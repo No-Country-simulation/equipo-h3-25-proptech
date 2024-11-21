@@ -1,3 +1,4 @@
+import InvestementSteps from "../components/investmentSteps"
 import Layout from "../components/layout"
 
 const Home = () => {
@@ -11,7 +12,7 @@ const Home = () => {
         
         <div>HeroSlider</div>
         <div>ServicesList</div>
-        <div>InvestmentSteps</div>
+        <InvestementSteps />
         <div>FAQHighlights</div>        
       </main>
     </Layout>
