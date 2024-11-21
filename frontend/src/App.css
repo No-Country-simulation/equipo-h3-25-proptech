@@ -1,3 +1,81 @@
+/* Background Colors */
+
+.bg-brand {
+  background-color: var(--clr-brand);
+}
+
+.bg-brand-light {
+  background-color: var(--clr-brand-light);
+}
+
+.bg-brand-dark {
+  background-color: var(--clr-brand-dark);
+}
+
+.bg-secondary {
+  background-color: var(--clr-secondary);
+}
+
+.bg-dark {
+  background-color: var(--clr-dark);
+}
+
+.bg-light {
+  background-color: var(--clr-light);
+}
+
+/* Foreground Colors */
+
+.fg-brand {
+  color: var(--clr-brand);
+}
+
+.fg-brand-light {
+  color: var(--clr-brand-light);
+}
+
+.fg-brand-dark {
+  color: var(--clr-brand-dark);
+}
+
+.fg-secondary {
+  color: var(--clr-secondary);
+}
+
+.fg-dark {
+  color: var(--clr-dark);
+}
+
+.fg-light {
+  color: var(--clr-light);
+}
+
+.fg {
+  color: var(--clr-fg);
+}
+
+.bg {
+  background-color: var(--clr-bg);
+}
+/* Estilos para el carrusel */
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--clr-brand-light) !important;
+  filter: drop-shadow(0 0 .2rem rgba(0, 0, 0, 0.3));
+
+}
+
+.swiper-pagination-bullet {
+  background-color: var(--clr-brand-light) !important;
+  opacity: 1 !important;
+  box-shadow: 0 0 .5rem .2rem rgba(0, 0, 0, 0.3);
+}
+
+.swiper-pagination-bullet-active {
+  background-color: white !important;
+}
+
 /* ::: ANIMATIONS ::: */
 
 /* .animate-load */
@@ -31,38 +109,4 @@
 
 .appear {
   animation: fadeIn 1s ease-in-out;
-}
-
-/* Colors */
-
-.bg-brand {
-  background-color: var(--clr-brand);
-}
-
-.bg-brand-light {
-  background-color: var(--clr-brand-light);
-}
-
-.bg-brand-dark {
-  background-color: var(--clr-brand-dark);
-}
-
-.bg-secondary {
-  background-color: var(--clr-secondary);
-}
-
-.bg-dark {
-  background-color: var(--clr-dark);
-}
-
-.bg-light {
-  background-color: var(--clr-light);
-}
-
-.fg {
-  color: var(--clr-fg);
-}
-
-.bg {
-  background-color: var(--clr-bg);
 }
