@@ -6,7 +6,7 @@ const Header = () => {
 
 
   return (
-    <header className="flex items-center justify-between p-5 px-10 max-w-screen-2xl mx-auto bg-gray-300/20 sticky top-0 backdrop-blur-md">
+    <header className="flex items-center justify-between p-5 px-10 max-w-screen-2xl mx-auto bg-gray-300/20 sticky top-0 backdrop-blur-md z-50">
       <Link to="/">
         <img src={logo} alt="Logo" className="w-36 min-w-36" />
       </Link>
