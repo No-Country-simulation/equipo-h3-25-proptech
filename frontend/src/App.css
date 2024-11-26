@@ -57,6 +57,37 @@
 .bg {
   background-color: var(--clr-bg);
 }
+
+/* Text Shadows */
+.text-shadow-default {
+  text-shadow: 0 0 .5rem hsla(0, 0%, 0%, 0.2);
+}
+
+.text-shadow-md {
+  text-shadow: 0 0 .6rem hsla(0, 0%, 0%, 0.4);
+}
+
+.text-shadow-lg {
+  text-shadow: 0 0 .7rem rgba(0, 0, 0, 0.6);
+}
+
+.text-shadow-xl {
+  text-shadow: 0 0 .8rem hsla(0, 0%, 0%, 0.8);
+}
+
+.text-shadow-2xl {
+  text-shadow: 0 0 1rem hsl(0, 0%, 0%, 1);
+}
+
+.text-shadow-inner {
+  text-shadow: inset 0 2px 4px hsla(0, 0%, 0%, 0.1);
+}
+
+.text-shadow-none {
+  text-shadow: none;
+}
+
+
 /* Estilos para el carrusel */
 
 .swiper-button-next,

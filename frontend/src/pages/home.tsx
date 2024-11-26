@@ -6,7 +6,6 @@ const Home = () => {
     <Layout>
       <main className="p-10 min-h-screen max-w-screen-2xl mx-auto">
         <HeroSlider/>
-        <div>HeroSlider</div>
         <div>ServicesList</div>
         <div>InvestmentSteps</div>
         <div>FAQHighlights</div>        

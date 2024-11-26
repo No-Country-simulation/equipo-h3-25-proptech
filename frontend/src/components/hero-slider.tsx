@@ -54,38 +54,27 @@ const HeroSlider: React.FC = () => {
           </SwiperSlide>
 
         </Swiper>
-        {/* Agregar más slides si es necesario */}
-        <div className="relative px-16"
-          style={{
-            borderTop: '2px solid var(--clr-fg)',
-            borderLeft: '2px solid var(--clr-fg)',
-            borderRadius: '10rem 0 0 0'
-          }}
-        >
-          <input type="text" placeholder="BUSCA TU INVERSIÓN" className="w-full m-5 px-4 py-2 border-2 rounded-xl clr-bg" />
-          <hr className='absolute bottom-0 right-0 w-1/3 border-1' />
-        </div>
+       
       </div>
-      <div className="relative flex-1 aspect-square z-10 "
+      <div className="relative flex-1 aspect-square z-10 rounded-3xl"
         style={{
-          backgroundImage: 'url(https://www.imobzi.com/papoimobiliario/wp-content/uploads/2018/03/venda-de-terrenos.jpg)',
+          backgroundImage: 'url(https://res.cloudinary.com/ddattmvj6/image/upload/v1732575962/ksfl4pswq2fg0zgnpy3d.jpg)',
           backgroundPosition: 'top right',
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           border: '2px solid var(--clr-fg)',
           borderLeft: '2px solid var(--clr-fg)',
-          borderRadius: '5rem 0 5rem 0'
         }}>
-        <div className="absolute top-10 -right-10 aspect-square h-1/4 h-auto border-2 rounded-3xl overflow-hidden"
+        <div className="absolute top-10 -left-10 aspect-square h-1/4 w-auto border-2 rounded-3xl overflow-hidden"
           style={{
-            backgroundImage: 'url(https://st4.depositphotos.com/7417846/22473/i/1600/depositphotos_224736636-stock-photo-portrait-beautiful-happy-smiling-family.jpg)',
+            backgroundImage: 'url(https://res.cloudinary.com/ddattmvj6/image/upload/v1732575962/lj3ckvc4uiacm0so6lha.jpg)',
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat'
           }}></div>
-        <div className="absolute bottom-14 -left-10 aspect-square h-1/4 h-auto border-2 rounded-3xl"
+        <div className="absolute bottom-14 -right-10 aspect-square h-1/4 w-auto border-2 rounded-3xl"
           style={{
-            backgroundImage: 'url(https://static1.bigstockphoto.com/2/6/4/large1500/46211113.jpg)',
+            backgroundImage: 'url(https://res.cloudinary.com/ddattmvj6/image/upload/v1732575962/mcfcdpxp1u3t7kaksr0h.jpg)',
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat'
