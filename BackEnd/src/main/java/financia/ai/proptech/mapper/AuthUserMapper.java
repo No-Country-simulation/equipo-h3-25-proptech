@@ -7,15 +7,17 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 
-@Mapper(componentModel = "spring")
+//@Mapper(componentModel = "spring")
 public interface AuthUserMapper {
+/*
     @Mappings({
             @Mapping(source = "id", target = "id"),
             @Mapping(source = "email", target = "email"),
             @Mapping(source = "password", target = "password")
     })
-    User toUser (AuthUserDto userDto);
+    User toAuthUser(AuthUserDto userDto);
     @InheritInverseConfiguration
-    AuthUserDto toUserDto(User user);
+    AuthUserDto toAuthUserDto(User user);
+*/
 
 }

@@ -1,14 +1,15 @@
 package financia.ai.proptech.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import financia.ai.proptech.emuns.Roles;
+import jakarta.persistence.*;
+import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Data
@@ -16,6 +17,7 @@ import org.hibernate.annotations.DynamicUpdate;
 @NoArgsConstructor
 @DynamicInsert
 @DynamicUpdate
+@Table(name = "userEntity")
 public class User {
 
    @Id
@@ -24,8 +26,24 @@ public class User {
 
    private String name;
 
+   private String lastName;
+
+   private Integer DNI;
+
    private String email;
 
    private String password;
 
+   private Boolean active = true;
+
+   @Enumerated(EnumType.STRING)
+   private Roles roles;
+
+   //@OneToMany
+   //private List<Documents> documents;
+
+   //hace que se genere auto, y le da un formato día/mes/año.
+   @CreationTimestamp
+   @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss")
+   private LocalDateTime CreationDate;
 }

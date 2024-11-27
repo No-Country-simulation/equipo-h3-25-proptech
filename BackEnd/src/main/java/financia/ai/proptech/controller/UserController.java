@@ -19,9 +19,6 @@ public class UserController {
 
     @PostMapping
     public ResponseEntity<UserDto> create (@RequestBody UserDto userDto){
-        if (userService.isUserIdDuplicate(userDto.id())){
-            return new ResponseEntity<>(HttpStatus.CONFLICT);
-        }
             return userService.create(userDto).map(user -> new ResponseEntity<>(user, HttpStatus.CREATED))
                     .orElse(new ResponseEntity<>(HttpStatus.CONFLICT));
     }
@@ -41,7 +38,7 @@ public class UserController {
 
     @PutMapping("/{id}")
     public ResponseEntity<UserDto> updateUser (@PathVariable Long id, @RequestBody UserDto userDto){
-        return userService.userId(id).map(user -> new ResponseEntity<>(user, HttpStatus.ACCEPTED))
+        return userService.update(id, userDto).map(user -> new ResponseEntity<>(user, HttpStatus.ACCEPTED))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
