@@ -1,0 +1,14 @@
+financia\ai\proptech\model\CreditApplication$CreditApplicationBuilder.class
+financia\ai\proptech\model\Lot.class
+financia\ai\proptech\model\CreditApplication.class
+financia\ai\proptech\service\UserService.class
+financia\ai\proptech\config\CorsConfig.class
+financia\ai\proptech\emuns\Roles.class
+financia\ai\proptech\exception\ExceptionRequest.class
+financia\ai\proptech\controller\UserController.class
+financia\ai\proptech\mapper\UserMapper.class
+financia\ai\proptech\repository\CreditApplicationRepository.class
+financia\ai\proptech\model\InvestmentApplication.class
+financia\ai\proptech\dto\CreditSimulator.class
+financia\ai\proptech\model\User.class
+financia\ai\proptech\repository\UserRepository.class
