@@ -1,6 +1,8 @@
 package financia.ai.proptech.controller;
 
-import financia.ai.proptech.dto.CreditAplicationDto;
+
+import financia.ai.proptech.dto.CreditApplicationDto;
+import financia.ai.proptech.service.CreditApplicationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,19 +13,19 @@ import java.util.List;
 
 public class CreditApplicationController {
     @Autowired
-    final ICreditApplicationService creditApplicationService;
-    public CreditApplicationController(ICreditApplicationService creditApplicationService) {
+    final CreditApplicationService creditApplicationService;
+    public CreditApplicationController(CreditApplicationService creditApplicationService) {
         this.creditApplicationService = creditApplicationService;
 
 
     }
     @GetMapping("/enlistarCreditApp")
-    public ResponseEntity<List<CreditAplicationDto>> getAllCreditApp() {
-        List<CreditAplicationDto> creditAplication = creditApplicationService.getAllcreditApplication();
+    public ResponseEntity<List<CreditApplicationDto>> getAllCreditApp() {
+        List<CreditApplicationDto> creditApplication = creditApplicationService.getAllcreditApplication();
         return ResponseEntity.ok(creditApplication);
     }
     @PostMapping("/guardarCreditApp")
-    public ResponseEntity<Void> createLot(@RequestBody CreditAplicationDto creditApplicationDto) {
+    public ResponseEntity<Void> createLot(@RequestBody CreditApplicationDto creditApplicationDto) {
         creditApplicationService.createCreditApplication(creditApplicationDto);
         return ResponseEntity.ok().build();
     }

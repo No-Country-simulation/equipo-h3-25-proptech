@@ -4,7 +4,7 @@ import financia.ai.proptech.model.User;
 
 import java.time.LocalDateTime;
 
-public record CreditAplicationDto(Long id,
+public record CreditApplicationDto(Long id,
     User buyer,
     Double requestedAmount,
     // Document[] document,
