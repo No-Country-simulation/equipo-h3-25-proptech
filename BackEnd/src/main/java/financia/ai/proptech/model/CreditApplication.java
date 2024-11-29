@@ -2,9 +2,11 @@ package financia.ai.proptech.model;
 
 import java.time.LocalDateTime;
 
+import jakarta.persistence.*;
 import lombok.*;
-//@Entity
-//@Table(name ="creditApplication")
+@Data
+@Entity
+@Table(name ="creditApplication")
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
@@ -15,16 +17,15 @@ import lombok.*;
 
 
 public class CreditApplication {
-
-    //@Id
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private User comprador;
-    private Double montoSolicitado;
-   // private Documento[] documento;
-    private Double ingresosMensuales;
-    //private EstadoSolicitud estadoSolicitud;
-    private LocalDateTime fechaSolicitud;
+    private User buyer;
+    private Double requestedAmount;
+   // private Document[] document;
+    private Double monthlyIncome;
+    //private StatusRequest statusRequest;
+    private LocalDateTime RequestDate;
 
 
 
