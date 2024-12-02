@@ -25,8 +25,12 @@ public class Lot {
     private String coordinates;
    // private byte [] pictures;
    // private String map;//si aplica
-
+    @Enumerated(EnumType.STRING)
     private LotStatus status;
     private Boolean active;
+
+
+
+
 
 }

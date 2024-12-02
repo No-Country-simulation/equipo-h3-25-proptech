@@ -26,14 +26,16 @@ public class LotServiceImpl implements ILotService {
     @Transactional
     @Override
     public void createLot(LotDto lotDto) {
+
         System.out.println("Received LotDto: " + lotDto);
         Lot lot = lotMapper.toEntityLot(lotDto);
+        lot.setActive(true);
         System.out.println("Mapped Lot entity: " + lot);
         lotRepository.save(lot);
     }
     @Transactional
     @Override
-    public LotDto updateLot(LotDto lotDto) {
+    public void updateLot(LotDto lotDto) {
         Lot existingLot = lotRepository.findById(lotDto.id())
                 .orElseThrow(() -> new ExceptionRequest("No puedo ser encontrado ese terreno con id " + lotDto.id()));
         existingLot.setTitle(lotDto.title());
@@ -45,9 +47,10 @@ public class LotServiceImpl implements ILotService {
         existingLot.setSurface(lotDto.surface());
         existingLot.setCoordinates(lotDto.coordinates());
         existingLot.setStatus(lotDto.status());
+
         lotRepository.save(existingLot);
 
-        return lotMapper.toLotDto(existingLot);
+        lotMapper.toLotDto(existingLot);
     }
 
     @Override
@@ -59,7 +62,7 @@ public class LotServiceImpl implements ILotService {
     public List<LotDto> getAllLots() {
         List <Lot> lotList= lotRepository.findAll();
         return lotList.stream()
-                .filter(lot -> Boolean.TRUE.equals(lot.getActive()))
+               .filter(lot -> Boolean.TRUE.equals(lot.getActive()))
                 .map(lotMapper::toLotDto)
                 .collect(Collectors.toList());
     }

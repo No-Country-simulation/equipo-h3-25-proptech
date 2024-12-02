@@ -2,6 +2,7 @@ package financia.ai.proptech.controller;
 
 import financia.ai.proptech.dto.LotDto;
 import financia.ai.proptech.service.serviceimpl.ILotService;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,13 +23,13 @@ public class LotController {
         return ResponseEntity.ok(lots);
     }
     @PostMapping("/guardarlote")
-    public ResponseEntity<Void> createLot(@RequestBody LotDto lotDto) {
+    public ResponseEntity<Void> createLot(@Valid @RequestBody LotDto lotDto) {
        lotService.createLot(lotDto);
        return ResponseEntity.ok().build();
     }
 
     @PutMapping("/actualizar")
-    public ResponseEntity<Void> updateLot(@RequestBody LotDto lotDto) {
+    public ResponseEntity<Void> updateLot(@Valid@RequestBody LotDto lotDto) {
         lotService.updateLot(lotDto);
         return ResponseEntity.ok().build();
     }

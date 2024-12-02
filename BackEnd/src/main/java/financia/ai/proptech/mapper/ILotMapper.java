@@ -4,6 +4,8 @@ import financia.ai.proptech.dto.LotDto;
 import financia.ai.proptech.model.Lot;
 import org.mapstruct.Mapper;
 
+
+
 import java.util.List;
 
 @Mapper(componentModel = "spring")

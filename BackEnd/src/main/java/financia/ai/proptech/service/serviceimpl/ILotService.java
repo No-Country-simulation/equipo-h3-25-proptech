@@ -9,7 +9,7 @@ import java.util.List;
 public interface ILotService {
 
      void createLot(LotDto lotDto);
-     LotDto updateLot(LotDto lotDto);
+     void updateLot(LotDto lotDto);
      Lot getLotById(int id);
      List<LotDto> getAllLots();
      void disableLotById(long id);
