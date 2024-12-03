@@ -1,47 +1,74 @@
-import Logo from '../assets/logo.svg';
+import { instagram_icon, whatsapp_icon, youtube_icon, facebook_icon, logo_footer } from "../assets";
+
+
+const data = [
+  {
+    id: 0,
+    title: "LINKS",
+    description: <ul className="flex flex-col gap-1">
+      <li>Quienes somos</li>
+      <li>Preguntas frecuentes</li>
+      <li>Politicas de protecciòn</li>
+    </ul>
+  }, {
+    id: 1,
+    title: "TE AYUDAMOS",
+    description: <p>Facilitamos el acceso a terrenos en Latinoamérica con financiamiento accesible, conectando familias con su hogar ideal y ofreciendo a inversores oportunidades en activos de alto valor</p>
+  }, {
+    id: 2,
+    title: "SUCURSALES",
+    description: <p>Facilitamos el acceso a terrenos en Latinoamérica con financiamiento accesible, conectando familias con su hogar ideal y ofreciendo a inversores oportunidades en activos de alto valor</p>
+  }, {
+    id: 3,
+    title: "CONTACTANOS",
+    description: <p>Facilitamos el acceso a terrenos en Latinoamérica con financiamiento accesible, conectando familias con su hogar ideal y ofreciendo a inversores oportunidades en activos de alto valor</p>
+  }
+]
+
+
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-400 text-gray-700 px-12">
-      <div className="border-b-[1px] border-gray-600 grid grid-cols-9 gap-16 pt-5 pb-7">
-        <div className="col-span-3">
-          <h5 className="font-semibold mb-3 text-black">SEGUINOS</h5>
-          <ul className="flex gap-4">
-            <li className="w-7 h-7 rounded-full bg-gray-200 flex items-center justify-center">M</li>
-            <li className="w-7 h-7 rounded-full bg-gray-200 flex items-center justify-center">M</li>
-            <li className="w-7 h-7 rounded-full bg-gray-200 flex items-center justify-center">M</li>
-            <li className="w-7 h-7 rounded-full bg-gray-200 flex items-center justify-center">M</li>
-            <li className="w-7 h-7 rounded-full bg-gray-200 flex items-center justify-center">M</li>
-          </ul>
-        </div>
-        <div className="col-span-2">
-          <h5 className="font-semibold mb-3 text-black">TE AYUDAMOS</h5>
-          <p>Facilitamos el acceso a terrenos</p>
-        </div>
-        <div className="col-span-2">
-          <h5 className="font-semibold mb-3 text-black">SUCURSALES</h5>
-          <p>Facilitamos el acceso a terrenos</p>
-        </div>
-        <div className="col-span-2">
-          <h5 className="font-semibold mb-3 text-black">CONTACTANOS</h5>
-          <p>Facilitamos el acceso a terrenos</p>
-        </div>
+    <footer className="bg-black text-[#C6C6C8] text-xs px-9 py-7">
+      <div className="border-b-2 border-white grid grid-cols-4">
+        {data.map((item) => (
+          <Sections key={item.id} title={item.title}>
+            {item.description}
+          </Sections>
+        ))}
       </div>
-      <div className="grid grid-cols-12 gap-16 py-8">
-        <div className="col-span-4">
-          <img src={Logo} alt="" />
+  
+      <div className="py-4 flex items-center justify-between">
+        <div className="flex items-center gap-8">
+          <img src={logo_footer} alt="" />
+          <p className="inline-block">@2024 Financia.ai. Todos los derechos reservados</p>
         </div>
-        <div className="col-span-3">
-          <p>
-            Facilitamos el acceso a terrenos en Latinoamérica con financiamiento accesible, <strong>conectando</strong>
-          </p>
-        </div>
-        <div className="col-start-10 col-span-3">
-          <p>
-            Facilitamos el acceso a terrenos en Latinoamérica con financiamiento accesible, <strong>conectando</strong>
-          </p>
+        <div className="flex gap-5">
+          <SocialIcon icon={whatsapp_icon} />
+          <SocialIcon icon={facebook_icon} />
+          <SocialIcon icon={youtube_icon} />
+          <SocialIcon icon={instagram_icon} />
         </div>
       </div>
     </footer>
+  );
+}
+
+
+function Sections ({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <div className="pb-6 max-w-[220px]">
+      <h5 className="text-lg text-white mb-3">{title}</h5>
+      {children}
+    </div>
+  );
+}
+
+
+function SocialIcon ({ icon }: { icon: string}) {
+  return (
+    <div className="bg-white inline-block size-10 p-2 rounded-full">
+      <img src={icon} alt="" className="w-full h-full" />
+    </div>
   );
 }
