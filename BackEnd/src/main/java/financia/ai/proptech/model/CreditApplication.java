@@ -26,6 +26,7 @@ public class CreditApplication {
     private Double monthlyIncome;
     //private StatusRequest statusRequest;
     private LocalDateTime RequestDate;
+    private Boolean active;
 
 
 

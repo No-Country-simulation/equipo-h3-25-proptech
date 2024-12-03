@@ -2,6 +2,7 @@ package financia.ai.proptech.mapper;
 import financia.ai.proptech.dto.CreditApplicationDto;
 import financia.ai.proptech.model.CreditApplication;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapper;
 
 import java.util.List;
 

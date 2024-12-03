@@ -7,6 +7,7 @@ import financia.ai.proptech.model.CreditApplication;
 import financia.ai.proptech.repository.CreditApplicationRepository;
 import financia.ai.proptech.service.CreditApplicationService;
 import jakarta.transaction.Transactional;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
@@ -34,7 +35,7 @@ public class CreditApplicationImpl  implements CreditApplicationService {
     @Transactional
     @Override
     public CreditApplicationDto updateCreditApplication(CreditApplicationDto creditApplicationDto) {
-        CreditApplication existingCreditApplication = CreditApplicationRepository.findById(creditApplicationDto.id())
+        CreditApplication existingCreditApplication = creditApplicationRepository.findById(creditApplicationDto.id())
                 .orElseThrow(() -> new ExceptionRequest("No puedo ser encontrado ese credito con id " + creditApplicationDto.id()));
         existingCreditApplication.setBuyer(creditApplicationDto.buyer());
         existingCreditApplication.setMonthlyIncome(creditApplicationDto.monthlyIncome());
@@ -69,6 +70,6 @@ public class CreditApplicationImpl  implements CreditApplicationService {
                 .filter(creditApplication -> Boolean.TRUE.equals(creditApplication.getActive()))
                 .map(creditApplicationMapper::toCreditApplicationDto)
                 .collect(Collectors.toList());
-        ;
+
     }
 }
