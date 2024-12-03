@@ -3,24 +3,24 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Navigate,
 } from "react-router-dom"
-import { useContext } from "react"
 
 
 /* ::: PAGES ::: */
 
 import Home from "./pages/home"
+import Layout from "./components/layout"
 
 function App() {
-
   return (
     <>
-        <Router>
+      <Router>
+        <Layout>
           <Routes>
             <Route path="/" element={<Home />}></Route>
           </Routes>
-        </Router>
+        </Layout>
+      </Router>
     </>
   )
 }
