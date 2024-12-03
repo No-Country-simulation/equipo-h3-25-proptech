@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        Exo2: ["Exo 2", "sans-serif"],
+        Exo2: ['"Exo 2"', "sans-serif"],
         Roboto: ["Roboto", "sans-serif"],
       },
       colors: {
