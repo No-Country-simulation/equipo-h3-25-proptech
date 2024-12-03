@@ -9,6 +9,8 @@ import whatsapp_icon from "./whatsapp_icon.svg";
 import youtube_icon from "./youtube_icon.svg";
 import logo_footer from "./logo_footer.svg";
 
+import banner5 from "./banner5.webp";
+
 
 export {
   logo,
@@ -21,4 +23,5 @@ export {
   whatsapp_icon,
   youtube_icon,
   logo_footer,
+  banner5,
 }
