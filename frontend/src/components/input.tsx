@@ -31,11 +31,11 @@ export default function Input ({
   return (
     <div>
       {label && 
-        <label htmlFor={name} className="text-gray-700 font-medium block mb-3 inline-block">
+        <label htmlFor={name} className="font-Roboto text-lg text-body block mb-4 inline-block">
           {label}
         </label>
       }
-      <div className="flex items-center gap-5 rounded-md outline outline-1 outline-gray-300 py-2.5 px-5 has-[input:focus]:outline-2 has-[input:focus]:outline-[#00FFA0] has-[:disabled]:bg-gray-300">
+      <div className="flex items-center gap-5 rounded-md outline outline-1 outline-[#B4B4B4] py-4 px-5 has-[input:focus]:outline-2 has-[input:focus]:outline-primary-500 has-[:disabled]:bg-[#BFBFBF]">
         <input
           name={name}
           id={name}
@@ -44,7 +44,7 @@ export default function Input ({
           disabled={disabled}
           value={value}
           onChange={onChange}
-          className="w-full bg-white text-gray-700 outline-none disabled:bg-gray-300"
+          className="w-full bg-white font-Roboto text-sm text-[#616161] placeholder:text-[#616161] outline-none disabled:bg-[#BFBFBF]"
         />
         {type === "password" &&
           <img
