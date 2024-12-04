@@ -13,10 +13,10 @@ interface SelectProps {
   options: Option[];
   disabled?: boolean;
   onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
-  defaultValue?: Option;
+  value: string;
 }
 
-export default function Select({ label, name, options, disabled, onChange, defaultValue }: SelectProps) {
+export default function Select({ label, name, options, disabled, onChange, value}: SelectProps) {
   return (
     <div>
       {label && 
@@ -26,7 +26,7 @@ export default function Select({ label, name, options, disabled, onChange, defau
       }
       <div className="relative">
         <select
-          value={defaultValue?.value}
+          value={value}
           onChange={onChange}
           disabled={disabled}
           id={name}
