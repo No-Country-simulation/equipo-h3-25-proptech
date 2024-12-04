@@ -3,23 +3,9 @@
 @tailwind utilities;
 
 :root {
-  font-family: "Montserrat", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Roboto", system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  --clr-brand: hsl(128, 100%, 27%);
-  --clr-brand-light: hsl(159, 100%, 50%);
-  --clr-brand-dark: hsl(85, 85%, 13%);
-  --clr-secondary: rgb(129, 119, 110);
-  --clr-dark: #222;
-  --clr-light: #eee;
-  --clr-fg: var(--clr-dark);
-  --clr-bg: var(--clr-light);
-
-  color-scheme: light dark;
-  color: var(--clr-fg);
-  background-color: var(--clr-bg);
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -28,30 +14,4 @@
 
 #root {
   padding: 0;
-}
-
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --clr-fg: var(--clr-light);
-    --clr-bg: var(--clr-dark);
-  }
-}
-
-/* ::: FONTS ::: */
-
-/* Normal */
-.montserrat-400 {
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-}
-
-/* Bold */
-.montserrat-700 {
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
 }
