@@ -1,4 +1,3 @@
-import Layout from "../components/layout"
 import HeroSlider from "../components/heroSlider"
 
 const Home = () => {

@@ -1,12 +1,11 @@
 // import Swiper core and required modules
-import { Autoplay, Navigation, Pagination, A11y } from 'swiper/modules';
+import { Autoplay, Pagination, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import banner1 from "../assets/banner1_1.webp";
 
 
 // Import Swiper styles
 import 'swiper/css'
-// import 'swiper/modules/pagination/pagination.min.css'
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import Button from './button';
