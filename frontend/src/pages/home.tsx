@@ -1,5 +1,5 @@
 import Layout from "../components/layout"
-import HeroSlider from "../components/hero-slider"
+import HeroSlider from "../components/heroSlider"
 
 const Home = () => {
   return (
