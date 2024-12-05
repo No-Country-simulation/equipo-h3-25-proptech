@@ -3,11 +3,6 @@
 
 # Financia.AI (Fintech)
 [https://financiaai.vercel.app/](https://financiaai.vercel.app/)
-[![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/No-Country-simulation/equipo-h3-25-proptech?include_prereleases)](https://github.com/No-Country-simulation/equipo-h3-25-proptech/releases)
-[![GitHub last commit](https://img.shields.io/github/last-commit/No-Country-simulation/equipo-h3-25-proptech)](https://github.com/No-Country-simulation/equipo-h3-25-proptech/commits)
-[![GitHub issues](https://img.shields.io/github/issues-raw/No-Country-simulation/equipo-h3-25-proptech)](https://github.com/No-Country-simulation/equipo-h3-25-proptech/issues)
-[![GitHub pull requests](https://img.shields.io/github/issues-pr/No-Country-simulation/equipo-h3-25-proptech)](https://github.com/No-Country-simulation/equipo-h3-25-proptech/pulls)
-[![GitHub](https://img.shields.io/github/license/No-Country-simulation/equipo-h3-25-proptech)](https://github.com/No-Country-simulation/equipo-h3-25-proptech/blob/main/LICENSE)
 
 
 ## Descripción del Proyecto
