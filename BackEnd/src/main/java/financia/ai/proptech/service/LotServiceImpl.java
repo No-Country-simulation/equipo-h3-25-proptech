@@ -27,10 +27,8 @@ public class LotServiceImpl implements ILotService {
     @Override
     public void createLot(LotDto lotDto) {
 
-        System.out.println("Received LotDto: " + lotDto);
         Lot lot = lotMapper.toEntityLot(lotDto);
         lot.setActive(true);
-        System.out.println("Mapped Lot entity: " + lot);
         lotRepository.save(lot);
     }
     @Transactional
