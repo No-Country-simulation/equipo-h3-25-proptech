@@ -29,7 +29,8 @@ const data = [
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-[#C6C6C8] text-xs px-9 py-7">
+    <footer className="bg-black text-[#C6C6C8] text-xs px-9 py-7 relative">
+      <div className="h-1.5 w-full absolute top-0 left-0 bg-gradient-yellow"></div>
       <div className="border-b-2 border-white grid grid-cols-4">
         {data.map((item) => (
           <Sections key={item.id} title={item.title}>
