@@ -35,7 +35,7 @@ export default function Input ({
           {label}
         </label>
       }
-      <div className="flex items-center gap-5 rounded-md outline outline-1 outline-[#B4B4B4] py-4 px-5 has-[input:focus]:outline-2 has-[input:focus]:outline-primary-500 has-[:disabled]:bg-[#BFBFBF]">
+      <div className="bg-white flex items-center gap-5 rounded-md outline outline-1 outline-[#B4B4B4] py-4 px-5 has-[input:focus]:outline-2 has-[input:focus]:outline-primary-500 has-[:disabled]:bg-[#BFBFBF]">
         <input
           name={name}
           id={name}
