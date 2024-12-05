@@ -6,6 +6,16 @@
   font-family: "Roboto", system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+
+  --clr-brand: hsl(128, 100%, 27%);
+  --clr-brand-light: hsl(159, 100%, 50%);
+  --clr-brand-dark: hsl(85, 85%, 13%);
+  --clr-secondary: rgb(129, 119, 110);
+  --clr-dark: #222;
+  --clr-light: #eee;
+  --clr-fg: var(--clr-dark);
+  --clr-bg: var(--clr-light);
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
