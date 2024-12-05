@@ -2,7 +2,8 @@ package financia.ai.proptech.controller;
 
 import financia.ai.proptech.dto.InvestmentApplicationDto;
 
-import financia.ai.proptech.service.InvestmentApplicationServiceImpl;
+
+import financia.ai.proptech.service.serviceimpl.InvestmentApplicationServiceImpl;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
