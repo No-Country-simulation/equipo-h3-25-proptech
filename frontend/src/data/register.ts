@@ -1,4 +1,4 @@
-import { ahorrador_image, comprador_image, info1, info2, info3, info4, inversor_image } from "../assets";
+import { ahorrador_image, award_icon, coin_icon, comprador_image, inversor_image, requirements_icon, wallet_icon } from "../assets";
 
 export type TypeOfUserValue = 
   | "inversor"
@@ -103,19 +103,19 @@ export const registerSteps : RegisterStep[] = [
       title: "Beneficios de registrarse con FINANCIA.AI",
       sections: [
         {
-          image: info1,
+          image: award_icon,
           description: "Abrir tu cuenta con Financia.ai no tiene ningún costo ni comisiones. Puedes depositar o retirar fondos cuando lo desees, sin cargos adicionales.",
         },
         {
-          image: info2,
+          image: wallet_icon,
           description: "Al completar el registro, tendrás acceso a dashboard privado para gestionar tus inversiones o financiamientos.",
         },
         {
-          image: info3,
+          image: requirements_icon,
           description: "Explora métricas detalladas y obtén información clave de manera simple y segura.",
         },
         {
-          image: info4,
+          image: coin_icon,
           description: "Empieza a financiar desde USD 15,000 y aprovecha una experiencia rápida, accesible y confiable.",
         },
       ]
@@ -128,19 +128,19 @@ export const registerSteps : RegisterStep[] = [
       title: "Beneficios de registrarse con FINANCIA.AI",
       sections: [
         {
-          image: info1,
+          image: award_icon,
           description: "Abrir tu cuenta con Financia.ai no tiene ningún costo ni comisiones. Puedes depositar o retirar fondos cuando lo desees, sin cargos adicionales.",
         },
         {
-          image: info2,
+          image: wallet_icon,
           description: "Al completar el registro, tendrás acceso a dashboard privado para gestionar tus inversiones o financiamientos.",
         },
         {
-          image: info3,
+          image: requirements_icon,
           description: "Explora métricas detalladas y obtén información clave de manera simple y segura.",
         },
         {
-          image: info4,
+          image: coin_icon,
           description: "Empieza a financiar desde USD 15,000 y aprovecha una experiencia rápida, accesible y confiable.",
         },
       ]

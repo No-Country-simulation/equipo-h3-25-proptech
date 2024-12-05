@@ -13,10 +13,10 @@ import register_info from "./register_info.webp";
 import ahorrador_image from "./ahorrador_image.webp";
 import comprador_image from "./comprador_image.webp";
 import inversor_image from "./inversor_image.webp";
-import info1 from "./info1.webp";
-import info2 from "./info2.webp";
-import info3 from "./info3.webp";
-import info4 from "./info4.webp";
+import award_icon from "./awards_icon.webp";
+import wallet_icon from "./wallet_icon.webp";
+import requirements_icon from "./requirements_icon.webp";
+import coin_icon from "./coin_icon.webp";
 import captcha from "./captcha.png";
 
 import hero_header from "./aboutUs/hero_header.webp";
@@ -28,8 +28,8 @@ import plus_icon from "./aboutUs/plus_icon.svg";
 import notification_icon from "./aboutUs/notification_icon.svg";
 import valores_icon from "./aboutUs/valores_icon.svg";
 import vision_icon from "./aboutUs/vision_icon.svg";
-
-
+import terms_icon from "./terms_icon.webp";
+import faqs_icon from "./FAQS_icon.webp";
 
 
 
@@ -49,10 +49,10 @@ export {
   ahorrador_image,
   comprador_image,
   inversor_image,
-  info1,
-  info2,
-  info3,
-  info4,
+  award_icon,
+  wallet_icon,
+  requirements_icon,
+  coin_icon,
   captcha,
 
   hero_header,
@@ -64,4 +64,6 @@ export {
   notification_icon,
   valores_icon,
   vision_icon,
+  terms_icon,
+  faqs_icon,
 }
