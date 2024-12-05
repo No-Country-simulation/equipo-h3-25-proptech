@@ -19,6 +19,19 @@ import info3 from "./info3.webp";
 import info4 from "./info4.webp";
 import captcha from "./captcha.png";
 
+import hero_header from "./aboutUs/hero_header.webp";
+import tablet_image from "./aboutUs/tablet_image.webp";
+import distintive_image from "./aboutUs/distintive.webp";
+import checkbox from "./aboutUs/checkbox.svg";
+import mision_icon from "./aboutUs/mision_icon.svg";
+import plus_icon from "./aboutUs/plus_icon.svg";
+import notification_icon from "./aboutUs/notification_icon.svg";
+import valores_icon from "./aboutUs/valores_icon.svg";
+import vision_icon from "./aboutUs/vision_icon.svg";
+
+
+
+
 
 export {
   logo,
@@ -41,4 +54,14 @@ export {
   info3,
   info4,
   captcha,
+
+  hero_header,
+  tablet_image,
+  distintive_image,
+  checkbox,
+  mision_icon,
+  plus_icon,
+  notification_icon,
+  valores_icon,
+  vision_icon,
 }
