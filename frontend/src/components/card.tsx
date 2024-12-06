@@ -14,7 +14,7 @@ export default function Card({ children, title, icon, step, bgColor = "bg-white"
   return (
     <div className={`rounded-2xl p-10 pb-16 pe-12 flex flex-col items-start gap-5 relative ${bgColor}`}>
       {step && 
-        <span className="absolute top-2 right-4 text-2xl text-primary-500 font-bold">1</span>
+        <span className="absolute top-2 right-4 text-2xl text-primary-500 font-bold">{step}</span>
       }
       <div className="bg-[#F6F6F6] rounded-full p-4">
         <img src={icon} alt={title} className="size-8" />
