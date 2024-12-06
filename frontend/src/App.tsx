@@ -16,11 +16,13 @@ import RegisterStep2 from "./pages/register/step2"
 import RegisterStep3 from "./pages/register/step3"
 import AboutUs from "./pages/aboutUs"
 import Help from "./pages/help"
+import ScrollToTop from "./helpers/scrollToTop"
 
 function App() {
   return (
     <>
       <Router>
+        <ScrollToTop />
         <Layout>
           <Routes>
             <Route path="/" element={<Home />}></Route>
