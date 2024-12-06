@@ -3,7 +3,6 @@ import PreFooter from "../components/preFooter";
 import questions from "../data/help";
 import { useState} from "react";
 import {
-  arrow_down,
   help_hero_header,
   help_image_1,
   help_image_2,
@@ -14,6 +13,7 @@ import {
   minus_icon,
   plus_black_icon,
 } from "../assets";
+import ArrowButton from "../components/arrowButton";
 
 
 
@@ -31,7 +31,6 @@ export default function Help() {
 
   return (
     <div className="">
-
       <section className="p-12 grid grid-cols-2 gap-16 items-center shadow-[0px_0px_15px_3px_rgba(0,0,0,0.25)] relative">
         <img src={help_hero_header} alt="" className="min-w-[400px] w-[600px]" />
         <div className="max-w-[620px]">
@@ -41,9 +40,7 @@ export default function Help() {
             Explora las preguntas frecuentes para encontrar respuestas claras y rápidas. <strong>Descubre cómo funciona nuestra plataforma,</strong> los requisitos para financiar terrenos y las oportunidades de inversión que ofrecemos.
           </p>
         </div>
-        <a href="#faqs" className="inline-block bg-white rounded-full p-6 mt-6 shadow-[0px_0px_15px_3px_rgba(0,0,0,0.25)] absolute z-10 -bottom-10 left-1/2 -translate-x-1/2">
-          <img src={arrow_down} alt="arrow down" width={50} height={50} className="w-[50px] h-[50px] translate-y-1" />
-        </a>
+        <ArrowButton to="#faqs" />
       </section>
 
       <section id="faqs" className="relative bg-[#f6F6F6] p-20 pb-10 mb-20 grid grid-cols-[7fr_5fr] gap-12 shadow-[0px_0px_15px_3px_rgba(0,0,0,0.25)]">
@@ -61,7 +58,6 @@ export default function Help() {
           <img src={help_image_2} alt="" className="relative top-[-80px]"/>
           <img src={help_image_3} alt="" />
           <img src={help_image_4} alt="" className="relative top-[-80px]"/>
-
         </div>
       </section>
       
