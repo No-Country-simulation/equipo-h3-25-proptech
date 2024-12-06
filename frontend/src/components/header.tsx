@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../assets/logo.svg';
+import {logo} from '../assets';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -12,7 +12,7 @@ const Header: React.FC = () => {
   return (
     <header className="flex items-center justify-between p-5 px-10 mx-auto bg-neutral-900 sticky top-0 backdrop-blur-md z-50 text-white">
       <Link to="/">
-        <img src={logo} alt="Logo" className="w-36 min-w-36" />
+        <img src={logo} alt="Logo" className="w-16 h-16" />
       </Link>
       <nav className={` ${isMenuOpen ? 'flex ' : 'hidden'} absolute right-1 pt-20 top-1 flex-col gap-4 items-right space-x-4 p-10 text-right bg-neutral-800 md:hidden rounded-xl backdrop-blur-md z-50`}>
         <Link to="/financiamiento">Financiamiento</Link>

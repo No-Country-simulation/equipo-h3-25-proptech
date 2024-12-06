@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { banner5 } from "../assets";
+import { login_image } from "../assets";
 import { Link } from "react-router-dom";
 import Button from "../components/button";
 import Input from "../components/input";
@@ -38,7 +38,7 @@ export default function Login() {
     <div className="bg-white w-full">
       <div className="flex justify-between gap-10 py-10 ps-8 pe-28 text-body max-w-[1200px] mx-auto font-Roboto text-body">
         <div className="w-1/2 rounded-3xl flex justify-center items-center relative">
-          <img src={banner5} alt="login banner" />
+          <img src={login_image} alt="login banner" />
         </div>
         <div className="w-1/2 max-w-[420px]">
           <h3 className="text-black font-bold text-2xl font-Exo2">FINANCIA.AI</h3>

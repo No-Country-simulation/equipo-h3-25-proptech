@@ -1,4 +1,4 @@
-import { ahorrador_image, award_icon, coin_icon, comprador_image, inversor_image, requirements_icon, wallet_icon } from "../assets";
+import { saver_coin, award_highicon, coin_highicon, buyer_coin, inversor_coin, requirements_highicon, wallet_highicon } from "../assets";
 
 export type TypeOfUserValue = 
   | "inversor"
@@ -76,19 +76,19 @@ export const registerSteps : RegisterStep[] = [
     info: {
       sections: [
         {
-          image: inversor_image,
+          image: inversor_coin,
           title: "Inversor",
           description: "Personas o entidades que buscan diversificar su portafolio mediante la financiación de terrenos en Latinoamérica.",
           link: "#"
         },
         {
-          image: comprador_image,
+          image: buyer_coin,
           title: "Comprador de terreno",
           description: "Individuos interesados en adquirir terrenos, que necesitan opciones de financiamiento accesibles.",
           link: "#"
         },
         {
-          image: ahorrador_image,
+          image: saver_coin,
           title: "Ahorrador con capacidad de inversion",
           description: "Personas que buscan alternativas seguras para capitalizar sus ahorros a mediano plazo mediante la revalorización de terrenos.",
           link: "#"
@@ -103,19 +103,19 @@ export const registerSteps : RegisterStep[] = [
       title: "Beneficios de registrarse con FINANCIA.AI",
       sections: [
         {
-          image: award_icon,
+          image: award_highicon,
           description: "Abrir tu cuenta con Financia.ai no tiene ningún costo ni comisiones. Puedes depositar o retirar fondos cuando lo desees, sin cargos adicionales.",
         },
         {
-          image: wallet_icon,
+          image: wallet_highicon,
           description: "Al completar el registro, tendrás acceso a dashboard privado para gestionar tus inversiones o financiamientos.",
         },
         {
-          image: requirements_icon,
+          image: requirements_highicon,
           description: "Explora métricas detalladas y obtén información clave de manera simple y segura.",
         },
         {
-          image: coin_icon,
+          image: coin_highicon,
           description: "Empieza a financiar desde USD 15,000 y aprovecha una experiencia rápida, accesible y confiable.",
         },
       ]
@@ -128,19 +128,19 @@ export const registerSteps : RegisterStep[] = [
       title: "Beneficios de registrarse con FINANCIA.AI",
       sections: [
         {
-          image: award_icon,
+          image: award_highicon,
           description: "Abrir tu cuenta con Financia.ai no tiene ningún costo ni comisiones. Puedes depositar o retirar fondos cuando lo desees, sin cargos adicionales.",
         },
         {
-          image: wallet_icon,
+          image: wallet_highicon,
           description: "Al completar el registro, tendrás acceso a dashboard privado para gestionar tus inversiones o financiamientos.",
         },
         {
-          image: requirements_icon,
+          image: requirements_highicon,
           description: "Explora métricas detalladas y obtén información clave de manera simple y segura.",
         },
         {
-          image: coin_icon,
+          image: coin_highicon,
           description: "Empieza a financiar desde USD 15,000 y aprovecha una experiencia rápida, accesible y confiable.",
         },
       ]

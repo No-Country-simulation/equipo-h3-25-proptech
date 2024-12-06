@@ -1,7 +1,7 @@
 // import Swiper core and required modules
 import { Autoplay, Pagination, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import banner1 from "../assets/banner1_1.webp";
+import { home_hero_header } from '../assets';
 
 
 // Import Swiper styles
@@ -38,7 +38,7 @@ const HeroSlider: React.FC = () => {
             </div>
           </div>
           <div className="flex-1 flex justify-center">
-            <img src={banner1} alt="login banner" />
+            <img src={home_hero_header} alt="login banner" />
           </div>
         </div>
       </SwiperSlide>
@@ -56,7 +56,7 @@ const HeroSlider: React.FC = () => {
             </div>
           </div>
           <div className="flex-1 flex justify-center">
-            <img src={banner1} alt="login banner" />
+            <img src={home_hero_header} alt="login banner" />
           </div>
         </div>
       </SwiperSlide>
