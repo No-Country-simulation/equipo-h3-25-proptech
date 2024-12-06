@@ -18,7 +18,6 @@ import wallet_icon from "./wallet_icon.webp";
 import requirements_icon from "./requirements_icon.webp";
 import coin_icon from "./coin_icon.webp";
 import captcha from "./captcha.png";
-
 import hero_header from "./aboutUs/hero_header.webp";
 import tablet_image from "./aboutUs/tablet_image.webp";
 import distintive_image from "./aboutUs/distintive.webp";
@@ -30,6 +29,17 @@ import valores_icon from "./aboutUs/valores_icon.svg";
 import vision_icon from "./aboutUs/vision_icon.svg";
 import terms_icon from "./terms_icon.webp";
 import faqs_icon from "./FAQS_icon.webp";
+import minus_icon from "./minus_icon.svg";
+import plus_black_icon from "./plus_black_icon.svg";
+
+import help_hero_header from "./help/help_hero_header.webp";
+import help_image_1 from "./help/help_image_1.webp";
+import help_image_2 from "./help/help_image_2.webp";
+import help_image_3 from "./help/help_image_3.webp";
+import help_image_4 from "./help/help_image_4.webp";
+import help_image_5 from "./help/help_image_5.webp";
+import help_image_6 from "./help/help_image_6.webp";
+
 
 
 
@@ -66,4 +76,13 @@ export {
   vision_icon,
   terms_icon,
   faqs_icon,
+  minus_icon,
+  plus_black_icon,
+  help_hero_header,
+  help_image_1,
+  help_image_2,
+  help_image_3,
+  help_image_4,
+  help_image_5,
+  help_image_6,
 }
