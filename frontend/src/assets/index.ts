@@ -57,6 +57,23 @@ import help5_image from "./help/help5_image.webp";
 import help6_image from "./help/help6_image.webp";
 import help_hero_header from "./help/help_hero_header.webp";
 
+// users
+import users_hero_header from "./users/users_hero_header.webp";
+import buyer_image from "./users/buyer_image.webp";
+import inversor_image from "./users/inversor_image.webp";
+import saver_image from "./users/saver_image.webp";
+
+import chat_icon from "./chat_icon.svg";
+import checkbox_icon from "./checkbox_icon.svg";
+import clock_icon from "./clock_icon.svg";
+import clockWarning_icon from "./clockWarning_icon.svg";
+import dolar_icon from "./dolar_icon.svg";
+import finance_icon from "./finance_icon.svg";
+import handshake_icon from "./handshake_icon.svg";
+import piggyBank_icon from "./piggyBank_icon.svg";
+import security_icon from "./security_icon.svg";
+import signalBars_icon from "./signalBars_icon.svg";
+
 
 
 
@@ -116,4 +133,21 @@ export {
   help5_image,
   help6_image,
   help_hero_header,
+
+  // users
+  users_hero_header,
+  buyer_image,
+  inversor_image,
+  saver_image, 
+
+  chat_icon,
+  checkbox_icon,
+  clock_icon,
+  clockWarning_icon,
+  dolar_icon,
+  finance_icon,
+  handshake_icon,
+  piggyBank_icon,
+  security_icon,
+  signalBars_icon
 }
