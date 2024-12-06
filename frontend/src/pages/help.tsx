@@ -31,36 +31,40 @@ export default function Help() {
 
   return (
     <div className="">
-      <section className="p-12 grid grid-cols-2 gap-16 items-center shadow-[0px_0px_15px_3px_rgba(0,0,0,0.25)] relative">
-        <img src={help_hero_header} alt="" className="min-w-[400px] w-[600px]" />
-        <div className="max-w-[620px]">
-          <h3 className="font-bold font-Exo2 text-2xl">FINANCIA.AI</h3>
-          <h2 className="font-bold font-Exo2 text-5xl mb-6">RESUELVE TODAS TUS <span className="text-primary-500">DUDAS</span> EN UN SOLO LUGAR</h2>
-          <p className="text-body">
-            Explora las preguntas frecuentes para encontrar respuestas claras y rápidas. <strong>Descubre cómo funciona nuestra plataforma,</strong> los requisitos para financiar terrenos y las oportunidades de inversión que ofrecemos.
-          </p>
+      <section className="p-12 shadow-[0px_0px_15px_3px_rgba(0,0,0,0.25)] relative">
+        <div className="max-w-screen-2xl mx-auto grid grid-cols-2 gap-16 items-center">
+          <img src={help_hero_header} alt="" className="min-w-[400px] w-[600px]" />
+          <div className="max-w-[620px]">
+            <h3 className="font-bold font-Exo2 text-2xl">FINANCIA.AI</h3>
+            <h2 className="font-bold font-Exo2 text-5xl mb-6">RESUELVE TODAS TUS <span className="text-primary-500">DUDAS</span> EN UN SOLO LUGAR</h2>
+            <p className="text-body">
+              Explora las preguntas frecuentes para encontrar respuestas claras y rápidas. <strong>Descubre cómo funciona nuestra plataforma,</strong> los requisitos para financiar terrenos y las oportunidades de inversión que ofrecemos.
+            </p>
+          </div>
+          <ArrowButton to="#faqs" className="absolute left-1/2 translate-x-[-50%] bottom-[-50px] z-10" />
         </div>
-        <ArrowButton to="#faqs" />
       </section>
 
-      <section id="faqs" className="relative bg-[#f6F6F6] p-20 pb-10 mb-20 grid grid-cols-[7fr_5fr] gap-12 shadow-[0px_0px_15px_3px_rgba(0,0,0,0.25)]">
-        <Accordion data={questions} handleChange={handelChange} expanded={expanded}/>
-        <div className="grid grid-rows-[min-content] grid-cols-2 gap-6 h-min">
-          <div className="col-span-2 relative">
-            <img src={help_image_1} alt="" />
-            <div className="absolute bottom-10 w-full flex gap-10 justify-center">
-              <Button variant="secondary" onClick={() => {}}>SIMULA TU INVERSIÓN</Button>
-              <Button variant="primary" onClick={() => {}}>SIMULA TU INVERSIÓN</Button>
+      <section id="faqs" className="relative bg-[#f6F6F6] p-20 pb-10 mb-20 shadow-[0px_0px_15px_3px_rgba(0,0,0,0.25)]">
+        <div className="max-w-screen-2xl mx-auto grid grid-cols-[7fr_5fr] gap-12">
+          <Accordion data={questions} handleChange={handelChange} expanded={expanded}/>
+          <div className="grid grid-cols-2 grid-rows-[repeat(10,_auto)] gap-6 h-min">
+            <div className="col-span-2 row-span-4 relative">
+              <img src={help_image_1} alt="image 1" className="w-full" />
+              <div className="absolute bottom-[10%] w-full flex gap-10 justify-center">
+                <Button variant="secondary" onClick={() => {}}>SIMULA TU INVERSIÓN</Button>
+                <Button variant="primary" onClick={() => {}}>SIMULA TU INVERSIÓN</Button>
+              </div>
             </div>
+            <img src={help_image_6} alt="image 6" className="w-full row-span-2" />
+            <img src={help_image_5} alt="image 5" className="w-full row-span-3" />
+            <img src={help_image_2} alt="image 2" className="w-full row-span-3" />
+            <img src={help_image_3} alt="image 3" className="w-full row-span-3" />
+            <img src={help_image_4} alt="image 4" className="w-full " />
           </div>
-          <img src={help_image_6} alt="" />
-          <img src={help_image_5} alt="" />
-          <img src={help_image_2} alt="" className="relative top-[-80px]"/>
-          <img src={help_image_3} alt="" />
-          <img src={help_image_4} alt="" className="relative top-[-80px]"/>
         </div>
       </section>
-      
+
       <PreFooter />
     </div>
   );
