@@ -17,6 +17,7 @@ import RegisterStep3 from "./pages/register/step3"
 import AboutUs from "./pages/aboutUs"
 import Help from "./pages/help"
 import ScrollToTop from "./helpers/scrollToTop"
+import Users from "./pages/users"
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
             <Route path="/register/step3" element={<RegisterStep3 />}></Route>
             <Route path="/aboutUs" element={<AboutUs />}></Route>
             <Route path="/help" element={<Help />}></Route>
+            <Route path="/users" element={<Users />}></Route>
           </Routes>
         </Layout>
       </Router>
