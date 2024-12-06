@@ -3,6 +3,7 @@ package financia.ai.proptech.controller;
 import financia.ai.proptech.exception.ExceptionRequest;
 import financia.ai.proptech.exception.ExceptionResponse;
 import financia.ai.proptech.exception.MyException;
+import financia.ai.proptech.exception.UserNoExistsException;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.http.HttpServletRequest;
 import org.apache.tomcat.util.http.fileupload.impl.SizeException;
@@ -75,10 +76,9 @@ public class GlobalExceptionHandler {
         ExceptionResponse exceptionResponse = new ExceptionResponse(errorMessage.toString());
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(exceptionResponse);
     }
-
-
-
-
-
+    @ExceptionHandler(UserNoExistsException.class)
+    public ResponseEntity<String> handleUserNoExistsException(UserNoExistsException ex) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
+    }
 }
 
