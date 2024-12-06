@@ -1,4 +1,4 @@
-import { instagram_icon, whatsapp_icon, youtube_icon, facebook_icon, logo_footer } from "../assets";
+import { instagram_icon, whatsapp_icon, youtube_icon, facebook_icon, logo } from "../assets";
 import data from "../data/footer";
 
 
@@ -17,7 +17,7 @@ export default function Footer() {
   
       <div className="py-4 flex items-center justify-between">
         <div className="flex items-center gap-8">
-          <img src={logo_footer} alt="" />
+          <img src={logo} alt="" />
           <p className="inline-block">@2024 Financia.ai. Todos los derechos reservados</p>
         </div>
         <div className="flex gap-5">

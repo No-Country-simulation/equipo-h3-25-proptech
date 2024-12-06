@@ -4,14 +4,14 @@ import questions from "../data/help";
 import { useState} from "react";
 import {
   help_hero_header,
-  help_image_1,
-  help_image_2,
-  help_image_3,
-  help_image_4,
-  help_image_5,
-  help_image_6, 
+  help1_image,
+  help2_image,
+  help3_image,
+  help4_image,
+  help5_image,
+  help6_image, 
   minus_icon,
-  plus_black_icon,
+  plusBlack_icon,
 } from "../assets";
 import ArrowButton from "../components/arrowButton";
 
@@ -50,17 +50,17 @@ export default function Help() {
           <Accordion data={questions} handleChange={handelChange} expanded={expanded}/>
           <div className="grid grid-cols-2 grid-rows-[repeat(10,_auto)] gap-6 h-min">
             <div className="col-span-2 row-span-4 relative">
-              <img src={help_image_1} alt="image 1" className="w-full" />
+              <img src={help1_image} alt="image 1" className="w-full" />
               <div className="absolute bottom-[10%] w-full flex gap-10 justify-center">
                 <Button variant="secondary" onClick={() => {}}>SIMULA TU INVERSIÓN</Button>
                 <Button variant="primary" onClick={() => {}}>SIMULA TU INVERSIÓN</Button>
               </div>
             </div>
-            <img src={help_image_6} alt="image 6" className="w-full row-span-2" />
-            <img src={help_image_5} alt="image 5" className="w-full row-span-3" />
-            <img src={help_image_2} alt="image 2" className="w-full row-span-3" />
-            <img src={help_image_3} alt="image 3" className="w-full row-span-3" />
-            <img src={help_image_4} alt="image 4" className="w-full " />
+            <img src={help6_image} alt="image 6" className="w-full row-span-2" />
+            <img src={help5_image} alt="image 5" className="w-full row-span-3" />
+            <img src={help2_image} alt="image 2" className="w-full row-span-3" />
+            <img src={help3_image} alt="image 3" className="w-full row-span-3" />
+            <img src={help4_image} alt="image 4" className="w-full " />
           </div>
         </div>
       </section>
@@ -93,7 +93,7 @@ function Accordion({ data, handleChange, expanded }: AccordionProps) {
           <div className="flex items-center justify-between p-3">
             <h3 className="font-Exo2 font-semibold text-2xl">{index + 1}. {pregunta.question}</h3>
             <button className="bg-white flex items-center justify-center rounded-full w-10 h-10">
-              <img src={expanded === `panel ${index + 1}` ? minus_icon : plus_black_icon} alt="" />
+              <img src={expanded === `panel ${index + 1}` ? minus_icon : plusBlack_icon} alt="" />
             </button>
           </div>
           <p className={`text-body overflow-hidden pe-10`}>{pregunta.answer}</p>

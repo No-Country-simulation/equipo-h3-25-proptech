@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { visibilityOff, visibilityOn } from "../assets";
+import { visibilityOff_icon, visibilityOn_icon } from "../assets";
 
 
 interface InputProps {
@@ -48,7 +48,7 @@ export default function Input ({
         />
         {type === "password" &&
           <img
-            src={isVisible ? visibilityOff : visibilityOn}
+            src={isVisible ? visibilityOff_icon : visibilityOn_icon}
             alt="mostrar contraseña"
             className="w-6 h-6 cursor-pointer"
             onClick={changeVisibility}

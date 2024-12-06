@@ -1,4 +1,4 @@
-import { checkbox, distintive_image } from "../../assets";
+import { list_icon, distintive_image } from "../../assets";
 
 export default function Distinctive() {
   return (
@@ -10,15 +10,15 @@ export default function Distinctive() {
         <h3 className="font-Exo2 font-bold text-2xl my-6">FINANCIA.AI</h3>
         <ul className="text-body text-lg mt-6 flex flex-col gap-4">
           <li className="flex items-start gap-4">
-            <img src={checkbox} alt=""  className="mt-1"/>
+            <img src={list_icon} alt=""  className="mt-1"/>
             <p><strong>Innovación tecnológica:</strong> Utilizamos herramientas digitales avanzadas para ofrecer financiamiento rápido y eficiente.</p>
           </li>
           <li className="flex items-start gap-4">
-            <img src={checkbox} alt="" className="mt-1"/>
+            <img src={list_icon} alt="" className="mt-1"/>
             <p><strong>Enfoque inclusivo:</strong> Nuestra plataforma está diseñada para adaptarse a las necesidades de cada cliente.</p>
           </li>
           <li className="flex items-start gap-4">
-            <img src={checkbox} alt="" className="mt-1"/>
+            <img src={list_icon} alt="" className="mt-1"/>
             <p><strong>Impacto social:</strong> Apoyamos el desarrollo de comunidades mediante la revalorización de terrenos y proyectos habitacionales.</p>
           </li>
         </ul>

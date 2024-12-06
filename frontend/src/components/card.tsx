@@ -1,4 +1,4 @@
-import { plus_icon } from "../assets";
+import { plusWhite_icon } from "../assets";
 
 
 
@@ -22,7 +22,7 @@ export default function Card({ children, title, icon, step, bgColor = "bg-white"
       <h5 className="font-Exo2 font-bold text-lg">{title}</h5>
       {children}
       <div className="bg-primary-500 p-4 rounded-full ms-auto mt-auto absolute bottom-6 right-6">
-        <img src={plus_icon} alt="" width={12} />
+        <img src={plusWhite_icon} alt="" width={12} />
       </div> 
     </div>
   );
