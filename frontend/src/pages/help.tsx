@@ -1,0 +1,104 @@
+import Button from "../components/button";
+import PreFooter from "../components/preFooter";
+import questions from "../data/help";
+import { useState} from "react";
+import {
+  arrow_down,
+  help_hero_header,
+  help_image_1,
+  help_image_2,
+  help_image_3,
+  help_image_4,
+  help_image_5,
+  help_image_6, 
+  minus_icon,
+  plus_black_icon,
+} from "../assets";
+
+
+
+export default function Help() {
+  const [expanded, setExpanded] = useState<string | false>(false);
+
+  const handelChange = (index: number) => {
+    if (expanded === `panel ${index + 1}`) {
+      setExpanded(false);
+    } else {
+      setExpanded(`panel ${index + 1}`);
+    }
+  }
+
+
+  return (
+    <div className="">
+
+      <section className="p-12 grid grid-cols-2 gap-16 items-center shadow-[0px_0px_15px_3px_rgba(0,0,0,0.25)] relative">
+        <img src={help_hero_header} alt="" className="min-w-[400px] w-[600px]" />
+        <div className="max-w-[620px]">
+          <h3 className="font-bold font-Exo2 text-2xl">FINANCIA.AI</h3>
+          <h2 className="font-bold font-Exo2 text-5xl mb-6">RESUELVE TODAS TUS <span className="text-primary-500">DUDAS</span> EN UN SOLO LUGAR</h2>
+          <p className="text-body">
+            Explora las preguntas frecuentes para encontrar respuestas claras y rápidas. <strong>Descubre cómo funciona nuestra plataforma,</strong> los requisitos para financiar terrenos y las oportunidades de inversión que ofrecemos.
+          </p>
+        </div>
+        <a href="#faqs" className="inline-block bg-white rounded-full p-6 mt-6 shadow-[0px_0px_15px_3px_rgba(0,0,0,0.25)] absolute z-10 -bottom-10 left-1/2 -translate-x-1/2">
+          <img src={arrow_down} alt="arrow down" width={50} height={50} className="w-[50px] h-[50px] translate-y-1" />
+        </a>
+      </section>
+
+      <section id="faqs" className="relative bg-[#f6F6F6] p-20 pb-10 mb-20 grid grid-cols-[7fr_5fr] gap-12 shadow-[0px_0px_15px_3px_rgba(0,0,0,0.25)]">
+        <Accordion data={questions} handleChange={handelChange} expanded={expanded}/>
+        <div className="grid grid-rows-[min-content] grid-cols-2 gap-6 h-min">
+          <div className="col-span-2 relative">
+            <img src={help_image_1} alt="" />
+            <div className="absolute bottom-10 w-full flex gap-10 justify-center">
+              <Button variant="secondary" onClick={() => {}}>SIMULA TU INVERSIÓN</Button>
+              <Button variant="primary" onClick={() => {}}>SIMULA TU INVERSIÓN</Button>
+            </div>
+          </div>
+          <img src={help_image_6} alt="" />
+          <img src={help_image_5} alt="" />
+          <img src={help_image_2} alt="" className="relative top-[-80px]"/>
+          <img src={help_image_3} alt="" />
+          <img src={help_image_4} alt="" className="relative top-[-80px]"/>
+
+        </div>
+      </section>
+      
+      <PreFooter />
+    </div>
+  );
+}
+
+
+
+interface AccordionProps {
+  data: {
+    question: string;
+    answer: string;
+  }[];
+  handleChange: (index: number) => void;
+  expanded: string | false;
+}
+
+function Accordion({ data, handleChange, expanded }: AccordionProps) {
+  return (
+    <div>
+      {data.map((pregunta, index) => (
+        <div
+          key={index}
+          className={`border-b-[1px] border-[#8C8C8C] last:border-b-0 transition-all duration-500 transition-ease grid ${expanded === `panel ${index + 1}` ? 'grid-rows-[auto_1fr] pb-8' : 'grid-rows-[auto_0fr]'}`}
+          onClick={() => handleChange(index)}
+        >
+          <div className="flex items-center justify-between p-3">
+            <h3 className="font-Exo2 font-semibold text-2xl">{index + 1}. {pregunta.question}</h3>
+            <button className="bg-white flex items-center justify-center rounded-full w-10 h-10">
+              <img src={expanded === `panel ${index + 1}` ? minus_icon : plus_black_icon} alt="" />
+            </button>
+          </div>
+          <p className={`text-body overflow-hidden pe-10`}>{pregunta.answer}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
