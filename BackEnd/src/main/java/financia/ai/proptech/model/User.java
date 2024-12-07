@@ -8,7 +8,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
-import java.time.LocalDate;
+
 import java.time.LocalDateTime;
 
 @Entity
@@ -28,7 +28,7 @@ public class User {
 
    private String lastName;
 
-   private Integer DNI;
+   private Integer dni;
 
    private String email;
 
