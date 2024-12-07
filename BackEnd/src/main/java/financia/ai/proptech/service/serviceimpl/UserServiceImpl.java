@@ -8,6 +8,7 @@ import financia.ai.proptech.model.User;
 import financia.ai.proptech.repository.UserRepository;
 import financia.ai.proptech.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -25,8 +26,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Optional<UserDto> create(UserDto userDto) {
-        return Optional.of(userMapper.toUserDto(userRepository
-                .save(userMapper.toUser(userDto))));
+      User user =userMapper.toUser(userDto);
+      user.setPassword(new BCryptPasswordEncoder().encode( user.getPassword()));
+      userRepository.save(user);
+      return Optional.of(userMapper.toUserDto(user));
     }
 
     //TODO: agregar los demás campos tan pronto se termine de definir los atributos.
@@ -41,8 +44,8 @@ public class UserServiceImpl implements UserService {
                 userToModify.setLastName(userDto.lastName());
             }
 
-            if (userDto.DNI() != null) {
-                userToModify.setDNI(userDto.DNI());
+            if (userDto.dni() != null) {
+                userToModify.setDni(userDto.dni());
             }
 
             if (userDto.email() != null) {

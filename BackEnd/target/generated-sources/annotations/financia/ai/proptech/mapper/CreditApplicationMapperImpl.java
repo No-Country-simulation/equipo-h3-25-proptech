@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-12-05T19:08:06-0500",
+    date = "2024-12-06T22:39:44-0500",
     comments = "version: 1.6.3, compiler: javac, environment: Java 21.0.1 (Amazon.com Inc.)"
 )
 @Component
@@ -24,15 +24,14 @@ public class CreditApplicationMapperImpl implements CreditApplicationMapper {
         }
 
         Long id = null;
-        User buyer = null;
         Double requestedAmount = null;
         Double monthlyIncome = null;
 
         id = creditApplication.getId();
-        buyer = creditApplication.getBuyer();
         requestedAmount = creditApplication.getRequestedAmount();
         monthlyIncome = creditApplication.getMonthlyIncome();
 
+        User buyer = null;
         LocalDateTime requestDate = null;
 
         CreditApplicationDto creditApplicationDto = new CreditApplicationDto( id, buyer, requestedAmount, monthlyIncome, requestDate );
@@ -49,7 +48,6 @@ public class CreditApplicationMapperImpl implements CreditApplicationMapper {
         CreditApplication.CreditApplicationBuilder creditApplication = CreditApplication.builder();
 
         creditApplication.id( creditApplicationDto.id() );
-        creditApplication.buyer( creditApplicationDto.buyer() );
         creditApplication.requestedAmount( creditApplicationDto.requestedAmount() );
         creditApplication.monthlyIncome( creditApplicationDto.monthlyIncome() );
         creditApplication.RequestDate( creditApplicationDto.RequestDate() );
