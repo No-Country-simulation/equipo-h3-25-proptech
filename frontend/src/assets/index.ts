@@ -74,6 +74,20 @@ import piggyBank_icon from "./piggyBank_icon.svg";
 import security_icon from "./security_icon.svg";
 import signalBars_icon from "./signalBars_icon.svg";
 
+// finance
+import finance_hero_header from "./finance/finance_hero_header.webp";
+import finance_image from "./finance/finance_image.webp";
+import requirements_image from "./finance/requirements_image.webp";
+import simulator_image from "./finance/simulator_image.webp";
+import bell_highicon from "./bell_highicon.webp";
+import card_highicon from "./card_highicon.webp";
+import ok_highicon from "./ok_highicon.webp";
+
+import doc_icon from "./doc_icon.svg";
+import listWhite_icon from "./listWhite_icon.svg";
+import user_icon from "./user_icon.svg";
+
+
 
 
 
@@ -149,5 +163,18 @@ export {
   handshake_icon,
   piggyBank_icon,
   security_icon,
-  signalBars_icon
+  signalBars_icon,
+  
+  // finance
+  finance_hero_header,
+  finance_image,
+  requirements_image,
+  simulator_image,
+  bell_highicon,
+  card_highicon,
+  ok_highicon,
+  
+  doc_icon,
+  listWhite_icon,
+  user_icon,
 }
