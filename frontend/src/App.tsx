@@ -19,6 +19,7 @@ import Help from "./pages/help"
 import ScrollToTop from "./helpers/scrollToTop"
 import Users from "./pages/users"
 import Financing from "./pages/financing"
+import Success from "./pages/register/success"
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
             <Route path="/register/paso1" element={<RegisterStep1 />}></Route>
             <Route path="/register/paso2" element={<RegisterStep2 />}></Route>
             <Route path="/register/paso3" element={<RegisterStep3 />}></Route>
+            <Route path="/register/exito" element={<Success />}></Route>
             <Route path="/acerca-de" element={<AboutUs />}></Route>
             <Route path="/ayuda" element={<Help />}></Route>
             <Route path="/usuarios" element={<Users />}></Route>
