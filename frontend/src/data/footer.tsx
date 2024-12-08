@@ -12,9 +12,9 @@ const data: FooterData[] = [
     id: 0,
     title: "LINKS",
     description: <ul className="flex flex-col gap-1">
-      <li><Link to="/aboutUs">Quienes somos</Link></li>
-      <li><Link to="/help">Preguntas frecuentes</Link></li>
-      <li><Link to="/privacy">Politicas de protección</Link></li>
+      <li><Link to="/acerca-de">Quienes somos</Link></li>
+      <li><Link to="/ayuda">Preguntas frecuentes</Link></li>
+      <li><Link to="/privacidad">Politicas de protección</Link></li>
     </ul>
   }, {
     id: 1,
