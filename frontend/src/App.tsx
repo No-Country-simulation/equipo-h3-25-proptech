@@ -19,6 +19,7 @@ import Help from "./pages/help"
 import ScrollToTop from "./helpers/scrollToTop"
 import Users from "./pages/users"
 import Financing from "./pages/financing"
+import FinancingCalculator from "./pages/financingCalculator"
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
             <Route path="/help" element={<Help />}></Route>
             <Route path="/users" element={<Users />}></Route>
             <Route path="/financing" element={<Financing />}></Route>
+            <Route path="/financing-calculator" element={<FinancingCalculator />}></Route>
           </Routes>
         </Layout>
       </Router>
