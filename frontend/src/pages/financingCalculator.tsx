@@ -16,7 +16,10 @@ interface AmortizationRow {
 const FinancingCalculator: React.FC = () => {
   // Estados iniciales con valores por defecto
   const [amount, setAmount] = useState<number>(26600);
-  const [interestRate, setInterestRate] = useState<number>(9.5);
+  const [
+    interestRate, 
+    // setInterestRate
+  ] = useState<number>(9.5);
   const [downPayment, setDownPayment] = useState<number>(17000);
   const [term, setTerm] = useState<number>(6);
   const [termType, setTermType] = useState<'months' | 'years'>('months');
@@ -24,7 +27,7 @@ const FinancingCalculator: React.FC = () => {
   const [vehicleAmount, setVehicleAmount] = useState<number>(0);
   const [sendEmail, setSendEmail] = useState<boolean>(false);
   const [email, setEmail] = useState<string>('');
-  const [result, setResult] = useState<number | null>(null);
+  // const [result, setResult] = useState<number | null>(null);
   const [amortizationTable, setAmortizationTable] = useState<AmortizationRow[]>([]);
   const [error, setError] = useState<string>('');
 
