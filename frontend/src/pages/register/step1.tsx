@@ -42,7 +42,7 @@ export default function RegisterStep1() {
 
 
   return (
-    <Template data={registerSteps[0].title}>
+    <Template data={registerSteps[0]}>
       <form action="" onSubmit={handleSubmit} className="flex flex-col gap-8">
         <div>
           <h3 className="font-lg">¿Qué tipo de usuario eres?</h3>

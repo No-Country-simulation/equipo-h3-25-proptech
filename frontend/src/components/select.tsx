@@ -1,4 +1,4 @@
-import { arrow_down } from "../assets";
+import { arrowDown_icon } from "../assets";
 
 
 
@@ -37,7 +37,7 @@ export default function Select({ label, name, options, disabled, onChange, value
             <option key={index} value={option.value}>{option.label}</option>
           ))}
         </select>
-        <img src={arrow_down} alt="arrow down" className="w-4 absolute right-3 top-1/2 translate-y-[-50%] pointer-events-none" />
+        <img src={arrowDown_icon} alt="arrow down" className="w-4 absolute right-3 top-1/2 translate-y-[-50%] pointer-events-none" />
       </div>
     </div>
   );

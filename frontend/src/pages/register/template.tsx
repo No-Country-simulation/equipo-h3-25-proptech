@@ -12,10 +12,10 @@ export default function Template ({ children, data }: TemplateProps) {
       <div className="w-6/12 lg:w-1/2 py-20 px-10 lg:px-28 text-body">
         <h3 className="text-black font-bold text-2xl font-Exo2">FINANCIA.AI</h3>
         <h1 className="text-primary-500 font-bold text-5xl font-Exo2 text-secondary">{data.title}</h1>
-        <p className="mt-8 mb-7">{}</p>
+        <p className="mt-8 mb-7">{data.subtitle}</p>
         {children}
       </div>
-      <div className={`w-6/12 lg:w-1/2 bg-[#D9D9D9]a px-8 lg:px-20 bg-[url('/src/assets/register_info.webp')] bg-cover`}>
+      <div className={`w-6/12 lg:w-1/2 bg-[#D9D9D9]a px-8 lg:px-20 bg-[url('/src/assets/register/info_image.webp')] bg-cover`}>
         {data.info.title &&
           <h4 className="mt-28 text-3xl font-bold text-white">{data.info.title}</h4>
         }
