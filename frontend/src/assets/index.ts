@@ -39,6 +39,7 @@ import home_hero_header from "./home/home_hero_header.webp";
 // register
 import info_image from "./register/info_image.webp";
 import captcha from "./register/captcha.png";
+import letter_highicon from "./letter_highicon.webp";
 
 // login
 import login_image from "./login/login_image.webp";
@@ -130,6 +131,7 @@ export {
   // register
   info_image,
   captcha,
+  letter_highicon,
 
   // login
   login_image,
