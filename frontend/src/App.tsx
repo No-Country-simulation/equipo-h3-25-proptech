@@ -20,6 +20,8 @@ import ScrollToTop from "./helpers/scrollToTop"
 import Users from "./pages/users"
 import Financing from "./pages/financing"
 import Success from "./pages/register/success"
+import Dashboard from "./pages/dashboard"
+import DashboardLayout from "./components/dashboardLayout"
 
 function App() {
   return (
@@ -38,6 +40,9 @@ function App() {
             <Route path="/ayuda" element={<Help />}></Route>
             <Route path="/usuarios" element={<Users />}></Route>
             <Route path="/financiamiento" element={<Financing />}></Route>
+            <Route path="/dashboard" element={<DashboardLayout />}>
+              <Route path="/dashboard/perfil" element={<Dashboard />}></Route>
+            </Route>
           </Routes>
         </Layout>
       </Router>
