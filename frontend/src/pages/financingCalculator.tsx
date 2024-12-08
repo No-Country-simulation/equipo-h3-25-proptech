@@ -159,7 +159,7 @@ const FinancingCalculator: React.FC = () => {
   };
 
   const handleApplyLoan = () => {
-    localStorage.setItem('loanData', JSON.stringify({ amount, interestRate, downPayment, term, termType, result }));
+    localStorage.setItem('loanData', JSON.stringify({ amount, interestRate, downPayment, term, termType }));
     window.location.href = '/register';
   };
 
