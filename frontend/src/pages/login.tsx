@@ -80,7 +80,7 @@ export default function Login() {
           </div>
           <Button onClick={() => {}} variant="primary">LOGIN</Button>
         </form>
-        <p>¿Nuevo usuario? <Link to="/register" className="text-primary-500 font-bold">Registrate</Link></p>
+        <p>¿Nuevo usuario? <Link to="/register/paso1" className="text-primary-500 font-bold">Registrate</Link></p>
       </div>
     </div>
   );

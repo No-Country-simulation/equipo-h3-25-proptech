@@ -65,7 +65,7 @@ export default function RegisterStep2() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    navigate("/register/step3");
+    navigate("/register/paso3");
   }
 
 
