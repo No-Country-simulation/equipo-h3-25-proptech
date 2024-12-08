@@ -30,6 +30,10 @@ import eye_icon from "./eye_icon.svg";
 import star_icon from "./star_icon.svg";
 
 import list_icon from "./list_icon.svg";
+import camera_icon from "./camera_icon.svg";
+import profile from "./profile.webp";
+import arrowWhite_icon from "./arrowWhite_icon.svg";
+import config_icon from "./config_icon.svg";
 
 
 
@@ -39,6 +43,7 @@ import home_hero_header from "./home/home_hero_header.webp";
 // register
 import info_image from "./register/info_image.webp";
 import captcha from "./register/captcha.png";
+import letter_highicon from "./letter_highicon.webp";
 
 // login
 import login_image from "./login/login_image.webp";
@@ -106,7 +111,7 @@ export {
   buyer_coin,
   saver_coin,
 
-  arrowDown_icon,
+  arrowWhite_icon,
   minus_icon,
   plusBlack_icon,
   plusWhite_icon,
@@ -123,6 +128,10 @@ export {
   star_icon,
 
   list_icon,
+  camera_icon,
+  profile,
+  arrowDown_icon,
+  config_icon,
 
   // home
   home_hero_header,
@@ -130,6 +139,7 @@ export {
   // register
   info_image,
   captcha,
+  letter_highicon,
 
   // login
   login_image,
