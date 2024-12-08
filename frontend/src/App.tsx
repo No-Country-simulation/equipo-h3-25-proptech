@@ -29,13 +29,13 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="/login" element={<Login />}></Route>
-            <Route path="/register/step1" element={<RegisterStep1 />}></Route>
-            <Route path="/register/step2" element={<RegisterStep2 />}></Route>
-            <Route path="/register/step3" element={<RegisterStep3 />}></Route>
-            <Route path="/aboutUs" element={<AboutUs />}></Route>
-            <Route path="/help" element={<Help />}></Route>
-            <Route path="/users" element={<Users />}></Route>
-            <Route path="/financing" element={<Financing />}></Route>
+            <Route path="/register/paso1" element={<RegisterStep1 />}></Route>
+            <Route path="/register/paso2" element={<RegisterStep2 />}></Route>
+            <Route path="/register/paso3" element={<RegisterStep3 />}></Route>
+            <Route path="/acerca-de" element={<AboutUs />}></Route>
+            <Route path="/ayuda" element={<Help />}></Route>
+            <Route path="/usuarios" element={<Users />}></Route>
+            <Route path="/financiamiento" element={<Financing />}></Route>
           </Routes>
         </Layout>
       </Router>
