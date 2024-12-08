@@ -3,7 +3,7 @@ package financia.ai.proptech.controller;
 
 import financia.ai.proptech.dto.CreditApplicationDto;
 import financia.ai.proptech.service.CreditApplicationService;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,8 +12,10 @@ import java.util.List;
 @RequestMapping("/creditApp")
 
 public class CreditApplicationController {
-    @Autowired
+
+
     final CreditApplicationService creditApplicationService;
+
     public CreditApplicationController(CreditApplicationService creditApplicationService) {
         this.creditApplicationService = creditApplicationService;
 

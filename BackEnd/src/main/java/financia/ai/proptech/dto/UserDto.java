@@ -7,7 +7,7 @@ public record UserDto(
         Long id,
         String name,
         String lastName,
-        Integer DNI,
+        Integer dni,
         String email,
         String password,
         Boolean active,
