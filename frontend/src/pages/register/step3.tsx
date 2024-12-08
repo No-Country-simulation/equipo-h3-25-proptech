@@ -5,6 +5,7 @@ import InputCheck from "../../components/inputCheck";
 import { captcha } from "../../assets";
 import { useState } from "react";
 import { registerSteps } from "../../data/register";
+import {useNavigate} from "react-router-dom";
 
 
 
@@ -34,6 +35,7 @@ const formDefaultValues: FormValues = {
 
 
 export default function RegisterStep3() {
+  const navigate = useNavigate();
   const [form, setForm] = useState<FormValues>(formDefaultValues);
   const isValid = form.home && form.number && form.password && form.confirmPassword;
   
@@ -56,11 +58,12 @@ export default function RegisterStep3() {
 
     const inputChecked = Object.values(form.depositMethod).filter((value) => value);
     if (inputChecked.length === 0) {
-      console.log("Tienes que seleccionar un metodo de depósito.");
+      return console.log("Tienes que seleccionar un metodo de depósito.");
     }
     if (form.password !== form.confirmPassword) {
-      console.log("Las contraseña no coinciden.");
+      return console.log("Las contraseña no coinciden.");
     }
+    navigate("/register/exito");
   }
 
 
