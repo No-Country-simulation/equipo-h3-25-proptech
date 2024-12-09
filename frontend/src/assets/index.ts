@@ -34,6 +34,8 @@ import camera_icon from "./camera_icon.svg";
 import profile from "./profile.webp";
 import arrowWhite_icon from "./arrowWhite_icon.svg";
 import config_icon from "./config_icon.svg";
+import moneyBillTrendUp_icon from "./moneyBillTrendUp_icon.svg";
+import ticket_icon from "./ticket_icon.svg";
 
 
 
@@ -132,6 +134,8 @@ export {
   profile,
   arrowDown_icon,
   config_icon,
+  moneyBillTrendUp_icon,
+  ticket_icon,
 
   // home
   home_hero_header,
