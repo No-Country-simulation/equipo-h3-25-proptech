@@ -1,4 +1,4 @@
-import { arrowWhite_icon, camera_icon, config_icon, profile } from "../assets";
+import { arrowDown_icon, arrowWhite_icon, camera_icon, config_icon, profile } from "../assets";
 import Button from "../components/button";
 import Input from "../components/input";
 
@@ -52,7 +52,7 @@ export default function Dashboard() {
 
         {/* estadisticas de inversion */}
         <div>
-          <h5 className="font-Exo2 font-bold text-2xl">INVERSIONES REALIZADAS</h5>
+          <h5 className="font-Exo2 font-bold text-2xl">ESTADÍSTICAS DE INVERSIÓN</h5>
           <div className="w-full grid grid-cols-2 gap-6 mt-4">
 
             {/* card 1 */}
@@ -71,8 +71,8 @@ export default function Dashboard() {
             <div className="bg-[#DEDEDE] rounded-2xl p-6 text-[#3D3D3D]">
               <div className="flex justify-between items-center gap-4">
                 <p className="">Realizado en la semana</p>
-                <div className="bg-primary-500 rounded-full p-2">
-                  <img src={arrowWhite_icon} alt="" className="size-6" />
+                <div className="bg-white rounded-full p-2">
+                  <img src={arrowDown_icon} alt="" className="size-6 -rotate-90" />
                 </div>
               </div>
               <span className="inline-block font-Exo2 font-extrabold text-4xl mb-4 text-black">$0</span>
