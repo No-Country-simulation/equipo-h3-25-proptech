@@ -26,7 +26,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Optional<UserDto> create(UserDto userDto) {
-      User user =userMapper.toUser(userDto);
+      User user = userMapper.toUser(userDto);
       user.setPassword(new BCryptPasswordEncoder().encode( user.getPassword()));
       userRepository.save(user);
       return Optional.of(userMapper.toUserDto(user));
