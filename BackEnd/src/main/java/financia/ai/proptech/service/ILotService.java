@@ -1,4 +1,4 @@
-package financia.ai.proptech.service.serviceimpl;
+package financia.ai.proptech.service;
 
 import financia.ai.proptech.dto.LotDto;
 

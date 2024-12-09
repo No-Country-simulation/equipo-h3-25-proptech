@@ -1,11 +1,12 @@
-package financia.ai.proptech.service;
+package financia.ai.proptech.service.serviceimpl;
 
 import financia.ai.proptech.dto.LotDto;
 import financia.ai.proptech.exception.ExceptionRequest;
 import financia.ai.proptech.mapper.ILotMapper;
 import financia.ai.proptech.model.Lot;
 import financia.ai.proptech.repository.LotRepository;
-import financia.ai.proptech.service.serviceimpl.ILotService;
+
+import financia.ai.proptech.service.ILotService;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
@@ -27,10 +28,8 @@ public class LotServiceImpl implements ILotService {
     @Override
     public void createLot(LotDto lotDto) {
 
-        System.out.println("Received LotDto: " + lotDto);
         Lot lot = lotMapper.toEntityLot(lotDto);
         lot.setActive(true);
-        System.out.println("Mapped Lot entity: " + lot);
         lotRepository.save(lot);
     }
     @Transactional

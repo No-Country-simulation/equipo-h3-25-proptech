@@ -1,7 +1,8 @@
 package financia.ai.proptech.controller;
 
 import financia.ai.proptech.dto.LotDto;
-import financia.ai.proptech.service.serviceimpl.ILotService;
+
+import financia.ai.proptech.service.ILotService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
