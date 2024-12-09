@@ -25,20 +25,20 @@ Tecnologías Utilizadas
 - Deploy backend: ---
 - Deploy DB: ---
 
-Video de presentación: ---
+Video de presentación: [financia.ia YouTube](https://www.youtube.com/watch?v=M-recfKYTuk)
 
 ## Colaboradores
 
 #### UI/UX
--  **Christian R. Kase**
--  **Lizeth Velasco (Liz)**
+-  **Christian R. Kase** [LinkedIn](www.linkedin.com/in/christian-kase23) [Github](https://github.com/ChristianKase)
+-  **Lizeth Velasco (Liz)** [LinkedIn](https://www.linkedin.com/in/lizeth-velasco98/) 
 #### Backend
-- **Christian Ivan Cachero**
-- **Christian Arias**
-- **Ricardo Andres Tolomei**
+- **Christian Ivan Cachero**  [LinkedIn](https://www.linkedin.com/in/christian-cachero/) [Github](https://github.com/Christian-Cachero)
+- **Christian Arias** [Github](https://github.com/christ774)
+- **Ricardo Andres Tolomei** [Github]()
 #### Frontend
-- **Santiago Gonzales**
-- **Fabio Roldan**
+- **Santiago Gonzales**  [LinkedIn](https://www.linkedin.com/in/santiagogonzalez0892/) [Github](https://github.com/SantiagoGonzalez0892)
+- **Fabio Roldan**  [LinkedIn](https://www.linkedin.com/in/fabio-roldan/) [Github](https://github.com/fabioroldan)
 
 ## Instrucciones para Instalar y Ejecutar el Proyecto Localmente
 

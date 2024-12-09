@@ -26,7 +26,7 @@ export default function Template ({ children, data }: TemplateProps) {
               {section.title &&
                 <h5 className="text-2xl font-Exo2 font-bold text-white">{section.title}</h5>
               }
-              <p className="text-body text-sm text-white my-2">{section.description}</p>
+              <p className="text-white text-sm my-2">{section.description}</p>
               {section.link && 
                 <a href={section.link} className="text-primary-500 font-bold">Leer más</a>
               }
