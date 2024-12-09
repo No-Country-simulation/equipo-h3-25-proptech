@@ -92,7 +92,7 @@ function Accordion({ data, handleChange, expanded }: AccordionProps) {
         >
           <div className="flex items-center justify-between p-3">
             <h3 className="font-Exo2 font-semibold text-2xl">{index + 1}. {pregunta.question}</h3>
-            <button className="bg-white flex items-center justify-center rounded-full w-10 h-10">
+            <button className="bg-white flex items-center justify-center rounded-full w-10 h-10" title="expand">
               <img src={expanded === `panel ${index + 1}` ? minus_icon : plusBlack_icon} alt="" />
             </button>
           </div>

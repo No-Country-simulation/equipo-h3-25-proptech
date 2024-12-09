@@ -9,8 +9,8 @@ export default function SideBar() {
   return (
     <div className="bg-black h-full px-4 py-14 w-[280px]">
       <ul className="flex flex-col gap-4 sticky top-[160px]">
-        {sideBarItems.map(item => (
-          <li>
+        {sideBarItems.map((item, index) => (
+          <li key={index}>
             <NavLink to={item.link} className={({ isActive }) => 
               `inline-block w-full py-4 text-sm font-bold text-white text-center rounded-xl ${isActive && "bg-primary-500"} hover:bg-slate-900/30`
             }>{item.name}</NavLink>

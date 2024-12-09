@@ -23,6 +23,7 @@ import FinancingCalculator from "./pages/financingCalculator"
 import Success from "./pages/register/success"
 import Dashboard from "./pages/dashboard"
 import DashboardLayout from "./components/dashboardLayout"
+import {Inversion} from "./pages/inversion"
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
             <Route path="/calculadora-financiamiento" element={<FinancingCalculator />}></Route>
             <Route path="/dashboard" element={<DashboardLayout />}>
               <Route path="/dashboard/perfil" element={<Dashboard />}></Route>
+              <Route path="/dashboard/inversion" element={<Inversion />}></Route>
             </Route>
           </Routes>
         </Layout>
