@@ -3,6 +3,8 @@ package financia.ai.proptech.dto;
 import financia.ai.proptech.emuns.StatusInvestment;
 import jakarta.validation.constraints.*;
 
+import java.util.List;
+
 public record InvestmentApplicationDto(
 
         Long id,
@@ -38,13 +40,13 @@ public record InvestmentApplicationDto(
 
         @NotNull(message = "Los recibos de salario son obligatorios.")
         @Size(max = 255, message = "La URL de los recibos de salario no puede exceder los 255 caracteres.")
-        String lastSalaryReceipts,
+        List<String> lastSalaryReceipts,
 
         @NotNull(message = "El CUIT es obligatorio.")
         @Pattern(regexp = "\\d{11}", message = "El CUIT debe tener exactamente 11 dígitos.")
         String cuit,
 
-       @NotNull(message = "El servicio público es obligatorio.")
+        @NotNull(message = "El servicio público es obligatorio.")
         @Size(max = 255, message = "La URL del servicio público no puede exceder los 255 caracteres.")
         String publicServices,
 

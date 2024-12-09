@@ -5,5 +5,6 @@ public record GuarantorsDto(
     String name,
     String lastname,
     Integer dni,
-    String email) {
+    String email,
+    Boolean active) {
 }

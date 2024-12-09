@@ -95,7 +95,6 @@ public class InvestmentApplicationServiceImpl implements IInvestmentApplication 
     @Override
     public List<InvestmentApplicationDto> getAllInvestmentApplications() {
         List<InvestmentApplication> investmentApplicationList = investmentApplicationRepository.findAll();
-
         return investmentApplicationList.stream()
                 .filter(investmentApplication -> Boolean.TRUE.equals(investmentApplication.getActive()))
                 .map(investmentApplicationMapper::toDto)

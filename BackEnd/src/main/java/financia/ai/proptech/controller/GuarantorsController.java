@@ -1,11 +1,10 @@
 package financia.ai.proptech.controller;
 
-import financia.ai.proptech.dto.CreditApplicationDto;
+
 import financia.ai.proptech.dto.GuarantorsDto;
-import financia.ai.proptech.model.Guarantors;
-import financia.ai.proptech.service.CreditApplicationService;
+
 import financia.ai.proptech.service.GuarantorsService;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,12 +13,11 @@ import java.util.List;
 @RestController
 @RequestMapping("/guarantors")
 public class GuarantorsController {
-    @Autowired
+
     final GuarantorsService guarantorsService;
+
     public GuarantorsController(GuarantorsService guarantorsService) {
         this.guarantorsService = guarantorsService;
-
-
 
     }
     @GetMapping("/enlistarGuarantors")

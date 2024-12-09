@@ -5,6 +5,8 @@ import financia.ai.proptech.emuns.StatusInvestment;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 @Entity
 @Table(name = "investmentapplication")
@@ -20,7 +22,7 @@ public class InvestmentApplication {
     private Double monthlyIncome;
     private Double monthlyExpenses;
     private Double assets;
-    private String lastSalaryReceipts;
+    private List<String> lastSalaryReceipts;
     private String cuit;
     private String publicServices;
 

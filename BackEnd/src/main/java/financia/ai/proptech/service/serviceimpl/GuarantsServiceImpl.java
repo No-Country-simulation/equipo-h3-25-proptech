@@ -4,6 +4,7 @@ import financia.ai.proptech.dto.GuarantorsDto;
 import financia.ai.proptech.exception.ExceptionRequest;
 import financia.ai.proptech.mapper.GuarantorsMapper;
 import financia.ai.proptech.model.Guarantors;
+
 import financia.ai.proptech.repository.GuarantorsRepository;
 import financia.ai.proptech.service.GuarantorsService;
 import jakarta.transaction.Transactional;
@@ -13,23 +14,23 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 @Service
-public class GuarantorsImpl implements GuarantorsService {
+public class GuarantsServiceImpl implements GuarantorsService {
 
     final GuarantorsMapper guarantorsMapper;
     final GuarantorsRepository guarantorsRepository;
 
-
-
-    public GuarantorsImpl(GuarantorsMapper guarantorsMapper, GuarantorsRepository guarantorsRepository) {
+    public GuarantsServiceImpl(GuarantorsMapper guarantorsMapper, GuarantorsRepository guarantorsRepository) {
         this.guarantorsMapper = guarantorsMapper;
         this.guarantorsRepository = guarantorsRepository;
     }
+
     @Transactional
     @Override
     public void createGuarantors(GuarantorsDto guarantorsDto) {
         System.out.println("Received GuarantorsDto: " + guarantorsDto);
         Guarantors guarantors = guarantorsMapper.toEntityGuarantors(guarantorsDto);
         System.out.println("Mapped Guarantors entity: " + guarantors);
+        guarantors.setActive(true);
         guarantorsRepository.save(guarantors);
 
     }
@@ -66,11 +67,14 @@ public class GuarantorsImpl implements GuarantorsService {
 
     @Override
     public List<GuarantorsDto> getAllGurantors() {
-        List <Guarantors> lotList= guarantorsRepository.findAll();
-        return lotList.stream()
+        List <Guarantors> guarantorsList= guarantorsRepository.findAll();
+        return guarantorsList.stream()
                 .filter(guarantors -> Boolean.TRUE.equals(guarantors.getActive()))
                 .map(guarantorsMapper::toGuarantorsDto)
                 .collect(Collectors.toList());
 
     }
+
+
+
 }
