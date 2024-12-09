@@ -3,6 +3,7 @@ import Input from '../components/input';
 import InputCheck from '../components/inputCheck';
 import InputRadio from '../components/inputRadio';
 import Button from '../components/button';
+import { useNavigate } from 'react-router-dom';
 
 interface AmortizationRow {
   month: number;
@@ -14,10 +15,11 @@ interface AmortizationRow {
 }
 
 const FinancingCalculator: React.FC = () => {
+  const navigate = useNavigate()
   // Estados iniciales con valores por defecto
   const [amount, setAmount] = useState<number>(26600);
   const [
-    interestRate, 
+    interestRate,
     // setInterestRate
   ] = useState<number>(9.5);
   const [downPayment, setDownPayment] = useState<number>(17000);
@@ -160,7 +162,7 @@ const FinancingCalculator: React.FC = () => {
 
   const handleApplyLoan = () => {
     localStorage.setItem('loanData', JSON.stringify({ amount, interestRate, downPayment, term, termType }));
-    window.location.href = '/register';
+    navigate('/register/paso1')
   };
 
   // const handleReset = () => {
@@ -270,7 +272,7 @@ const FinancingCalculator: React.FC = () => {
           onChange={(e) => setTerm(parseInt(e.target.value, 10))}
           name="term-length"
           type="number"
-          label="Monto de financiación"
+          label="Número de años o meses para el préstamo"
           placeholder="Ejemplo: 6"
         />
         <small
@@ -377,7 +379,6 @@ const FinancingCalculator: React.FC = () => {
         >
           Mostrar cuadro de amortización
         </Button>
-
         <Button
           variant="primary"
           onClick={handleApplyLoan}
