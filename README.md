@@ -11,19 +11,23 @@ La startup ofrece préstamos a personas que desean comprar terrenos, proporciona
 Además, Financia.AI presenta un producto para inversionistas similar a un plazo fijo, donde el dinero de los inversionistas se utiliza para otorgar estos préstamos. 
 
 Tecnologías Utilizadas
-- Frontend: React, Tailwind CSS
-- Backend: SpringBoot
+- Frontend: React, Tailwind CSS, Swiper, etc 
+- Backend: SpringBoot, Docker, etc
 - Base de Datos: Postgress
-- Herramientas de Desarrollo: Vite, TypeScript
+- Herramientas de Desarrollo: Vite, TypeScript, Swagger, etc 
+
+Arquitectura Distribuida:
+- Frontend:  Vercel 
+- Backend: Render 
+- Base de Datos: Neon
+- Files: Cloudinary 
 
 ## Enlaces Relevantes
-- Documentación: ---
+- Documentación Backend: https://api-deploy-lastest.onrender.com/swagger-ui/index.html
 - Figma Diseño: https://www.figma.com/design/YfDilW3qRO4MSPlhQ7qNj2/Financia.ai--WEB-3-(COMPARTIDO)?node-id=0-1&node-type=canvas&t=tKe5HWtAwrevGuJG-0
 - Figma Backend: https://www.figma.com/board/BneUi23r574kUciTxFukvH/Backend?node-id=0-1&t=YwwjkO2Xn6nQIky5-1
 - Repositorio GitHub: https://github.com/No-Country-simulation/equipo-h3-25-proptech
 - Deploy frontend: https://financiaai.vercel.app/
-- Deploy backend: ---
-- Deploy DB: ---
 
 Video de presentación: [financia.ia YouTube](https://www.youtube.com/watch?v=M-recfKYTuk)
 
@@ -49,32 +53,21 @@ Video de presentación: [financia.ia YouTube](https://www.youtube.com/watch?v=M-
 
 ### Configuración del Backend
 
-2. Navegar al directorio del backend:
-```bash
-cd equipo-h3-25-proptech/backend
-```
+2. Abrir el proyecto con tu IDE preferido
 
-3. Instalar las dependencias:
-
-```bash
----
-```
-
-4. Configurar las variables de entorno:
+3. Configurar las variables de entorno:
 
 Crea un archivo .env dentro de la carpeta /backend y añade las siguientes variables de entorno:
 
 ```env
-PORT=3000
-DATABASE_URL=YOUR_DB_URL
-JWT_SECRET=YOUR_JWT_SECRET
+DB_URL= db url ej. jdbc:postgresql://xxx/xxx?xxx
+DB_PASSWORD= db pasword
+DB_USERNAME= db username
+FRONTEND_URL= url del frontend
 ```
 
-Iniciar la aplicación:
+Iniciar la aplicación ▶️ con tu IDE preferido
 
-```bash
----
-```
 
 ### Configuración del Frontend
 
