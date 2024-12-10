@@ -23,6 +23,13 @@ public class DocumentsServiceImpl implements DocumentsService {
 
     @Override
     public Optional<DocumentsDto> create(DocumentsDto documentsDto) {
+
+        String pathFile = documentsDto.pathFile();
+
+        if (pathFile == null || (!pathFile.endsWith(".pdf") && !pathFile.endsWith(".jpg"))){
+            throw new IllegalArgumentException("El archivo debe ser un PDF o un imagen JPG");
+        }
+
         return Optional.of(documentsMapper.toDocumentsDto(documentsRepository
                 .save(documentsMapper.toDocuments(documentsDto))));
     }
@@ -34,9 +41,9 @@ public class DocumentsServiceImpl implements DocumentsService {
                 docsToModify.setPathFile(documentsDto.pathFile());
             }
 
-            if (documentsDto.investmentApplication() != null){
+            /*if (documentsDto.investmentApplication() != null){
                 docsToModify.setInvestmentApplication(documentsDto.investmentApplication());
-            }
+            }*/
 
             Documents docModified = documentsRepository.save(docsToModify);
             return documentsMapper.toDocumentsDto(docModified);

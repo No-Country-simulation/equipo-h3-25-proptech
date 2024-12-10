@@ -26,7 +26,7 @@ public class Documents {
 
     private String pathFile;
 
-    private InvestmentApplication investmentApplication;
+    //private InvestmentApplication investmentApplication;
 
     /*@OneToMany
     private CreditApplication credit;*/

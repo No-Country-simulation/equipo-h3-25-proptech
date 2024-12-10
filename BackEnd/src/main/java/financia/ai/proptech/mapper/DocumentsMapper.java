@@ -15,7 +15,7 @@ public interface DocumentsMapper {
     @Mappings({
             @Mapping(source = "id", target = "id"),
             @Mapping(source = "pathFile", target = "pathFile"),
-            @Mapping(source = "investmentApplication", target = "investmentApplication")
+            /*@Mapping(source = "investmentApplication", target = "investmentApplication")*/
     })
     Documents toDocuments (DocumentsDto documentsDto);
 

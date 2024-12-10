@@ -50,7 +50,7 @@ public class DocumentsController {
             return ResponseEntity.ok("El documento fue eliminado correctamente");
         }catch(EntityNoExistsException e){
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body("El usuario no existe");
+                    .body("El documento no existe");
         }
     }
 
