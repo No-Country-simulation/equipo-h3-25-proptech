@@ -1,6 +1,17 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import {logo} from '../assets';
+import { logo } from '../../assets';
+
+const Links: React.FC = () => {
+  return <>
+    <Link to="/financiamiento">Financiamiento</Link>
+    <Link to="/inversion">Inversión</Link>
+    <Link to="/usuarios">Usuarios</Link>
+    <Link to="/ayuda">Ayuda</Link>
+    <Link to="/acerca-de">Acerca de</Link>
+    <Link to="/login" className="py-2 px-5 rounded-xl bg-primary-400 text-white text-center">Login</Link>
+  </>
+}
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -14,24 +25,14 @@ const Header: React.FC = () => {
       <Link to="/">
         <img src={logo} alt="Logo" className="w-16 h-16" />
       </Link>
+
       <nav className={` ${isMenuOpen ? 'flex ' : 'hidden'} absolute right-1 pt-20 top-1 flex-col gap-4 items-right space-x-4 p-10 text-right bg-neutral-800 md:hidden rounded-xl backdrop-blur-md z-50`}>
-        <Link to="/financiamiento">Financiamiento</Link>
-        <Link to="/inversiones">Inversiones</Link>
-        <Link to="/usuarios">Usuarios</Link>
-        <Link to="/ayuda">Ayuda</Link>
-        <Link to="/acerca-de">Acerca de</Link>
-        <Link to="/login" className="py-2 px-5 rounded-xl bg-primary-400 text-white text-center">Login</Link>
+        <Links />
       </nav>
 
       <nav className="hidden md:flex items-center space-x-4">
-        <Link to="/financiamiento">Financiamiento</Link>
-        <Link to="/inversiones">Inversiones</Link>
-        <Link to="/usuarios">Usuarios</Link>
-        <Link to="/ayuda">Ayuda</Link>
-        <Link to="/acerca-de">Acerca de</Link>
-        <Link to="/login" className="py-2 px-5 rounded-xl bg-primary-400 text-white">Login</Link>
+        <Links />
       </nav>
-
 
       <div className="md:hidden absolute right-1 top-1 h-5/6 aspect-square z-50">
         <button type='button' title="Toggle Menu" onClick={toggleMenu} className="w-full h-full text-white flex items-center justify-center rounded-xl focus:outline-none hover:bg-neutral-700">

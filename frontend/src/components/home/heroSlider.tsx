@@ -2,14 +2,14 @@ import { useNavigate } from 'react-router-dom';
 // import Swiper core and required modules
 import { Autoplay, Pagination, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { home_hero_header } from '../assets';
+import { home_hero_header } from '../../assets';
 
 
 // Import Swiper styles
 import 'swiper/css'
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import Button from './button';
+import Button from '../common/button';
 
 const HeroSlider: React.FC = () => {
   const navigate = useNavigate()
@@ -40,7 +40,7 @@ const HeroSlider: React.FC = () => {
             </div>
           </div>
           <div className="flex-1 flex justify-center">
-            <img src={home_hero_header} alt="login banner" />
+            <img src={home_hero_header} alt="Home banner" />
           </div>
         </div>
       </SwiperSlide>

@@ -1,5 +1,5 @@
-import ArrowButton from "../arrowButton";
-import Button from "../button";
+import ArrowButton from "../common/arrowButton";
+import Button from "../common/button";
 import { bell_highicon, card_highicon, ok_highicon, simulator_image } from "../../assets";
 
 

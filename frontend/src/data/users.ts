@@ -1,25 +1,11 @@
 import {
   buyer_coin,
   buyer_image,
-  chat_icon,
-  checkbox_icon,
-  clock_icon,
-  clockWarning_icon,
-  dolar_icon,
-  finance_icon,
-  handshake_icon,
   inversor_coin,
   inversor_image,
-  piggyBank_icon,
   saver_coin,
   saver_image,
-  security_icon,
-  signalBars_icon
 } from "../assets";
-
-
-
-
 
 export interface CardProps {
   title: string;
@@ -45,22 +31,22 @@ const usersData: UserData[] = [
       {
         title: "RENTABILIDAD",
         description: "Algoritmos optimizan oportunidades para maximizar retornos.",
-        icon: signalBars_icon,
+        icon: 'signal_cellular_alt',
       },
       {
         title: "DIVERSIFICACIÓN DE ACTIVOS",
         description: "Gestiona activos variados desde una plataforma centralizada.",
-        icon: clockWarning_icon,
+        icon: 'running_with_errors',
       },
       {
         title: "TRANSPARENCIA",
         description: "Informes claros y métricas en tiempo real.",
-        icon: checkbox_icon,
+        icon: 'check_box',
       },
       {
         title: "ACUERDO MUTUO",
         description: "Soluciones adaptadas a objetivos y confianza mutua.",
-        icon: handshake_icon,
+        icon: 'handshake',
       }
     ]
   },
@@ -73,22 +59,22 @@ const usersData: UserData[] = [
       {
         title: "FINANCIAMIENTO ACCESIBLE",
         description: "Planes accesibles y personalizados.",
-        icon: dolar_icon,
+        icon: 'paid',
       },
       {
         title: "PLAZOS SEGÚN CLIENTE",
         description: "Opciones flexibles adaptadas al cliente.",
-        icon: clock_icon,
+        icon: 'schedule',
       },
       {
         title: "CHAT BOT",
         description: "Asistencia 24/7 durante todo el proceso.",
-        icon: chat_icon,
+        icon: 'forum',
       },
       {
         title: "REFINANCIACIÓN",
         description: "Posibilidad de renegociar pagos según necesidades.",
-        icon: finance_icon,
+        icon: 'currency_exchange',
       }
     ]
   },
@@ -101,22 +87,22 @@ const usersData: UserData[] = [
       {
         title: "CAPITALIZACIÓN DE AHORROS",
         description: "Maximiza el valor de sus ahorros con tasas competitivas",
-        icon: piggyBank_icon,
+        icon: 'savings',
       },
       {
         title: "SEGURIDAD GARANTIZADA",
         description: "Fondos protegidos con respaldo confiable.",
-        icon: security_icon,
+        icon: 'security',
       },
       {
         title: "REINVERSION FÁCIL",
         description: "Fácil y ágil para un crecimiento continuo.",
-        icon: signalBars_icon,
+        icon: 'signal_cellular_alt',
       },
       {
         title: "DOCUMENTO FIRMADO",
         description: "Contrato formal que garantiza transparencia.",
-        icon: handshake_icon,
+        icon: 'handshake',
       }
     ]
   }

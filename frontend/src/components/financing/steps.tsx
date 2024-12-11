@@ -1,6 +1,6 @@
 import financingData from "../../data/finance";
-import Button from "../button";
-import Card from "../card";
+import Button from "../common/button";
+import Card from "../common/card";
 import { finance_image } from "../../assets";
 
 

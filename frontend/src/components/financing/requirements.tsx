@@ -1,5 +1,5 @@
 import financingData from "../../data/finance";
-import Button from "../button";
+import Button from "../common/button";
 import { listWhite_icon, requirements_image } from "../../assets";
 
 
