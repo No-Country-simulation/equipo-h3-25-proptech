@@ -1,12 +1,16 @@
-import HeroSlider from "../components/heroSlider"
+import HeroSlider from "../components/home/heroSlider"
+import LinksMarquee from "../components/home/linksMarquee"
+import InvestmentSteps from "../components/home/investmentSteps"
+import PreFooter from "../components/common/preFooter"
 
 const Home = () => {
   return (
     <main className="p-10 min-h-screen max-w-screen-2xl mx-auto">
-      <HeroSlider/>
-      <div>ServicesList</div>
-      <div>InvestmentSteps</div>
-      <div>FAQHighlights</div>        
+      <HeroSlider />
+      <LinksMarquee />
+      <InvestmentSteps />
+      <PreFooter />
+
     </main>
   )
 }

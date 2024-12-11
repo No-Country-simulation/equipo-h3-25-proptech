@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { login_image } from "../assets";
 import { Link } from "react-router-dom";
-import Button from "../components/button";
-import Input from "../components/input";
-import InputCheck from "../components/inputCheck";
+import Button from "../components/common/button";
+import Input from "../components/common/input";
+import InputCheck from "../components/common/inputCheck";
 
 
 interface FormValues {

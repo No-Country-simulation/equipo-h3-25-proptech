@@ -1,4 +1,4 @@
-import Button from "../button";
+import Button from "../common/button";
 import { finance_hero_header } from "../../assets";
 
 

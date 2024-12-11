@@ -1,7 +1,7 @@
-import ArrowButton from "../components/arrowButton";
-import PreFooter from "../components/preFooter";
-import Button from "../components/button";
-import Card from "../components/card";
+import ArrowButton from "../components/common/arrowButton";
+import PreFooter from "../components/common/preFooter";
+import Button from "../components/common/button";
+import Card from "../components/common/card";
 import usersData, { CardProps } from "../data/users";
 import { list_icon, users_hero_header } from "../assets";
 

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { visibilityOff_icon, visibilityOn_icon } from "../assets";
+import { visibilityOff_icon, visibilityOn_icon } from "../../assets";
 
 
 interface InputProps {

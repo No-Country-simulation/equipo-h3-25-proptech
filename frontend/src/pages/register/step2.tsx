@@ -1,7 +1,7 @@
-import Button from "../../components/button";
-import Input from "../../components/input";
-import InputRadio from "../../components/inputRadio";
-import Select from "../../components/select";
+import Button from "../../components/common/button";
+import Input from "../../components/common/input";
+import InputRadio from "../../components/common/inputRadio";
+import Select from "../../components/common/select";
 import Template from "./template";
 import { useNavigate } from "react-router-dom";
 import { registerSteps } from "../../data/register";

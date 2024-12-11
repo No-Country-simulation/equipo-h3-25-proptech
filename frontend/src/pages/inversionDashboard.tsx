@@ -1,5 +1,5 @@
 import {arrowDown_icon, arrowWhite_icon, config_icon, moneyBillTrendUp_icon, ticket_icon} from "../assets";
-import Button from "../components/button";
+import Button from "../components/common/button";
 
 export default function InversionDashboard() {
   const date = new Date().getDay();

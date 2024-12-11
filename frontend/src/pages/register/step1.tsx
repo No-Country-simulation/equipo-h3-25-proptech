@@ -1,12 +1,11 @@
-import Input from "../../components/input";
-import Button from "../../components/button";
-import Select from "../../components/select";
+import Input from "../../components/common/input";
+import Button from "../../components/common/button";
+import Select from "../../components/common/select";
 import Template from "./template";
-import InputRadio from "../../components/inputRadio";
+import InputRadio from "../../components/common/inputRadio";
 import { CountryValue, TypeOfUserValue, typeOfUsers, countries, registerSteps} from "../../data/register";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-
 
 
 interface FormValues {
@@ -20,8 +19,6 @@ const formDefaultValues: FormValues = {
   country: "argentina",
   postalCode: "",
 }
-
-
 
 export default function RegisterStep1() {
   const navigate = useNavigate();

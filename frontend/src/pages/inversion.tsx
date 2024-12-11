@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { arrowDown_icon } from "../assets";
-import Select from "../components/select";
-import Input from "../components/input";
-import Button from "../components/button";
+import Select from "../components/common/select";
+import Input from "../components/common/input";
+import Button from "../components/common/button";
 import dashboardInversion from "../data/dashboardInversion";
 
 

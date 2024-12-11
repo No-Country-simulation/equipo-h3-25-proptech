@@ -1,4 +1,4 @@
-import sideBarItems from "../data/dashboard";
+import sideBarItems from "../../data/dashboard";
 import { NavLink } from "react-router-dom";
 
 

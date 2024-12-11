@@ -4,12 +4,12 @@ import {
   Routes,
   Route,
 } from "react-router-dom"
-
+import 'react-material-symbols/sharp';
 
 /* ::: PAGES ::: */
 
 import Home from "./pages/home"
-import Layout from "./components/layout"
+import Layout from "./components/common/layout"
 import Login from "./pages/login"
 import RegisterStep1 from "./pages/register/step1"
 import RegisterStep2 from "./pages/register/step2"
@@ -22,7 +22,7 @@ import Financing from "./pages/financing"
 import FinancingCalculator from "./pages/financingCalculator"
 import Success from "./pages/register/success"
 import Dashboard from "./pages/dashboard"
-import DashboardLayout from "./components/dashboardLayout"
+import DashboardLayout from "./components/dashboard/dashboardLayout"
 import {Inversion} from "./pages/inversion"
 import InversionDashboard from "./pages/inversionDashboard"
 
@@ -44,6 +44,7 @@ function App() {
             <Route path="/usuarios" element={<Users />}></Route>
             <Route path="/financiamiento" element={<Financing />}></Route>
             <Route path="/calculadora-financiamiento" element={<FinancingCalculator />}></Route>
+            <Route path="/inversion" element={<Inversion />}></Route>
             <Route path="/dashboard" element={<DashboardLayout />}>
               <Route path="/dashboard/perfil" element={<Dashboard />}></Route>
               <Route path="/dashboard/inversion" element={<InversionDashboard />}></Route>

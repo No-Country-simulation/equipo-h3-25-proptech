@@ -1,5 +1,5 @@
 import { star_icon, eye_icon, diamond_icon } from "../../assets";
-import Card from "../card";
+import Card from "../common/card";
 
 
 
