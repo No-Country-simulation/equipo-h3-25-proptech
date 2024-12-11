@@ -1,4 +1,4 @@
-import { doc_icon, dolar_icon, handshake_icon, user_icon } from "../assets";
+// import { doc', dolar', handshake', user' } from "../assets";
 
 
 const financingData = {
@@ -12,22 +12,22 @@ const financingData = {
   ],
   financingSteps: [
     {
-      icon: user_icon,
+      icon: 'person',
       title: "VALIDACIÓN  DE IDENTIDAD",
       description: "Deberas completar un formulario con datos personales y la información de dos garantes",
       step: 1
     }, {
-      icon: dolar_icon,
+      icon: 'payments',
       title: "SOLICITAR FINANCIAMIENTO",
       description: "Podrás solicitar el financiamiento deseado directamente desde la plataforma.",
       step: 2
     }, {
-      icon: doc_icon,
+      icon: 'inventory',
       title: "ESTADO DE PRESTAMO",
       description: "El estado de tu préstamo estará en pendiente, ya que el equipo de análisis revisará los datos.",
       step: 3
     }, {
-      icon: handshake_icon,
+      icon: 'handshake',
       title: "FIRMA Y ENVÍO DEL ACUERDO",
       description: "Descarga el documento de mutuo acuerdo, firmalo, y subelo a la plataforma. Al aprobarlo recibes el financiamiento",
       step: 4

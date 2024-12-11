@@ -1,5 +1,5 @@
-import Button from "../components/button";
-import PreFooter from "../components/preFooter";
+import Button from "../components/common/button";
+import PreFooter from "../components/common/preFooter";
 import questions from "../data/help";
 import { useState} from "react";
 import {
@@ -13,7 +13,7 @@ import {
   minus_icon,
   plusBlack_icon,
 } from "../assets";
-import ArrowButton from "../components/arrowButton";
+import ArrowButton from "../components/common/arrowButton";
 
 
 

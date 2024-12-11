@@ -1,5 +1,5 @@
-import { instagram_icon, whatsapp_icon, youtube_icon, facebook_icon, logo } from "../assets";
-import data from "../data/footer";
+import { instagram_icon, whatsapp_icon, youtube_icon, facebook_icon, logo } from "../../assets";
+import data from "../../data/footer";
 
 
 

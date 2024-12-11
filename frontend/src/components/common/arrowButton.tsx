@@ -1,4 +1,4 @@
-import { arrowDown_icon } from "../assets";
+import { arrowDown_icon } from "../../assets";
 
 
 interface ArrowButtonProps {

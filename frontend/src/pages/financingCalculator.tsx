@@ -1,8 +1,8 @@
 import React, { useState, useMemo } from 'react';
-import Input from '../components/input';
-import InputCheck from '../components/inputCheck';
-import InputRadio from '../components/inputRadio';
-import Button from '../components/button';
+import Input from '../components/common/input';
+import InputCheck from '../components/common/inputCheck';
+import InputRadio from '../components/common/inputRadio';
+import Button from '../components/common/button';
 import { useNavigate } from 'react-router-dom';
 
 interface AmortizationRow {

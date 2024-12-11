@@ -1,4 +1,4 @@
-import { faqs_highicon, requirements_highicon, bullseyeArrow_highicon } from "../assets";
+import { faqs_highicon, requirements_highicon, bullseyeArrow_highicon } from "../../assets";
 
 export default function PreFooter() {
   return (

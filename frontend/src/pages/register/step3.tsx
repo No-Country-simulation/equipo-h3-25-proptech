@@ -1,7 +1,7 @@
 import Template from "./template";
-import Input from "../../components/input";
-import Button from "../../components/button";
-import InputCheck from "../../components/inputCheck";
+import Input from "../../components/common/input";
+import Button from "../../components/common/button";
+import InputCheck from "../../components/common/inputCheck";
 import { captcha } from "../../assets";
 import { useState } from "react";
 import { registerSteps } from "../../data/register";
