@@ -1,6 +1,8 @@
 package financia.ai.proptech.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import financia.ai.proptech.emuns.DepositMethod;
+import financia.ai.proptech.emuns.Gender;
 import financia.ai.proptech.emuns.Roles;
 import jakarta.persistence.*;
 import lombok.*;
@@ -9,6 +11,7 @@ import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -23,6 +26,26 @@ public class User {
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private Long id;
+
+   private String country;
+
+   private Integer zipCode;
+
+   private Integer phoneNumber;
+
+   @Enumerated(EnumType.STRING)
+   private Gender gender;
+
+   private String citizenship;
+
+   private String address;
+
+   private Integer numbering;
+
+   @Enumerated(EnumType.STRING)
+   private DepositMethod depositMethod;
+
+   private Integer postalCode;
 
    private String name;
 
@@ -46,4 +69,8 @@ public class User {
    @CreationTimestamp
    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss")
    private LocalDateTime CreationDate;
+
+   @CreationTimestamp
+   @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
+   private LocalDate dateOfBirth;
 }
