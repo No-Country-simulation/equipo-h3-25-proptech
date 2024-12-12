@@ -1,4 +1,4 @@
-import { star_icon, eye_icon, diamond_icon } from "../../assets";
+// import { star_icon, eye_icon, diamond_icon } from "../../assets";
 import Card from "../common/card";
 
 
@@ -13,19 +13,19 @@ export default function OurPurpose() {
       </div>
       <div className="px-16 pt-36 pb-20 bg-gradient-to-b from-primary-400 to-primary-600">
         <div className="max-w-screen-2xl grid grid-cols-3 gap-10 mx-auto">
-          <Card icon={star_icon} title="MISIÓN">
+          <Card icon={'star'} title="MISIÓN">
             <p className="w-full overflow-hidden line-clamp-6">
               Brindar una plataforma fintech de impacto social, <strong>que facilite el acceso a terrenos en Latinoamérica</strong> mediante financiamiento accesible, promoviendo así una solución habitacional viable para familias y ofreciendo a los inversores oportunidades de crecimiento económico en activos sólidos y de revalorización a mediano plazo.
             </p>
           </Card>
 
-          <Card icon={eye_icon} title="VISIÓN">
+          <Card icon={'visibility'} title="VISIÓN">
             <p className="w-full overflow-hidden line-clamp-6">
               Convertirnos en la plataforma líder en financiación de terrenos en Latinoamérica, <strong>logrando un impacto social</strong> significativo al crear un mercado inclusivo y accesible que permita a más personas cumplir su sueño de adquirir un terreno mientras atraemos a inversores que buscan opciones de inversión con rendimientos sostenibles y de bajo riesgo.
             </p>
           </Card>
 
-          <Card icon={diamond_icon} title="VALORES">
+          <Card icon={'diamond'} title="VALORES">
             <ul className="list-disc ams-7">
               <li className="line-clamp-2 ps-5 relative before:size-1 before:bg-black before:rounded-full before:absolute before:top-2.5 before:left-2">
                 <strong>Transparencia:</strong> Claridad y confianza en procesos y datos.

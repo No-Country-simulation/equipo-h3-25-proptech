@@ -5,8 +5,6 @@ import Card from "../components/common/card";
 import usersData, { CardProps } from "../data/users";
 import { list_icon, users_hero_header } from "../assets";
 
-
-
 export default function Users() {
   return (
     <>
@@ -21,14 +19,12 @@ export default function Users() {
                 Descubre cómo ayudamos a inversores, compradores de terrenos y ahorradores con capacidad de inversión a alcanzar sus metas con <strong>soluciones de financiamiento flexibles y confiables.</strong>
               </p>
               <div className="mt-6 grid grid-cols-2 gap-6">
-                <Button onClick={() => {}} variant="secondary">FINANCIAR UN TERRENO</Button>
-                <Button onClick={() => {}} variant="primary">SIMULA TU INVERSIÓN</Button>
+                <Button onClick={() => { }} variant="secondary">FINANCIAR UN TERRENO</Button>
+                <Button onClick={() => { }} variant="primary">SIMULA TU INVERSIÓN</Button>
               </div>
             </div>
           </div>
-
         </section>
-
 
         {usersData.map((user, index) => (
           <Template
@@ -43,7 +39,6 @@ export default function Users() {
             inverse={index % 2 !== 0}
           />
         ))}
-
       </div>
       <PreFooter />
     </>
@@ -120,7 +115,7 @@ function Template({ title, description, bgColor, cardColor, image, coin, cards, 
           </Card>
         ))}
       </div>
-      <ArrowButton className="absolute left-1/2 translate-x-[-50%] bottom-[-50px] z-10 group-last:hidden"/>
+      <ArrowButton className="absolute left-1/2 translate-x-[-50%] bottom-[-50px] z-10 group-last:hidden" />
     </section>
   );
 }
