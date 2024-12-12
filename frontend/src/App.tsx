@@ -25,6 +25,7 @@ import Dashboard from "./pages/dashboard"
 import DashboardLayout from "./components/dashboard/dashboardLayout"
 import {Inversion} from "./pages/inversion"
 import InversionDashboard from "./pages/inversionDashboard"
+import HttpRequestTester from "./pages/HttpRequestTester";
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
             <Route path="/financiamiento" element={<Financing />}></Route>
             <Route path="/calculadora-financiamiento" element={<FinancingCalculator />}></Route>
             <Route path="/inversion" element={<Inversion />}></Route>
+            <Route path="/test" element={<HttpRequestTester />}></Route>
             <Route path="/dashboard" element={<DashboardLayout />}>
               <Route path="/dashboard/perfil" element={<Dashboard />}></Route>
               <Route path="/dashboard/inversion" element={<InversionDashboard />}></Route>
