@@ -1,6 +1,5 @@
 package financia.ai.proptech.config;
 
-import financia.ai.proptech.service.serviceimpl.CustomUserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,17 +14,21 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.logout.HeaderWriterLogoutHandler;
 import org.springframework.security.web.header.writers.ClearSiteDataHeaderWriter;
-
 import static org.springframework.security.web.header.writers.ClearSiteDataHeaderWriter.Directive.COOKIES;
+import org.springframework.web.cors.CorsConfigurationSource;
+
+import financia.ai.proptech.service.serviceimpl.CustomUserDetailsServiceImpl;
+
 @Configuration
 public class SecurityConfig {
 
-  final CustomUserDetailsServiceImpl userDetailsService;
+    @Autowired
+    private CorsConfigurationSource corsConfigurationSource;
+    final CustomUserDetailsServiceImpl userDetailsService;
 
     public SecurityConfig(CustomUserDetailsServiceImpl userDetailsService) {
         this.userDetailsService = userDetailsService;
     }
-
 
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
@@ -34,39 +37,34 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.csrf(AbstractHttpConfigurer::disable)// se desactivo para hacer pruebas en
-                // postman
+        http
+                .csrf(AbstractHttpConfigurer::disable)
+                .cors(cors -> cors.configurationSource(corsConfigurationSource)) // Usa el bean de CorsConfigurationSource
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/css/**", "/images/**", "/js/**",
-                                "/**")
-                        .permitAll().anyRequest().authenticated()
-
+                .requestMatchers("/css/**", "/images/**", "/js/**", "/**")
+                .permitAll().anyRequest().authenticated()
                 )
                 .formLogin(formLogin -> formLogin.loginPage("/iniciarsesion")
-                        .loginProcessingUrl("/logincheck")
-                        .usernameParameter("email")
-                        .passwordParameter("password")
-                        .permitAll())
+                .loginProcessingUrl("/logincheck")
+                .usernameParameter("email")
+                .passwordParameter("password")
+                .permitAll())
                 .logout(logout -> logout.logoutUrl("/cerrarsesion").logoutSuccessUrl("/")
-                        .deleteCookies("JSESSIONID")
-                        .deleteCookies("our-custom-cookie")
-                        .addLogoutHandler(new HeaderWriterLogoutHandler(
+                .deleteCookies("JSESSIONID")
+                .deleteCookies("our-custom-cookie")
+                .addLogoutHandler(
+                        new HeaderWriterLogoutHandler(
                                 new ClearSiteDataHeaderWriter(
                                         COOKIES)))
-                        .permitAll())
+                .permitAll())
                 .sessionManagement((session) -> session
-                        .sessionCreationPolicy(SessionCreationPolicy.ALWAYS)
-                        .invalidSessionUrl("/invalidSession")// invalida la
-                        // sesion
-                        // cuando no se
-                        // utiliza en
-                        // tiempo
-                        // determinado
-                        .maximumSessions(1)// Numero de sesiones permitidas
-                        .maxSessionsPreventsLogin(false)
-                        .sessionRegistry(sessionRegistry()))
+                .sessionCreationPolicy(SessionCreationPolicy.ALWAYS)
+                .invalidSessionUrl("/invalidSession") // invalida la sesion cuando no se utiliza en tiempo determinado
+                .maximumSessions(1) // Numero de sesiones permitidas
+                .maxSessionsPreventsLogin(false)
+                .sessionRegistry(sessionRegistry()))
                 .sessionManagement((session) -> session.sessionFixation(
-                        SessionManagementConfigurer.SessionFixationConfigurer::newSession))
+                SessionManagementConfigurer.SessionFixationConfigurer::newSession))
                 .httpBasic(AbstractHttpConfigurer::disable);
 
         return http.build();
@@ -76,7 +74,6 @@ public class SecurityConfig {
     public SessionRegistry sessionRegistry() {
         return new SessionRegistryImpl();
     }
-
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
