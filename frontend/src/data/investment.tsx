@@ -1,5 +1,11 @@
-// import { doc, dolar, handshake, user } from "../assets";
+import { SymbolCodepoints } from "react-material-symbols";
 
+export interface InvestmentStep {
+  icon: SymbolCodepoints,
+  title: string,
+  description: string,
+  step: number
+}
 
 const investmentData = {
   requirements: [
@@ -9,8 +15,9 @@ const investmentData = {
     <p>Reporte crediticio <strong>limpio.</strong></p>,
     <p>Contar con <strong>2 garantes</strong></p>,
     <p>Cada uno debe tener <strong>ingreso igual o mayor a 3 cuotas</strong></p>,
-  ],
-  investmentSteps: [
+  ] as React.ReactNode[],
+
+  steps: [
     {
       icon: 'person',
       title: "VALIDACIÓN  DE IDENTIDAD",
@@ -32,7 +39,8 @@ const investmentData = {
       description: "Monitorea el rendimiento de tu inversión en el panel",
       step: 4
     }
-  ]
-}
+  ] as InvestmentStep[]
+};
+
 
 export default investmentData;

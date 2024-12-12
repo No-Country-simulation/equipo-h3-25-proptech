@@ -1,9 +1,9 @@
-import { MaterialSymbol, MaterialSymbolProps, PolymorphicMaterialSymbolProps } from "react-material-symbols";
+import { MaterialSymbol, SymbolCodepoints } from "react-material-symbols";
 
 interface PurposeCardProps {
   children: React.ReactNode;
   title: string;
-  icon: string ;
+  icon: SymbolCodepoints;
   step?: number;
   bgColor?: string;
 }
