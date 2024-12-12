@@ -5,9 +5,7 @@ import InputCheck from "../../components/common/inputCheck";
 import { captcha } from "../../assets";
 import { useState } from "react";
 import { registerSteps } from "../../data/register";
-import {useNavigate} from "react-router-dom";
-
-
+import { useNavigate } from "react-router-dom";
 
 type depositMethod = "electronicTransfer" | "cash" | "check"
 
@@ -33,12 +31,11 @@ const formDefaultValues: FormValues = {
   confirmPassword: "",
 }
 
-
 export default function RegisterStep3() {
   const navigate = useNavigate();
   const [form, setForm] = useState<FormValues>(formDefaultValues);
   const isValid = form.home && form.number && form.password && form.confirmPassword;
-  
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, checked, type } = e.target;
     if (type === "checkbox") {
@@ -65,8 +62,6 @@ export default function RegisterStep3() {
     }
     navigate("/register/exito");
   }
-
-
 
   return (
     <Template data={registerSteps[1]}>
@@ -131,29 +126,29 @@ export default function RegisterStep3() {
         <div className="mx-auto">
           <ul className="text-xs flex flex-col gap-1">
             <li className="flex gap-3">
-              <span className="bg-[#D9D9D9] inline-block rounded-full size-4 text-[8px] flex items-center justify-center">?</span>
+              <span className="bg-[#D9D9D9] rounded-full size-4 text-[8px] flex items-center justify-center">?</span>
               <p>Utiliza al menos 8 carácteres</p>
             </li>
             <li className="flex gap-3">
-              <span className="bg-[#D9D9D9] inline-block rounded-full size-4 text-[8px] flex items-center justify-center">?</span>
+              <span className="bg-[#D9D9D9] rounded-full size-4 text-[8px] flex items-center justify-center">?</span>
               <p>Utiliza al menos una minúscula y una mayúscula</p>
             </li>
             <li className="flex gap-3">
-              <span className="bg-[#D9D9D9] inline-block rounded-full size-4 text-[8px] flex items-center justify-center">?</span>
+              <span className="bg-[#D9D9D9] rounded-full size-4 text-[8px] flex items-center justify-center">?</span>
               <p>Usa al menos un número</p>
             </li>
             <li className="flex gap-3">
-              <span className="bg-[#D9D9D9] inline-block rounded-full size-4 text-[8px] flex items-center justify-center">?</span>
+              <span className="bg-[#D9D9D9] rounded-full size-4 text-[8px] flex items-center justify-center">?</span>
               <p>No uses 3 o más caracteres consecutivos ni repetidos</p></li>
             <li className="flex gap-3">
-              <span className="bg-[#D9D9D9] inline-block rounded-full size-4 text-[8px] flex items-center justify-center">?</span>
+              <span className="bg-[#D9D9D9] rounded-full size-4 text-[8px] flex items-center justify-center">?</span>
               <p>Usa al menos una vocal y una consonante</p></li>
           </ul>
         </div>
 
         <img src={captcha} alt="captcha" width={296} className="mx-auto" />
-        
-        <Button disabled={!isValid} variant="primary" onClick={() => {}}>CREAR CUENTA</Button>
+
+        <Button disabled={!isValid} variant="primary" onClick={() => { }}>CREAR CUENTA</Button>
       </form>
     </Template>
   );

@@ -1,5 +1,12 @@
-// import { doc', dolar', handshake', user' } from "../assets";
+import { SymbolCodepoints } from "react-material-symbols";
+import React from 'react'; // Asegúrate de importar React
 
+export interface FinancingStep {
+  icon: SymbolCodepoints,
+  title: string,
+  description: string,
+  step: number
+}
 
 const financingData = {
   requirements: [
@@ -9,7 +16,7 @@ const financingData = {
     <p>Reporte crediticio <strong>limpio.</strong></p>,
     <p>Contar con <strong>2 garantes</strong></p>,
     <p>Cada uno debe tener <strong>ingreso igual o mayor a 3 cuotas</strong></p>,
-  ],
+  ] as React.ReactNode[],
   financingSteps: [
     {
       icon: 'person',
@@ -32,7 +39,7 @@ const financingData = {
       description: "Descarga el documento de mutuo acuerdo, firmalo, y subelo a la plataforma. Al aprobarlo recibes el financiamiento",
       step: 4
     }
-  ]
+  ] as FinancingStep[]
 }
 
 export default financingData;

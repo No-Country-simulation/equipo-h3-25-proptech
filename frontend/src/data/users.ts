@@ -6,10 +6,11 @@ import {
   saver_coin,
   saver_image,
 } from "../assets";
+import { SymbolCodepoints } from "react-material-symbols";
 
 export interface CardProps {
   title: string;
-  icon: string;
+  icon: SymbolCodepoints;
   description: string;
 }
 
