@@ -1,55 +1,69 @@
 import { saver_coin, award_highicon, coin_highicon, buyer_coin, inversor_coin, requirements_highicon, wallet_highicon } from "../assets";
 
-export type TypeOfUserValue = 
-  | "inversor"
-  | "comprador" 
-  | "ahorrador";
 
-export interface TypeOfUser {
-  value: TypeOfUserValue;
+
+export type Roles = "INVERSOR" | "AHORRADOR" | "COMPRADOR";
+export const rolesValues: Roles[] = ["INVERSOR", "COMPRADOR", "AHORRADOR"];
+export interface RoleOption {
+  value: Roles;
   label: string;
 }
-export const typeOfUsers: TypeOfUser[] = [
-  {
-    value: "inversor",
-    label: "Inversor"
-  },{
-    value: "comprador",
-    label: "Comprador de terreno"
-  }, {
-    value: "ahorrador",
-    label: "Ahorrador con capacidad de inversion"
-  }
+export const rolesOptions: RoleOption[] = [
+  { value: "INVERSOR", label: "Inversor" },
+  { value: "COMPRADOR", label: "Comprador de terreno" },
+  { value: "AHORRADOR", label: "Ahorrador con capacidad de inversion" }
 ];
 
 
 
-export type CountryValue = 
-  | "argentina" 
-  | "colombia" 
-  | "brasil" 
-  | "chile" 
-  | "venezuela" 
-  | "peru" 
-  | "bolivia" 
-  | "paraguay" 
-  | "uruguay";
-
-export interface Countries {
-  value: CountryValue;
+export type Countries =  "Argentina" | "Colombia" | "Brasil" | "Chile" | "Venezuela" | "Peru" | "Bolivia" | "Paraguay" | "Uruguay";
+export const countriesValues: Countries[] = ["Argentina", "Colombia", "Brasil", "Chile", "Venezuela", "Peru", "Bolivia", "Paraguay", "Uruguay"];
+export interface CountryOption {
+  value: Countries;
   label: string;
 }
-export const countries: Countries[] = [
-  { value: "argentina", label: "Argentina" },
-  { value: "colombia", label: "Colombia" },
-  { value: "brasil", label: "Brasil" },
-  { value: "chile", label: "Chile" },
-  { value: "venezuela", label: "Venezuela" },
-  { value: "peru", label: "Perú" },
-  { value: "bolivia", label: "Bolivia" },
-  { value: "paraguay", label: "Paraguay" },
-  { value: "uruguay", label: "Uruguay" }
+export const countriesOptions: CountryOption[] = [
+  { value: "Argentina", label: "Argentina" },
+  { value: "Colombia", label: "Colombia" },
+  { value: "Brasil", label: "Brasil" },
+  { value: "Chile", label: "Chile" },
+  { value: "Venezuela", label: "Venezuela" },
+  { value: "Peru", label: "Perú" },
+  { value: "Bolivia", label: "Bolivia" },
+  { value: "Paraguay", label: "Paraguay" },
+  { value: "Uruguay", label: "Uruguay" }
 ]
+
+
+
+export type Gender = "MASCULINO" | "FEMENINO";
+export const genderValues: Gender[] = ["MASCULINO", "FEMENINO"];
+
+
+
+export type Citizenship = "Argentino" | "Colombiano" | "Brasileño" | "Chileno" | "Venezolano" | "Peruano" | "Boliviano" | "Paraguayo" | "Uruguayo";
+export const citizenshipValues: Citizenship[] = ["Argentino", "Colombiano", "Brasileño", "Chileno", "Venezolano", "Peruano", "Boliviano", "Paraguayo", "Uruguayo"];
+export interface CitizenshipOption {
+  value: Citizenship;
+  label: string;
+}
+export const citizenshipOptions: CitizenshipOption[] = [
+  { value: "Argentino", label: "Argentino" },
+  { value: "Colombiano", label: "Colombiano" },
+  { value: "Brasileño", label: "Brasileño" },
+  { value: "Chileno", label: "Chileno" },
+  { value: "Venezolano", label: "Venezolano" },
+  { value: "Peruano", label: "Peruano" },
+  { value: "Boliviano", label: "Boliviano" },
+  { value: "Paraguayo", label: "Paraguayo" },
+  { value: "Uruguayo", label: "Uruguayo" }
+]
+
+
+
+export type DepositMethod = "TRANSFERENCIA_ELECTRONICA" | "EFECTIVO" | "CHEQUE";
+export const depositMethodValues: DepositMethod[] = ["TRANSFERENCIA_ELECTRONICA", "EFECTIVO", "CHEQUE"];
+
 
 
 
