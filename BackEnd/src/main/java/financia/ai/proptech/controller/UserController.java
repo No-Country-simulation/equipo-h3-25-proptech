@@ -1,11 +1,14 @@
 package financia.ai.proptech.controller;
 
 import financia.ai.proptech.dto.UserDto;
-import financia.ai.proptech.exception.UserNoExistsException;
+import financia.ai.proptech.exception.EntityNoExistsException;
 import financia.ai.proptech.service.UserService;
+import financia.ai.proptech.validation.Create;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,8 +21,9 @@ public class UserController {
     private UserService userService;
 
     @PostMapping
-    public ResponseEntity<UserDto> create (@RequestBody UserDto userDto){
-            return userService.create(userDto).map(user -> new ResponseEntity<>(user, HttpStatus.CREATED))
+    public ResponseEntity<UserDto> create (@RequestBody @Validated(Create.class) UserDto userDto){
+            return userService.create(userDto)
+                    .map(user -> new ResponseEntity<>(user, HttpStatus.CREATED))
                     .orElse(new ResponseEntity<>(HttpStatus.CONFLICT));
     }
 
@@ -27,7 +31,7 @@ public class UserController {
     public ResponseEntity<List<UserDto>> getUsers (){
         return userService.users()
                 .map(users -> new ResponseEntity<>(users, HttpStatus.OK))
-                .orElseGet(() -> ResponseEntity.notFound().build());
+                .orElseGet(() -> ResponseEntity.noContent().build());
     }
 
     @GetMapping("/{id}")
@@ -38,7 +42,8 @@ public class UserController {
 
     @PutMapping("/{id}")
     public ResponseEntity<UserDto> updateUser (@PathVariable Long id, @RequestBody UserDto userDto){
-        return userService.update(id, userDto).map(user -> new ResponseEntity<>(user, HttpStatus.ACCEPTED))
+        return userService.update(id, userDto)
+                .map(user -> new ResponseEntity<>(user, HttpStatus.ACCEPTED))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
@@ -47,7 +52,7 @@ public class UserController {
         try{
             userService.delete(id);
             return ResponseEntity.ok("El usuario fue eliminado correctamente");
-        }catch (UserNoExistsException e){
+        }catch (EntityNoExistsException e){
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
                     .body("El usuario no existe");
         }

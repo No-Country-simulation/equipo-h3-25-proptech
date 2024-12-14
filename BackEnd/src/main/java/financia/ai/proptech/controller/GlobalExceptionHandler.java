@@ -1,5 +1,6 @@
 package financia.ai.proptech.controller;
 
+import com.fasterxml.jackson.core.JsonParseException;
 import financia.ai.proptech.exception.*;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.http.HttpServletRequest;
@@ -72,10 +73,6 @@ public class GlobalExceptionHandler {
 
         ExceptionResponse exceptionResponse = new ExceptionResponse(errorMessage.toString());
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(exceptionResponse);
-    }
-    @ExceptionHandler(UserNoExistsException.class)
-    public ResponseEntity<String> handleUserNoExistsException(UserNoExistsException ex) {
-        return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler(EntityNoExistsException.class)
