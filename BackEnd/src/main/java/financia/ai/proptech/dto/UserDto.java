@@ -16,7 +16,7 @@ public record UserDto(
         @NotNull(groups = Create.class, message = "Este campo no puede ser nulo")
         Integer zipCode,
         @NotNull(groups = Create.class, message = "Este campo no puede ser nulo")
-        Integer phoneNumber,
+        Long phoneNumber,
         @NotNull(groups = Create.class, message = "Este campo no puede ser nulo")
         Gender gender,
         @NotNull(groups = Create.class, message = "Este campo no puede ser nulo")
