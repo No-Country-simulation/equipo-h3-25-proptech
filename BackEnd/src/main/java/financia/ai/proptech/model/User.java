@@ -31,7 +31,7 @@ public class User {
 
    private Integer zipCode;
 
-   private Integer phoneNumber;
+   private Long phoneNumber;
 
    @Enumerated(EnumType.STRING)
    private Gender gender;
