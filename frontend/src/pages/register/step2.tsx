@@ -4,64 +4,44 @@ import InputRadio from "../../components/common/inputRadio";
 import Select from "../../components/common/select";
 import Template from "./template";
 import { useNavigate } from "react-router-dom";
-import { registerSteps } from "../../data/register";
+import { citizenshipOptions, registerSteps } from "../../data/register";
 import { getDateValues } from "../../helpers/dates";
-import { useState } from "react";
+import {useRegister} from "../../context/registerContext";
 
 
-
-interface FormValues {
-  name: string;
-  lastname: string;
-  email: string;
-  phone: string;
-  dni: string;
-  gender: string;
-  dateOfBirth: {
-    day: string;
-    month: string;
-    year: string;
-  };
-  citizenship: string;
-}
-
-const FormDefaultValues: FormValues = {
-  name: "",
-  lastname: "",
-  email: "",
-  phone: "",
-  dni: "",
-  gender: "famale",
-  dateOfBirth: {
-    day: (new Date().getDay() + 1).toString(),
-    month: (new Date().getMonth() + 1).toString(),
-    year: (new Date().getFullYear()).toString(),
-  },
-  citizenship: "",
-}
 
 
 
 export default function RegisterStep2() {
-  const [form, setForm] = useState<FormValues>(FormDefaultValues);
   const navigate = useNavigate();
-  const isValid = form.name && form.lastname && form.email && form.phone && form.dni && form.citizenship;
-  const { days, months, years } = getDateValues(form.dateOfBirth.month, form.dateOfBirth.year);
+  const { form, setForm } = useRegister();
+  const { days, months, years } = getDateValues(form.dateOfBirth.split("-")[1], form.dateOfBirth.split("-")[0]);
+  const isValid = form.name && form.lastName && form.email && form.phoneNumber && form.dni && form.gender && form.dateOfBirth && form.citizenship;
 
 
-  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setForm({
-      ...form, dateOfBirth: {
-        ...form.dateOfBirth,
-        [e.target.name]: e.target.value
-      }
-    });
+
+  const handleDateChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    let dateParsed = "";
+
+    if (name === "year") {
+      dateParsed = `${value}-${form.dateOfBirth.split("-")[1]}-${form.dateOfBirth.split("-")[2]}`;
+    }
+    else if (name === "month") {
+      dateParsed = `${form.dateOfBirth.split("-")[0]}-${value}-${form.dateOfBirth.split("-")[2]}`;
+    }
+    else if (name === "day") {
+      dateParsed = `${form.dateOfBirth.split("-")[0]}-${form.dateOfBirth.split("-")[1]}-${value}`;
+    }
+
+    setForm({ ...form, dateOfBirth: dateParsed });
   }
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
   }
+  
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -82,10 +62,10 @@ export default function RegisterStep2() {
             onChange={handleChange}
           />
           <Input
-            name="lastname"
+            name="lastName"
             label="Apellido"
             placeholder="Apellido"
-            value={form.lastname}
+            value={form.lastName}
             onChange={handleChange}
           />
         </div>
@@ -98,11 +78,11 @@ export default function RegisterStep2() {
           onChange={handleChange}
         />
         <Input
-          type="tel"
-          name="phone"
+          type="number"
+          name="phoneNumber"
           label="Telefono"
           placeholder="Celular"
-          value={form.phone}
+          value={form.phoneNumber}
           onChange={handleChange}
         />
         <Input
@@ -119,14 +99,14 @@ export default function RegisterStep2() {
             <InputRadio
               name="gender"
               label="Mujer"
-              value="famale"
+              value="FEMENINO"
               valueSelected={form.gender}
               onChange={handleChange}
             />
             <InputRadio
               name="gender"
               label="Hombre"
-              value="male"
+              value="MASCULINO"
               valueSelected={form.gender}
               onChange={handleChange}
             />
@@ -135,16 +115,16 @@ export default function RegisterStep2() {
         <div>
           <h3 className="mb-6">Fecha de nacimiento</h3>
           <div className="grid grid-cols-3 gap-4">
-            <Select name="day" options={days} value={form.dateOfBirth.day} onChange={handleSelectChange} />
-            <Select name="month" options={months} value={form.dateOfBirth.month} onChange={handleSelectChange} />
-            <Select name="year" options={years} value={form.dateOfBirth.year} onChange={handleSelectChange} />
+            <Select name="day" options={days} value={form.dateOfBirth.split("-")[2]} onChange={handleDateChange} />
+            <Select name="month" options={months} value={form.dateOfBirth.split("-")[1]} onChange={handleDateChange} />
+            <Select name="year" options={years} value={form.dateOfBirth.split("-")[0]} onChange={handleDateChange} />
           </div>
         </div>
-        <Input
+        <Select
           name="citizenship"
           label="Ciudadanía"
-          placeholder="Argentina"
           value={form.citizenship}
+          options={citizenshipOptions}
           onChange={handleChange}
         />
 

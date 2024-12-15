@@ -1,9 +1,14 @@
 import Button from "../../components/common/button";
 import Input from "../../components/common/input";
 import { letter_highicon } from "../../assets";
+import {useRegister} from "../../context/registerContext";
 
 
 export default function Success() {
+  const { form } = useRegister();
+
+
+
   return (
     <div className="w-full max-w-[800px] mx-auto px-10 flex flex-col items-center py-20">
       <h3 className="font-bold text-2xl font-Exo2">FINANCIA.AI</h3>
@@ -17,7 +22,7 @@ export default function Success() {
       <div className="w-full flex flex-col items-center gap-6 mt-10">
         <h5 className="font-bold font-Exo2 text-2xl text-center">DIRECCIÓN DE MAIL</h5>
         <div className="w-full max-w-[400px]">
-          <Input name="email" value="mail@hotmail.com" onChange={() => {}}/>
+          <Input name="email" value={form.email} onChange={() => {}}/>
         </div>
         <div className="w-full grid grid-cols-2 gap-4">
           <Button variant="secondary" onClick={() => {}}>REENVIAR</Button>
