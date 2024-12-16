@@ -1,7 +1,7 @@
 package financia.ai.proptech.service.serviceimpl;
 
 import financia.ai.proptech.dto.UserDto;
-import financia.ai.proptech.exception.UserNoExistsException;
+import financia.ai.proptech.exception.EntityNoExistsException;
 
 import financia.ai.proptech.mapper.UserMapper;
 import financia.ai.proptech.model.User;
@@ -36,6 +36,42 @@ public class UserServiceImpl implements UserService {
     @Override
     public Optional<UserDto> update(Long id, UserDto userDto) {
         return Optional.ofNullable(userRepository.findById(id).map(userToModify -> {
+            if (userDto.country() != null){
+                userToModify.setCountry(userDto.country());
+            }
+
+            if (userDto.zipCode() != null){
+                userToModify.setZipCode(userDto.zipCode());
+            }
+
+            if (userDto.phoneNumber() != null){
+                userToModify.setPhoneNumber(userDto.phoneNumber());
+            }
+
+            if (userDto.gender() != null){
+                userToModify.setGender(userDto.gender());
+            }
+
+            if (userDto.citizenship() != null){
+                userToModify.setCitizenship(userDto.citizenship());
+            }
+
+            if (userDto.address() != null){
+                userToModify.setAddress(userDto.address());
+            }
+
+            if (userDto.numbering() != null){
+                userToModify.setNumbering(userDto.numbering());
+            }
+
+            if (userDto.depositMethod() != null){
+                userToModify.setDepositMethod(userDto.depositMethod());
+            }
+
+            if (userDto.postalCode() != null){
+                userToModify.setPostalCode(userDto.postalCode());
+            }
+
             if (userDto.name() != null) {
                 userToModify.setName(userDto.name());
             }
@@ -60,9 +96,13 @@ public class UserServiceImpl implements UserService {
                 userToModify.setActive(userDto.active());
             }
 
+            if (userDto.dateOfBirth() != null){
+                userToModify.setDateOfBirth(userDto.dateOfBirth());
+            }
+
             User userModified = userRepository.save(userToModify);
             return userMapper.toUserDto(userModified);
-        }).orElseThrow(() -> new UserNoExistsException("El usuario seleccionado no existe")));
+        }).orElseThrow(() -> new EntityNoExistsException("El usuario seleccionado no existe")));
     }
 
     @Override
@@ -78,7 +118,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public void delete(Long id) {
         if (!userRepository.existsById(id)){
-            throw new UserNoExistsException("El usuario con ID " + id + " no existe.");
+            throw new EntityNoExistsException("El usuario con ID " + id + " no existe.");
         }
 
         Optional<User> userState = userRepository.findById(id);
