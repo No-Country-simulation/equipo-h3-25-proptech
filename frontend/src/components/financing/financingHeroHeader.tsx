@@ -1,9 +1,11 @@
 import Button from "../common/button";
 import { finance_hero_header } from "../../assets";
+import { useNavigate } from "react-router-dom";
 
 
 
 export default function FinancingHeroHeader() {
+  const navigate = useNavigate()
   return (
     <section className="shadow-sectio p-12 relative">
       <div className="max-w-screen-2xl mx-auto grid grid-cols-2 gap-16 items-center">
@@ -17,8 +19,8 @@ export default function FinancingHeroHeader() {
             Ofrecemos plazos flexibles, tasas competitivas y un proceso completamente digital, diseñado para ajustarse a tus necesidades y <strong>garantizarte una experiencia sin complicaciones.</strong>
           </p>
           <div className="mt-6 grid grid-cols-2 gap-6">
-            <Button onClick={() => {}} variant="secondary">CALCULA TU FINANCIAMIENTO</Button>
-            <Button onClick={() => {}} variant="primary">SOLICITAR AHORA</Button>
+            <Button onClick={() => { navigate('/calculadora-financiamiento') }} variant="secondary">CALCULA TU FINANCIAMIENTO</Button>
+            <Button onClick={() => { navigate('/register/paso1') }} variant="primary">SOLICITAR AHORA</Button>
           </div>
         </div>
       </div>

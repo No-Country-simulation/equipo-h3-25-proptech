@@ -11,7 +11,10 @@ import Modal from "../../components/common/modal";
 export default function RegisterStep3() {
   const [confirmPassword, setConfirmPassword] = useState<string>("");
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [modalMessage, setModalMessage] = useState<string | any[]>("");
+  const [
+    modalMessage, 
+    // setModalMessage
+  ] = useState<string | any[]>("");
   const { form, setForm, submitForm } = useRegister();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [errors, setErrors] = useState({

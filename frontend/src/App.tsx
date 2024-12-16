@@ -43,7 +43,7 @@ function App() {
               <Route path="/usuarios" element={<Users />}></Route>
               <Route path="/inversion" element={<Investment />}></Route>
               <Route path="/financiamiento" element={<Financing />}></Route>
-              <Route exact path="/calculadora-financiamiento" element={<FinancingCalculator />}></Route>
+              <Route path="/calculadora-financiamiento" element={<FinancingCalculator />}></Route>
               <Route path="/test" element={<HttpRequestTester />}></Route>
               <Route path="/login" element={<Login />}></Route>
               <Route path="/register/paso1" element={<RegisterStep1 />}></Route>

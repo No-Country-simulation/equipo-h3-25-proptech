@@ -64,28 +64,28 @@ interface RegisterFormValues {
   numbering: string;
   depositMethod: DepositMethod;
   password: string;
+  active:boolean;
 }
 
 
 const registerFormDefaultValues: RegisterFormValues = {
-  roles: "INVERSOR",
   country: "Argentina",
-  postalCode: "",
-  name: "",
-  lastName: "",
-  email: "",
   phoneNumber: "",
-  dni: "",
   gender: "MASCULINO",
-  dateOfBirth: `${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()}`,
   citizenship: "Argentino",
   address: "",
+  postalCode: "",
   numbering: "",
   depositMethod: "TRANSFERENCIA_ELECTRONICA",
+  name: "",
+  lastName: "",
+  dni: "",
+  email: "",
   password: "",
+  active: true,
+  roles: "INVERSOR",
+  dateOfBirth: `${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()}`,
 }
-
-
 
 interface RegisterFormContext {
   form: RegisterFormValues;

@@ -1,6 +1,6 @@
-import FinancingHeroHeader from "../components/financing/heroHeader";
+import FinancingHeroHeader from "../components/financing/financingHeroHeader";
 import FinancingExample from "../components/financing/Example";
-import FinancingRequirements from "../components/financing/requirements";
+import FinancingRequirements from "../components/financing/financingRequirements";
 import FinancingSteps from "../components/financing/steps";
 import PreFooter from "../components/common/preFooter";
 
