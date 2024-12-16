@@ -57,7 +57,8 @@ function App() {
                 <Route path="/dashboard" element={<Navigate to="/dashboard/perfil" />}></Route>
                 <Route path="/dashboard/perfil" element={<Dashboard />}></Route>
                 <Route path="/dashboard/inversion" element={<InvestmentDashboard />}></Route>
-                <Route path="/dashboard/inversion/requisitos" element={<InvestmentSteps1 />}></Route>
+                <Route path="/dashboard/inversion/requisitos" element={<InvestmentDashboard />}></Route>
+                <Route path="/dashboard/financiamiento" element={<FinancingDashboard />}></Route>
               </Route>
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
