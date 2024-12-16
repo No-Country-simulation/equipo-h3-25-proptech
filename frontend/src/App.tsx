@@ -53,7 +53,7 @@ function App() {
               <Route path="/register/paso3" element={<RegisterStep3 />}></Route>
               <Route path="/register/exito" element={<Success />}></Route>
               <Route path="/dashboard" element={<DashboardLayout />}>
-                <Route path="/dashboard" element={<Navigate to="/dashboard/perfil"/>}></Route>
+                <Route path="/dashboard" element={<Navigate to="/dashboard/perfil" />}></Route>
                 <Route path="/dashboard/perfil" element={<Dashboard />}></Route>
                 <Route path="/dashboard/inversion" element={<InvestmentDashboard />}></Route>
                 <Route path="/dashboard/inversion/requisitos" element={<InvestmentSteps1 />}></Route>
