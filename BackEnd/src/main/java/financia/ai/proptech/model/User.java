@@ -76,7 +76,7 @@ public class User {
    //hace que se genere auto, y le da un formato día/mes/año.
    @CreationTimestamp
    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss")
-   private LocalDateTime CreationDate;
+   private LocalDateTime creationDate;
 
    @CreationTimestamp
    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")

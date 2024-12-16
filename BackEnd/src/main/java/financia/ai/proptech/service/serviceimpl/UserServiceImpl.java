@@ -40,10 +40,6 @@ public class UserServiceImpl implements UserService {
                 userToModify.setCountry(userDto.country());
             }
 
-            if (userDto.zipCode() != null){
-                userToModify.setZipCode(userDto.zipCode());
-            }
-
             if (userDto.phoneNumber() != null){
                 userToModify.setPhoneNumber(userDto.phoneNumber());
             }
