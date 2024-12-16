@@ -81,9 +81,10 @@ export default function Login() {
             label="Mail"
             placeholder="Mail"
           />
-          <Input
-            value={form.country}
-            onChange={handleChange}
+            {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+          </div>
+          <div>
+            <Select
             name="country"
             label="País"
               options={countriesOptions}
