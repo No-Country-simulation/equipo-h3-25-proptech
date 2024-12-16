@@ -27,6 +27,7 @@ import {Inversion} from "./pages/inversion"
 import InversionDashboard from "./pages/inversionDashboard"
 import HttpRequestTester from "./pages/HttpRequestTester";
 import {RegisterProvider} from "./context/registerContext"
+import NotFoundPage from "./pages/404";
 
 function App() {
   return (
