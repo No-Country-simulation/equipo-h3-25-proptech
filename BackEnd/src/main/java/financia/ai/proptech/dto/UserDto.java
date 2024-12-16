@@ -1,23 +1,22 @@
 package financia.ai.proptech.dto;
 
+import java.time.LocalDate;
+
 import financia.ai.proptech.emuns.DepositMethod;
 import financia.ai.proptech.emuns.Gender;
 import financia.ai.proptech.emuns.Roles;
-
-import java.time.LocalDate;
 
 
 public record UserDto(
         Long id,
         String country,
-        Integer zipCode,
-        Integer phoneNumber,
+        String phoneNumber,
         Gender gender,
         String citizenship,
         String address,
+        String postalCode,
         Integer numbering,
         DepositMethod depositMethod,
-        Integer postalCode,
         String name,
         String lastName,
         Integer dni,
