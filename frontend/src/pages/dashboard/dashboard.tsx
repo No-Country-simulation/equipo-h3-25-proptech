@@ -1,6 +1,6 @@
-import { arrowDown_icon, arrowWhite_icon, camera_icon, config_icon, profile } from "../assets";
-import Button from "../components/common/button";
-import Input from "../components/common/input";
+import { arrowDown_icon, arrowWhite_icon, camera_icon, config_icon, profile } from "../../assets";
+import Button from "../../components/common/button";
+import Input from "../../components/common/input";
 
 
 

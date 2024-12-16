@@ -1,10 +1,10 @@
-import {useNavigate} from "react-router-dom";
-import {arrowDown_icon, arrowWhite_icon, config_icon, logo, moneyBillTrendUp_icon, ticket_icon} from "../assets";
-import Button from "../components/common/button";
-import {useState} from "react";
-import Modal from "../components/common/modal";
+import { useNavigate } from "react-router-dom";
+import { arrowDown_icon, arrowWhite_icon, config_icon, logo, moneyBillTrendUp_icon, ticket_icon } from "../../assets";
+import Button from "../../components/common/button";
+import { useState } from "react";
+import Modal from "../../components/common/modal";
 
-export default function InvestmentDashboard() {
+export default function FinancingDashboard() {
   const date = new Date().getDay();
   const navigate = useNavigate();
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -14,25 +14,52 @@ export default function InvestmentDashboard() {
     <div className="p-10">
       <div className="flex flex-col items-center text-center max-w-[650px] mx-auto">
         <h4 className="font-Exo2 font-bold text-2xl">FINANCIA.AI</h4>
-        <h3 className="font-Exo2 font-bold text-5xl">INVERSION <span className="text-primary-500">FINANCIERA</span></h3>
-        <p className="text-body mt-4 max-w-[500px]">Invierte hoy y haz crecer tu capital con facilidad y seguridad</p>
+        <h3 className="font-Exo2 font-bold text-5xl">TU <span className="text-primary-500">FINANCIAMIENTO</span></h3>
+        <p className="text-body mt-4 max-w-[500px]">Rápido, accesible y adaptado a tus necesidades.</p>
 
         <div className="w-full flex flex-col items-center gap-5">
           <div className="size-16 border-[3px] border-black rounded-full flex justify-center items-center">
             <img src={ticket_icon} alt="" />
           </div>
-          <p className="font-Exo2 font-bold text-lg">MI DINERO</p>
+          <p className="font-Exo2 font-bold text-lg">MI PRESTAMO</p>
+          <div className="p-5 bg-gray-200 mb-5">Debe proporcionar la información de 2 garantes para poder acceder al financiamiento y los 3  deben justificar un ingreso en blanco de 3 veces el valor de la cuota cada uno</div>
 
-          <div className="font-Exo2 font-bold text-[52px] pb-3 border-b-[3px] border-primary-500 flex">
-            <span className="outline outline-[1px] outline-[#B4B4B4] px-3 pb-1 rounded-xl">$</span>
-            <p className="px-3 py-1 rounded-xl min-w-[200px]">0</p>
-          </div>
+        </div>
+      </div>
+      <div className="flex flex-row justify-arround gap-5 justify-center flex-wrap">
 
-          <div className="w-full grid grid-cols-2 gap-4">
-            <Button variant="secondary" onClick={() => {}}>TRANFERIR</Button>
-            <Button variant="primary" onClick={() => setModalIsOpen(true)}>INGRESAR</Button>
+        <div className="font-Exo2 font-bold text-[52px] pb-3 border-b-[3px] border-primary-500 flex flex-col min-w-56 max-w-72">
+          <p className="text-base capitalize mb-3">MONTO REQUERIDO</p>
+          <div className="flex flex-row gap-2">
+            <span className="outline outline-[1px] outline-[#B4B4B4] px-3 pb-1 rounded-xl ">$</span>
+            <input type="number" placeholder="0" className="outline outline-[1px] outline-[#B4B4B4] px-3 pb-1 rounded-xl flex flex-row text-center  min-w-[100px]" />
           </div>
         </div>
+        <div className="font-Exo2 font-bold text-[52px] pb-3 border-b-[3px] border-primary-500 flex flex-col min-w-56 max-w-72">
+          <p className="text-base capitalize mb-3">CUOTAS</p>
+          <div className="flex flex-row gap-2">
+            <input type="number"  placeholder="0" className="outline outline-[1px] outline-[#B4B4B4] px-3 pb-1 rounded-xl flex flex-row text-center  min-w-[100px]" />
+          </div>
+        </div>
+        <div className="font-Exo2 font-bold text-[52px] pb-3 border-b-[3px] border-primary-500 flex flex-col min-w-56 max-w-72">
+          <p className="text-base capitalize mb-3">INTERESES</p>
+          <div className="flex flex-row gap-2">
+            <span className="outline outline-[1px] outline-[#B4B4B4] px-3 pb-1 rounded-xl ">%</span>
+            <input type="number"  placeholder="0" className="outline outline-[1px] outline-[#B4B4B4] px-3 pb-1 rounded-xl flex flex-row text-center  min-w-[100px]" />
+          </div>
+        </div>
+        <div className="font-Exo2 font-bold text-[52px] pb-3 border-b-[3px] border-primary-500 flex flex-col min-w-56 max-w-72">
+          <p className="text-base capitalize mb-3">MONTO DE CUOTA</p>
+          <div className="flex flex-row gap-2">
+            <span className="outline outline-[1px] outline-[#B4B4B4] px-3 pb-1 rounded-xl ">$</span>
+            <input type="number"  placeholder="0" className="outline outline-[1px] outline-[#B4B4B4] px-3 pb-1 rounded-xl flex flex-row text-center  min-w-[100px]" />
+          </div>
+        </div>
+
+
+      </div>
+      <div className="w-full flex justify-center gap-4 mt-5 bg-green-50 p-10 ">
+        <Button variant="primary" onClick={() => setModalIsOpen(true)}>SOLICITAR FINANCIAMIENTO</Button>
       </div>
 
       {modalIsOpen && (
@@ -40,8 +67,8 @@ export default function InvestmentDashboard() {
           <div className="flex flex-col items-center gap-5 text-center">
             <img src={logo} width={170} alt="" />
             <h4 className="font-Exo2 font-bold text-2xl">PARA CONTINUAR</h4>
-            <p className="max-w-[350px] text-body">Es preciso que complete una serie de datos personales para poder realizar sus inversiones.</p>
-            
+            <p className="max-w-[350px] text-body">Es preciso que complete una serie de datos personales para poder realizar su inversion.</p>
+
             <div className="flex justify-evenly gap-4">
               <button
                 className="py-4 px-6 rounded-md font-Exo2 font-semibold text-xs transition-colors ease-in duration-100 bg-[#D9D9D9]"
@@ -57,7 +84,7 @@ export default function InvestmentDashboard() {
 
 
 
-      <div className="border-t-[1px] border-body py-8 my-10 mx-10 flex items-center gap-3">
+      {/* <div className="border-t-[1px] border-body py-8 my-10 mx-10 flex items-center gap-3">
         <div className="size-16 border-2 border-[#5F6368] rounded-full flex justify-center items-center">
           <img src={moneyBillTrendUp_icon} alt="" className="" />
         </div>
@@ -67,18 +94,17 @@ export default function InvestmentDashboard() {
         </div>
         <p className="font-Exo2 font-bold text-3xl text-primary-500 grow text-end">+0</p>
       </div>
+ */}
 
 
 
 
 
 
-
-      <div className="max-w-screen-2xl mx-auto">
+      {/* <div className="max-w-screen-2xl mx-auto">
         <h5 className="font-Exo2 font-bold text-2xl">ESTADÍSTICAS DE INVERSIÓN</h5>
         <div className="w-full grid grid-cols-2 gap-6 mt-4">
 
-          {/* card 1 */}
           <div className="bg-black rounded-2xl p-6 text-white">
             <div className="flex justify-between items-center gap-4">
               <p className="">Monto total invertido</p>
@@ -90,7 +116,6 @@ export default function InvestmentDashboard() {
             <p><strong>Ganancias</strong> obtenidas</p>
           </div>
 
-          {/* card 2 */}
           <div className="bg-[#DEDEDE] rounded-2xl p-6 text-[#3D3D3D]">
             <div className="flex justify-between items-center gap-4">
               <p className="">Realizado en la semana</p>
@@ -102,7 +127,6 @@ export default function InvestmentDashboard() {
             <p><strong className="text-black">Ganancias</strong> obtenidas</p>
           </div>
 
-          {/* card 3 */}
           <div className="bg-[#DEDEDE] rounded-2xl p-6 text-black col-span-2">
             <div className="flex justify-between items-center gap-4">
               <div>
@@ -145,10 +169,10 @@ export default function InvestmentDashboard() {
               </div>
             </div>
           </div>
-        </div>
+        </div> 
+
       </div>
-
-
+          */}
     </div>
   );
 }

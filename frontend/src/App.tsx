@@ -3,6 +3,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
+  Navigate,
 } from "react-router-dom"
 import 'react-material-symbols/sharp';
 
@@ -21,13 +22,15 @@ import Users from "./pages/users"
 import Financing from "./pages/financing"
 import FinancingCalculator from "./pages/financingCalculator"
 import Success from "./pages/registerSteps/success"
-import Dashboard from "./pages/dashboard"
+import Dashboard from "./pages/dashboard/dashboard"
 import DashboardLayout from "./components/dashboard/dashboardLayout"
 import Investment from "./pages/investment"
-import InvestmentDashboard from "./pages/investmentDashboard"
+import InvestmentDashboard from "./pages/dashboard/investmentDashboard"
+import FinancingDashboard from "./pages/dashboard/financingDashboard"
 import HttpRequestTester from "./pages/HttpRequestTester";
-import {RegisterProvider} from "./context/registerContext"
+import { RegisterProvider } from "./context/registerContext"
 import NotFoundPage from "./pages/404";
+import InvestmentSteps1 from "./pages/investmentSteps/investmentStep1";
 
 function App() {
   return (
@@ -51,9 +54,11 @@ function App() {
               <Route path="/register/paso3" element={<RegisterStep3 />}></Route>
               <Route path="/register/exito" element={<Success />}></Route>
               <Route path="/dashboard" element={<DashboardLayout />}>
+                <Route path="/dashboard" element={<Navigate to="/dashboard/perfil" />}></Route>
                 <Route path="/dashboard/perfil" element={<Dashboard />}></Route>
                 <Route path="/dashboard/inversion" element={<InvestmentDashboard />}></Route>
-                <Route path="/dashboard/inversion/requisitos" element={<Investment />}></Route>
+                <Route path="/dashboard/inversion/requisitos" element={<InvestmentDashboard />}></Route>
+                <Route path="/dashboard/financiamiento" element={<FinancingDashboard />}></Route>
               </Route>
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
