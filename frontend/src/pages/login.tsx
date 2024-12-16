@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 import Button from "../components/common/button";
 import Input from "../components/common/input";
 import InputCheck from "../components/common/inputCheck";
+import Modal from "../components/common/modal";
+import useAuthStore from "../store/authStore";
+import axios from "axios";
 
 
 interface FormValues {
@@ -25,6 +28,8 @@ const defaultValues: FormValues = {
 
 export default function Login() {
   const [form, setForm] = useState(defaultValues);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [modalMessage, setModalMessage] = useState<string>("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { type, value, name, checked } = e.target;
@@ -32,6 +37,27 @@ export default function Login() {
       setForm({ ...form, [name]: checked });
     else 
       setForm({ ...form, [name]: value });
+  }
+
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const { country, remember, ...rest } = form;
+    const { login } = useAuthStore.getState();
+
+    try {
+      const loginRes = await axios.post("https://api-deploy-lastest.onrender.com/iniciarsesion", rest);
+      console.log(loginRes);
+      login({name: ""});
+      setModalMessage("inicio de sesión exitoso");
+      setModalIsOpen(true);
+
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        console.log(error.response?.data);
+        setModalMessage(error.response?.data);
+        setModalIsOpen(true);
+      }
+    }
   }
 
 
@@ -42,7 +68,7 @@ export default function Login() {
         <h3 className="font-Exo2 font-bold text-2xl text-black">FINANCIA.AI</h3>
         <h1 className="font-Exo2 font-bold text-5xl text-primary-500">LOGIN</h1>
         <p className="mt-8 mb-5">¡Bienvenido de nuevo! Por favor, inicia sesión en tu cuenta.</p>
-        <form action="" className="flex flex-col gap-5 mb-6">
+        <form action="" onSubmit={onSubmit} className="flex flex-col gap-5 mb-6">
           <Input
             value={form.email}
             onChange={handleChange}
@@ -82,6 +108,13 @@ export default function Login() {
         </form>
         <p>¿Nuevo usuario? <Link to="/register/paso1" className="text-primary-500 font-bold">Registrate</Link></p>
       </div>
+      {modalIsOpen && <Modal onClose={() => setModalIsOpen(false)}>
+        <div className="flex flex-col items-center gap-3">
+          <h4 className="font-Exo2 font-bold text-2xl text-center">Error al iniciar sesión</h4>
+          <p className="text-red-500">{modalMessage}</p>
+          <Button variant="primary" onClick={() => setModalIsOpen(false)}>Volver a intentar</Button>
+        </div>
+      </Modal>}
     </div>
   );
 }

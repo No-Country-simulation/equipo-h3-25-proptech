@@ -3,33 +3,21 @@ import Button from "../../components/common/button";
 import Select from "../../components/common/select";
 import Template from "./template";
 import InputRadio from "../../components/common/inputRadio";
-import { CountryValue, TypeOfUserValue, typeOfUsers, countries, registerSteps} from "../../data/register";
+import { countriesOptions, registerSteps, rolesOptions} from "../../data/register";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useRegister } from "../../context/registerContext";
 
 
-interface FormValues {
-  typeOfUsers: TypeOfUserValue;
-  country: CountryValue;
-  postalCode: string;
-}
 
-const formDefaultValues: FormValues = {
-  typeOfUsers: "inversor",
-  country: "argentina",
-  postalCode: "",
-}
 
 export default function RegisterStep1() {
   const navigate = useNavigate();
-  const [form, setForm] = useState<FormValues>(formDefaultValues);
-  const isValid = form.typeOfUsers && form.country && form.postalCode;
+  const { form, setForm } = useRegister();
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value
-    })
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
   }
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -44,13 +32,13 @@ export default function RegisterStep1() {
         <div>
           <h3 className="font-lg">¿Qué tipo de usuario eres?</h3>
           <div className="flex flex-col gap-3 mt-4">
-            {typeOfUsers.map((user, index) => (
+            {rolesOptions.map((user, index) => (
               <InputRadio
                 key={index}
-                name="typeOfUsers"
+                name="roles"
                 label={user.label}
                 value={user.value}
-                valueSelected={form.typeOfUsers}
+                valueSelected={form.roles}
                 onChange={handleChange}
               />
             ))}
@@ -59,19 +47,21 @@ export default function RegisterStep1() {
         <Select
           name="country"
           label="País"
-          options={countries}
+          options={countriesOptions}
           onChange={handleChange}
           value={form.country}
+          
         />
         <Input
-          name="postalCode"
+          type="number"
+          name="zipCode"
           label="Código postal"
           placeholder="Número"
-          value={form.postalCode} 
+          value={form.zipCode} 
           onChange={handleChange}
         />
 
-        <Button disabled={!isValid} variant="primary" onClick={() => {}}>CONTINUAR</Button>
+        <Button variant="primary" onClick={() => {}}>CONTINUAR</Button>
       </form>
     </Template>
   )

@@ -26,6 +26,7 @@ import DashboardLayout from "./components/dashboard/dashboardLayout"
 import {Inversion} from "./pages/inversion"
 import InversionDashboard from "./pages/inversionDashboard"
 import HttpRequestTester from "./pages/HttpRequestTester";
+import {RegisterProvider} from "./context/registerContext"
 
 function App() {
   return (
@@ -33,26 +34,28 @@ function App() {
       <Router>
         <ScrollToTop />
         <Layout>
-          <Routes>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="/login" element={<Login />}></Route>
-            <Route path="/register/paso1" element={<RegisterStep1 />}></Route>
-            <Route path="/register/paso2" element={<RegisterStep2 />}></Route>
-            <Route path="/register/paso3" element={<RegisterStep3 />}></Route>
-            <Route path="/register/exito" element={<Success />}></Route>
-            <Route path="/acerca-de" element={<AboutUs />}></Route>
-            <Route path="/ayuda" element={<Help />}></Route>
-            <Route path="/usuarios" element={<Users />}></Route>
-            <Route path="/financiamiento" element={<Financing />}></Route>
-            <Route path="/calculadora-financiamiento" element={<FinancingCalculator />}></Route>
-            <Route path="/inversion" element={<Inversion />}></Route>
-            <Route path="/test" element={<HttpRequestTester />}></Route>
-            <Route path="/dashboard" element={<DashboardLayout />}>
-              <Route path="/dashboard/perfil" element={<Dashboard />}></Route>
-              <Route path="/dashboard/inversion" element={<InversionDashboard />}></Route>
-              <Route path="/dashboard/inversion/requisitos" element={<Inversion />}></Route>
-            </Route>
-          </Routes>
+          <RegisterProvider>
+            <Routes>
+              <Route path="/" element={<Home />}></Route>
+              <Route path="/login" element={<Login />}></Route>
+              <Route path="/register/paso1" element={<RegisterStep1 />}></Route>
+              <Route path="/register/paso2" element={<RegisterStep2 />}></Route>
+              <Route path="/register/paso3" element={<RegisterStep3 />}></Route>
+              <Route path="/register/exito" element={<Success />}></Route>
+              <Route path="/acerca-de" element={<AboutUs />}></Route>
+              <Route path="/ayuda" element={<Help />}></Route>
+              <Route path="/usuarios" element={<Users />}></Route>
+              <Route path="/financiamiento" element={<Financing />}></Route>
+              <Route path="/calculadora-financiamiento" element={<FinancingCalculator />}></Route>
+              <Route path="/inversion" element={<Inversion />}></Route>
+              <Route path="/test" element={<HttpRequestTester />}></Route>
+              <Route path="/dashboard" element={<DashboardLayout />}>
+                <Route path="/dashboard/perfil" element={<Dashboard />}></Route>
+                <Route path="/dashboard/inversion" element={<InversionDashboard />}></Route>
+                <Route path="/dashboard/inversion/requisitos" element={<Inversion />}></Route>
+              </Route>
+            </Routes>
+          </RegisterProvider>
         </Layout>
       </Router>
     </>

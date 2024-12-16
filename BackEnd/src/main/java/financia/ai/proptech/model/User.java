@@ -1,18 +1,27 @@
 package financia.ai.proptech.model;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import financia.ai.proptech.emuns.DepositMethod;
-import financia.ai.proptech.emuns.Gender;
-import financia.ai.proptech.emuns.Roles;
-import jakarta.persistence.*;
-import lombok.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+import financia.ai.proptech.emuns.DepositMethod;
+import financia.ai.proptech.emuns.Gender;
+import financia.ai.proptech.emuns.Roles;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
@@ -29,9 +38,9 @@ public class User {
 
    private String country;
 
-   private Integer zipCode;
+   private String postalCode;
 
-   private Long phoneNumber;
+   private String phoneNumber;
 
    @Enumerated(EnumType.STRING)
    private Gender gender;
@@ -45,8 +54,7 @@ public class User {
    @Enumerated(EnumType.STRING)
    private DepositMethod depositMethod;
 
-   private Integer postalCode;
-
+   
    private String name;
 
    private String lastName;

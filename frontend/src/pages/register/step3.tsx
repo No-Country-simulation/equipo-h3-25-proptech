@@ -1,66 +1,60 @@
 import Template from "./template";
 import Input from "../../components/common/input";
+import InputRadio from "../../components/common/inputRadio";
 import Button from "../../components/common/button";
-import InputCheck from "../../components/common/inputCheck";
 import { captcha } from "../../assets";
 import { useState } from "react";
 import { registerSteps } from "../../data/register";
-import { useNavigate } from "react-router-dom";
+import { useRegister } from "../../context/registerContext";
+import Modal from "../../components/common/modal";
 
-type depositMethod = "electronicTransfer" | "cash" | "check"
 
-interface FormValues {
-  home: string;
-  number: string;
-  depositMethod: {
-    [key in depositMethod]: boolean;
-  };
-  password: string;
-  confirmPassword: string;
-}
-
-const formDefaultValues: FormValues = {
-  home: "",
-  number: "",
-  depositMethod: {
-    electronicTransfer: false,
-    cash: false,
-    check: false
-  },
-  password: "",
-  confirmPassword: "",
-}
 
 export default function RegisterStep3() {
-  const navigate = useNavigate();
-  const [form, setForm] = useState<FormValues>(formDefaultValues);
-  const isValid = form.home && form.number && form.password && form.confirmPassword;
+  const [confirmPassword, setConfirmPassword] = useState<string>("");
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [modalMessage, setModalMessage] = useState<string | any[]>("");
+  const { form, setForm, submitForm } = useRegister();
+  const isValid = 
+    form.roles &&
+    form.country &&
+    form.zipCode &&
+    form.name &&
+    form.lastName &&
+    form.email &&
+    form.phoneNumber &&
+    form.dni &&
+    form.gender &&
+    form.dateOfBirth && 
+    form.citizenship &&
+    form.address &&
+    form.numbering &&
+    form.depositMethod &&
+    form.password &&
+    confirmPassword;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value, checked, type } = e.target;
-    if (type === "checkbox") {
-      setForm({
-        ...form, depositMethod: {
-          ...form.depositMethod,
-          [name]: checked
-        }
-      })
-    } else {
-      setForm({ ...form, [name]: value });
-    }
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
   }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    let passwordValid = form.password.length >= 8;
 
-    const inputChecked = Object.values(form.depositMethod).filter((value) => value);
-    if (inputChecked.length === 0) {
-      return console.log("Tienes que seleccionar un metodo de depósito.");
+
+    if (!passwordValid) {
+      setModalMessage("La contraseña debe tener al menos 8 caracteres.");
+      setModalIsOpen(true);
+      return;
     }
-    if (form.password !== form.confirmPassword) {
-      return console.log("Las contraseña no coinciden.");
+    else if (form.password !== confirmPassword) {
+      setModalMessage("Las contraseña no coinciden.");
+      setModalIsOpen(true);
+      return;
     }
-    navigate("/register/exito");
+    
+    submitForm();
   }
 
   return (
@@ -68,41 +62,44 @@ export default function RegisterStep3() {
       <form action="" onSubmit={handleSubmit} className="flex flex-col gap-9">
         <div className="grid grid-cols-[5fr_2fr] gap-2">
           <Input
-            name="home"
+            name="address"
             label="Domicilio"
             placeholder="Dirección"
-            value={form.home}
+            value={form.address}
             onChange={handleChange}
           />
           <Input
-            name="number"
+            name="numbering"
             type="number"
             label="Numeración"
             placeholder="1234"
-            value={form.number}
+            value={form.numbering}
             onChange={handleChange}
           />
         </div>
         <div>
           <h3 className="mb-6">¿Cómo harías tus depósitos y retiros en Financia.ai?</h3>
           <div className="flex flex-col gap-2">
-            <InputCheck
-              label="Transferencia electrónica"
-              name="electronicTransfer"
-              checked={form.depositMethod.electronicTransfer}
+            <InputRadio
+              label="Transferencia electronica"
+              name="depositMethod"
+              value="TRANSFERENCIA_ELECTRONICA"
               onChange={handleChange}
+              valueSelected={form.depositMethod}
             />
-            <InputCheck
+            <InputRadio
               label="Efectivo"
-              name="cash"
-              checked={form.depositMethod.cash}
+              name="depositMethod"
+              value="EFECTIVO"
               onChange={handleChange}
+              valueSelected={form.depositMethod}
             />
-            <InputCheck
-              label="check"
-              name="check"
-              checked={form.depositMethod.check}
+            <InputRadio
+              label="Transferencia electronica"
+              name="depositMethod"
+              value="CHEQUE"
               onChange={handleChange}
+              valueSelected={form.depositMethod}
             />
           </div>
         </div>
@@ -119,8 +116,8 @@ export default function RegisterStep3() {
           type="password"
           label="Confirmar contraseña"
           placeholder="Password"
-          value={form.confirmPassword}
-          onChange={handleChange}
+          value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
         />
 
         <div className="mx-auto">
@@ -150,6 +147,14 @@ export default function RegisterStep3() {
 
         <Button disabled={!isValid} variant="primary" onClick={() => { }}>CREAR CUENTA</Button>
       </form>
+      {modalIsOpen && (
+        <Modal onClose={() => setModalIsOpen(false)}>
+          <div className="flex flex-col gap-3 items-center">
+            <p className="text-red-500">{modalMessage}</p>
+            <Button variant="primary" onClick={() => setModalIsOpen(false)}>Volver a intentar</Button>
+          </div>
+        </Modal>
+      )}
     </Template>
   );
 }
