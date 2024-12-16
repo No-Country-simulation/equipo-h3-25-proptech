@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { login_image } from "../assets";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "../components/common/button";
 import Input from "../components/common/input";
 import InputCheck from "../components/common/inputCheck";
@@ -30,6 +30,7 @@ export default function Login() {
   const [form, setForm] = useState(defaultValues);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [modalMessage, setModalMessage] = useState<string>("");
+  const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { type, value, name, checked } = e.target;
@@ -48,8 +49,7 @@ export default function Login() {
       const loginRes = await axios.post("https://api-deploy-lastest.onrender.com/iniciarsesion", rest);
       console.log(loginRes);
       login({name: ""});
-      setModalMessage("inicio de sesión exitoso");
-      setModalIsOpen(true);
+      navigate("/dashboard/perfil")
 
     } catch (error) {
       if (axios.isAxiosError(error)) {

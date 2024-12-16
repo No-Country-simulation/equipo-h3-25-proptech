@@ -1,8 +1,13 @@
-import {arrowDown_icon, arrowWhite_icon, config_icon, moneyBillTrendUp_icon, ticket_icon} from "../assets";
+import {useNavigate} from "react-router-dom";
+import {arrowDown_icon, arrowWhite_icon, config_icon, logo, moneyBillTrendUp_icon, ticket_icon} from "../assets";
 import Button from "../components/common/button";
+import {useState} from "react";
+import Modal from "../components/common/modal";
 
 export default function InversionDashboard() {
   const date = new Date().getDay();
+  const navigate = useNavigate();
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
 
   return (
@@ -25,10 +30,29 @@ export default function InversionDashboard() {
 
           <div className="w-full grid grid-cols-2 gap-4">
             <Button variant="secondary" onClick={() => {}}>TRANFERIR</Button>
-            <Button variant="primary" onClick={() => {}}>INGRESAR</Button>
+            <Button variant="primary" onClick={() => setModalIsOpen(true)}>INGRESAR</Button>
           </div>
         </div>
       </div>
+
+      {modalIsOpen && (
+        <Modal onClose={() => setModalIsOpen(false)}>
+          <div className="flex flex-col items-center gap-5 text-center">
+            <img src={logo} width={170} alt="" />
+            <h4 className="font-Exo2 font-bold text-2xl">PARA CONTINUAR</h4>
+            <p className="max-w-[350px] text-body">Es preciso que complete una serie de datos personales para poder realizar sus inversiones.</p>
+            
+            <div className="flex justify-evenly gap-4">
+              <button
+                className="py-4 px-6 rounded-md font-Exo2 font-semibold text-xs transition-colors ease-in duration-100 bg-[#D9D9D9]"
+                onClick={() => setModalIsOpen(false)}
+              >REGRESAR</button>
+
+              <Button variant="primary" onClick={() => navigate("/dashboard/inversion/requisitos")}>CONTINUAR</Button>
+            </div>
+          </div>
+        </Modal>
+      )}
 
 
 
