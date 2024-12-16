@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { arrowDown_icon } from "../assets";
-import Select from "../components/common/select";
-import Input from "../components/common/input";
-import Button from "../components/common/button";
-import dashboardInversion from "../data/dashboardInversion";
+import { arrowDown_icon } from "../../assets";
+import Select from "../../components/common/select";
+import Input from "../../components/common/input";
+import Button from "../../components/common/button";
+import dashboardInversion from "../../data/dashboardInversion";
 
 
 
@@ -21,7 +21,7 @@ interface City {
   label: string;
 }
 
-export function Inversion() {
+export default function Investment() {
   const [currentPage, setCurrentPage] = useState<number>(0);
   const [cities, setCities] = useState<City[]>([]);
   const [form, setForm] = useState({

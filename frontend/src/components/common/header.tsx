@@ -26,11 +26,11 @@ const Header: React.FC = () => {
         <img src={logo} alt="Logo" className="w-16 h-16" />
       </Link>
 
-      <nav className={` ${isMenuOpen ? 'flex ' : 'hidden'} absolute right-1 pt-20 top-1 flex-col gap-4 items-right space-x-4 p-10 text-right bg-neutral-800 md:hidden rounded-xl backdrop-blur-md z-50`}>
+      <nav className={` ${isMenuOpen ? 'flex ' : 'hidden'} absolute right-1 pt-24 top-1 flex-col gap-7 items-right space-x-4 p-10 text-right bg-neutral-800 md:hidden rounded-xl backdrop-blur-md z-50`}>
         <Links />
       </nav>
 
-      <nav className="hidden md:flex items-center space-x-4">
+      <nav className="hidden md:flex items-center space-x-4 lg:gap-10  xl:gap-20">
         <Links />
       </nav>
 

@@ -13,8 +13,6 @@ const investmentData = {
     <p>Tener <strong>ingresos comprobables.</strong></p>,
     <p>Documento de <strong>identidad vigente.</strong></p>,
     <p>Reporte crediticio <strong>limpio.</strong></p>,
-    <p>Contar con <strong>2 garantes</strong></p>,
-    <p>Cada uno debe tener <strong>ingreso igual o mayor a 3 cuotas</strong></p>,
   ] as React.ReactNode[],
 
   steps: [

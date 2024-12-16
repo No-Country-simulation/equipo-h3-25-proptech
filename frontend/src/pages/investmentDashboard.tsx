@@ -4,7 +4,7 @@ import Button from "../components/common/button";
 import {useState} from "react";
 import Modal from "../components/common/modal";
 
-export default function InversionDashboard() {
+export default function InvestmentDashboard() {
   const date = new Date().getDay();
   const navigate = useNavigate();
   const [modalIsOpen, setModalIsOpen] = useState(false);
