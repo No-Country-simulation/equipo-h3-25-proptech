@@ -19,13 +19,13 @@ import Button from "../components/common/button";
 
 
 
-const phoneNumberRegex = /^(?:11|[2368]\d{1,3}|9\d{4})\d{6,7}$/;
+const phoneNumberRegex = /^\+?(\d{1,3})?\s?-?\(?\d{1,4}\)?\s?-?\d{1,4}\s?-?\d{1,4}\s?-?\d{1,9}$/;
 
 
 const register1Schema = z.object({
-  roles: z .enum(rolesValues as [Roles, ...Roles[]]),
-  country: z .enum(countriesValues as [Countries, ...Countries[]]),
-  zipCode: z .string()
+  roles: z.enum(rolesValues as [Roles, ...Roles[]]),
+  country: z.enum(countriesValues as [Countries, ...Countries[]]),
+  postalCode: z.string()
 });
 
 const register2Schema = z.object({
@@ -48,12 +48,10 @@ const register3Schema = z.object({
 
 const registerSchema = register1Schema.merge(register2Schema).merge(register3Schema);
 
-
-
 interface RegisterFormValues {
   roles: Roles;
   country: Countries;
-  zipCode: string;
+  postalCode: string;
   name: string;
   lastName: string;
   email: string;
@@ -72,7 +70,7 @@ interface RegisterFormValues {
 const registerFormDefaultValues: RegisterFormValues = {
   roles: "INVERSOR",
   country: "Argentina",
-  zipCode: "",
+  postalCode: "",
   name: "",
   lastName: "",
   email: "",
@@ -117,14 +115,14 @@ export function RegisterProvider({ children }: { children: React.ReactNode }) {
   const submitForm = async () => {
     const isFormValid = registerSchema.safeParse(form);
     if (!isFormValid.success) {
-      console.log(isFormValid.error);
-      setModalMessage(isFormValid.error.issues);
+      console.error(isFormValid.error);
+      setModalMessage(isFormValid.error.issues, );
       setModalIsOpen(true);
       return;
     }
 
     try {
-      const res = await api.post("/user", form);
+      const res = await api.post("/api/user", form);
       console.log(res);
       navigate("/register/exito");
     } catch (error) {
