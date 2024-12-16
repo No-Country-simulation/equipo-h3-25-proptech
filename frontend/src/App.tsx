@@ -28,7 +28,7 @@ import Investment from "./pages/investment"
 import InvestmentDashboard from "./pages/dashboard/investmentDashboard"
 import FinancingDashboard from "./pages/dashboard/financingDashboard"
 import HttpRequestTester from "./pages/HttpRequestTester";
-import {RegisterProvider} from "./context/registerContext"
+import { RegisterProvider } from "./context/registerContext"
 import NotFoundPage from "./pages/404";
 import InvestmentSteps1 from "./pages/investmentSteps/investmentStep1";
 
