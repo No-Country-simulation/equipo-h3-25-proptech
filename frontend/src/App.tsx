@@ -47,7 +47,6 @@ function App() {
               <Route path="/usuarios" element={<Users />}></Route>
               <Route path="/financiamiento" element={<Financing />}></Route>
               <Route path="/calculadora-financiamiento" element={<FinancingCalculator />}></Route>
-              <Route path="/inversion" element={<Inversion />}></Route>
               <Route path="/test" element={<HttpRequestTester />}></Route>
               <Route path="/dashboard" element={<DashboardLayout />}>
                 <Route path="/dashboard/perfil" element={<Dashboard />}></Route>
