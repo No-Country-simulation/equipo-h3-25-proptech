@@ -102,6 +102,9 @@ export default function Login() {
             label="DNI"
             placeholder="DNI"
           />
+            {errors.dni && <p className="text-red-500 text-sm mt-1">{errors.dni}</p>}
+          </div>
+          <div>
           <Input
             value={form.password}
             onChange={handleChange}
