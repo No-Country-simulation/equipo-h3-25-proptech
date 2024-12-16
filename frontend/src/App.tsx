@@ -25,7 +25,8 @@ import Success from "./pages/registerSteps/success"
 import Dashboard from "./pages/dashboard"
 import DashboardLayout from "./components/dashboard/dashboardLayout"
 import Investment from "./pages/investment"
-import InvestmentDashboard from "./pages/investmentDashboard"
+import InvestmentDashboard from "./pages/dashboard/investmentDashboard"
+import FinancingDashboard from "./pages/dashboard/financingDashboard"
 import HttpRequestTester from "./pages/HttpRequestTester";
 import {RegisterProvider} from "./context/registerContext"
 import NotFoundPage from "./pages/404";
