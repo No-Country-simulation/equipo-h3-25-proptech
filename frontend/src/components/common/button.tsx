@@ -15,7 +15,7 @@ export default function Button({ children, disabled, onClick, variant } : Button
 
   return (
     <button 
-      className={`relative py-4 px-6 rounded-md font-Exo2 font-semibold text-xs text-white transition-colors ease-in duration-100 ${variantStyle} ${disabledStyles}`}
+      className={`relative py-4 px-6 rounded-md font-Exo2 font-semibold text-xs text-white transition-colors overflow-hidden ease-in duration-100 ${variantStyle} ${disabledStyles}`}
       disabled={disabled}
       onClick={onClick}
     >
