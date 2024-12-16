@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { login_image } from "../assets";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "../components/common/button";
 import Input from "../components/common/input";
 import InputCheck from "../components/common/inputCheck";
@@ -30,6 +30,8 @@ export default function Login() {
   const [form, setForm] = useState(defaultValues);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [modalMessage, setModalMessage] = useState<string>("");
+  const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { type, value, name, checked } = e.target;
@@ -41,6 +43,7 @@ export default function Login() {
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsLoading(true)
     const { country, remember, ...rest } = form;
     const { login } = useAuthStore.getState();
 
@@ -48,8 +51,7 @@ export default function Login() {
       const loginRes = await axios.post("https://api-deploy-lastest.onrender.com/iniciarsesion", rest);
       console.log(loginRes);
       login({name: ""});
-      setModalMessage("inicio de sesión exitoso");
-      setModalIsOpen(true);
+      navigate("/dashboard/perfil")
 
     } catch (error) {
       if (axios.isAxiosError(error)) {
@@ -104,7 +106,15 @@ export default function Login() {
             <InputCheck name="remember" label="Recordar" onChange={handleChange} checked={form.remember}/>
             <Link to="/reset-password">¿Olvidaste la contraseña?</Link>
           </div>
-          <Button onClick={() => {}} variant="primary">LOGIN</Button>
+          <Button onClick={() => {}} variant="primary">
+          {isLoading
+            ? (<>
+              <div className={`absolute top-0 left-0 ${isLoading && 'animate-load'}  w-full h-full`}></div>
+              'INICIANDO SESIÓN...'
+            </>)
+            : 'INICIAR SESIÓN'}
+
+          </Button>
         </form>
         <p>¿Nuevo usuario? <Link to="/register/paso1" className="text-primary-500 font-bold">Registrate</Link></p>
       </div>

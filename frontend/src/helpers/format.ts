@@ -6,7 +6,7 @@ export const isRoleValid = (value: string) => {
 
 }
 
-export const isValidZipCode = (value: string) => {
+export const isValidPostalCode = (value: string) => {
   const numericRegex = /^[0-9]+$/;
   return !numericRegex.test(value) ? "El código postal solo debe contener numeros" : "";
 }
