@@ -34,9 +34,73 @@ export default function Login() {
   const [modalMessage, setModalMessage] = useState<string>("");
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [errors, setErrors] = useState({
+    email: "",
+    country: "",
+    dni: "",
+    password: "",
+  });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { type, value, name, checked } = e.target;
+  // Validation function
+  const validateForm = (): boolean => {
+    const newErrors = {
+      email: "",
+      country: "",
+      dni: "",
+      password: "",
+    };
+    let isValid = true;
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!form.email.trim()) {
+      newErrors.email = "El correo electrónico es requerido";
+      isValid = false;
+    } else if (!emailRegex.test(form.email)) {
+      newErrors.email = "Por favor ingrese un correo electrónico válido";
+      isValid = false;
+    }
+
+    // Country validation
+    if (!form.country.trim()) {
+      newErrors.country = "Por favor seleccione un país";
+      isValid = false;
+    }
+
+    // DNI validation
+    const dniRegex = /^\d{7,8}$/; // Assumes 7-8 digit DNI
+    if (!form.dni.trim()) {
+      newErrors.dni = "El DNI es requerido";
+      isValid = false;
+    } else if (!dniRegex.test(form.dni)) {
+      newErrors.dni = "Por favor ingrese un DNI válido (7-8 dígitos)";
+      isValid = false;
+    }
+
+    // Password validation
+    if (!form.password.trim()) {
+      newErrors.password = "La contraseña es requerida";
+      isValid = false;
+    } else if (form.password.length < 6) {
+      newErrors.password = "La contraseña debe tener al menos 6 caracteres";
+      isValid = false;
+    }
+
+    setErrors(newErrors);
+    return isValid;
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLElement>) => {
+    const { type, value, name, checked } = e.target as HTMLInputElement;
+    
+    // Clear specific error when user starts typing
+    if (errors[name as keyof typeof errors]) {
+      setErrors(prev => ({
+        ...prev,
+        [name]: ""
+      }));
+    }
+
     if (type === "checkbox")
       setForm({ ...form, [name]: checked });
     else 
