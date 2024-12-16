@@ -6,6 +6,7 @@ import Select from "../components/common/select";
 import Input from "../components/common/input";
 import InputCheck from "../components/common/inputCheck";
 import Modal from "../components/common/modal";
+import { countriesOptions } from "../data/register";
 import useAuthStore from "../store/authStore";
 import axios from "axios";
 
