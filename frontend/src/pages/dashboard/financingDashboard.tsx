@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { arrowDown_icon, arrowWhite_icon, config_icon, logo, moneyBillTrendUp_icon, ticket_icon } from "../../assets";
+import { logo, ticket_icon } from "../../assets";
 import Button from "../../components/common/button";
 import { useState } from "react";
 import Modal from "../../components/common/modal";
