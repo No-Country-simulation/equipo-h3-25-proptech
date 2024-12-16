@@ -13,6 +13,7 @@ public interface UserMapper {
 
     @Mappings({
             @Mapping(source = "id", target = "id"),
+            @Mapping(source = "profileImage", target = "profileImage"),
             @Mapping(source = "country", target = "country"),
             @Mapping(source = "postalCode", target = "postalCode"),
             @Mapping(source = "phoneNumber", target = "phoneNumber"),

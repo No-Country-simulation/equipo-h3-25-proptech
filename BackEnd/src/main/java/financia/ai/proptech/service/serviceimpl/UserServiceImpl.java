@@ -36,6 +36,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public Optional<UserDto> update(Long id, UserDto userDto) {
         return Optional.ofNullable(userRepository.findById(id).map(userToModify -> {
+            if (userDto.profileImage() != null){
+                userToModify.setProfileImage(userDto.profileImage());
+            }
+
             if (userDto.country() != null){
                 userToModify.setCountry(userDto.country());
             }

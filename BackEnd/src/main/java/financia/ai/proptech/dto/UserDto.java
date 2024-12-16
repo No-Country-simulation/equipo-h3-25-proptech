@@ -11,6 +11,7 @@ import jakarta.validation.constraints.NotNull;
 
 public record UserDto(
         Long id,
+        String profileImage,
         @NotNull(groups = Create.class, message = "Este campo no puede ser nulo")
         String country,
         @NotNull(groups = Create.class, message = "Este campo no puede ser nulo")
