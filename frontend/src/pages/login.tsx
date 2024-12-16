@@ -2,6 +2,7 @@ import { useState } from "react";
 import { login_image } from "../assets";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../components/common/button";
+import Select from "../components/common/select";
 import Input from "../components/common/input";
 import InputCheck from "../components/common/inputCheck";
 import Modal from "../components/common/modal";
@@ -84,8 +85,13 @@ export default function Login() {
             onChange={handleChange}
             name="country"
             label="País"
-            placeholder="País"
+              options={countriesOptions}
+              onChange={handleChange}
+              value={form.country}
           />
+            {errors.country && <p className="text-red-500 text-sm mt-1">{errors.country}</p>}
+          </div>
+          <div>
           <Input
             value={form.dni}
             onChange={handleChange}
