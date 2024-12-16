@@ -5,7 +5,7 @@ import { useState } from "react";
 import Modal from "../../components/common/modal";
 
 export default function FinancingDashboard() {
-  const date = new Date().getDay();
+  // const date = new Date().getDay();
   const navigate = useNavigate();
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
