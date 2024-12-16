@@ -5,13 +5,14 @@ import PreFooter from "../components/common/preFooter"
 
 const Home = () => {
   return (
-    <main className="p-10 min-h-screen max-w-screen-2xl mx-auto">
-      <HeroSlider />
-      <LinksMarquee />
-      <InvestmentSteps />
+    <>
+      <main className="p-10 min-h-screen max-w-screen-2xl mx-auto">
+        <HeroSlider />
+        <LinksMarquee />
+        <InvestmentSteps />
+      </main>
       <PreFooter />
-
-    </main>
+    </>
   )
 }
 

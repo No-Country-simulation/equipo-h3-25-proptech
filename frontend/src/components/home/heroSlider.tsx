@@ -29,8 +29,8 @@ const HeroSlider: React.FC = () => {
       <SwiperSlide >
         <div className="flex flex-col p-0 gap-5 md:p-10 md:flex-row">
           <div className="flex-1 flex flex-col justify-center">
-            <h4 className="text-sm font-bold ">FINANCIA.AI</h4>
-            <h2 className="text-3xl font-semibold pb-5">FINANCIACIÓN ACCESIBLE, <span className="text-primary-400">SUEÑOS</span> POSIBLES</h2>
+            <h4 className="font-Exo2 text-2xl font-bold ">FINANCIA.AI</h4>
+            <h2 className="font-Exo2 text-5xl font-semibold pb-5">FINANCIACIÓN ACCESIBLE, <span className="text-primary-400">SUEÑOS</span> POSIBLES</h2>
             <p className="pb-5">
               Facilitamos el acceso a terrenos en Latinoamérica con financiamiento accesible, conectando familias con su hogar ideal y ofreciendo a inversores oportunidades en activos de alto valor.
             </p>
