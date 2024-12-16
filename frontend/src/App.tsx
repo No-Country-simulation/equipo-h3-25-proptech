@@ -3,6 +3,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
+  Navigate,
 } from "react-router-dom"
 import 'react-material-symbols/sharp';
 
@@ -28,6 +29,7 @@ import InvestmentDashboard from "./pages/investmentDashboard"
 import HttpRequestTester from "./pages/HttpRequestTester";
 import {RegisterProvider} from "./context/registerContext"
 import NotFoundPage from "./pages/404";
+import InvestmentSteps1 from "./pages/investmentSteps/investmentStep1";
 
 function App() {
   return (
@@ -51,9 +53,10 @@ function App() {
               <Route path="/register/paso3" element={<RegisterStep3 />}></Route>
               <Route path="/register/exito" element={<Success />}></Route>
               <Route path="/dashboard" element={<DashboardLayout />}>
+                <Route path="/dashboard" element={<Navigate to="/dashboard/perfil"/>}></Route>
                 <Route path="/dashboard/perfil" element={<Dashboard />}></Route>
                 <Route path="/dashboard/inversion" element={<InvestmentDashboard />}></Route>
-                <Route path="/dashboard/inversion/requisitos" element={<Investment />}></Route>
+                <Route path="/dashboard/inversion/requisitos" element={<InvestmentSteps1 />}></Route>
               </Route>
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
