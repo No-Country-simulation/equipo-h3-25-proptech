@@ -1,20 +1,26 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { logo } from '../../assets';
+import useAuthStore from '../../store/authStore';
 
-const Links: React.FC = () => {
+const Links = ({userLogged}: { userLogged: boolean }) => {
+  console.log(userLogged)
   return <>
     <Link to="/financiamiento">Financiamiento</Link>
     <Link to="/inversion">Inversión</Link>
     <Link to="/usuarios">Usuarios</Link>
     <Link to="/ayuda">Ayuda</Link>
     <Link to="/acerca-de">Acerca de</Link>
-    <Link to="/login" className="py-2 px-5 rounded-xl bg-primary-400 text-white text-center">Login</Link>
+    <div className="flex gap-4">
+      {!userLogged && <Link to="/login" className="py-2 px-5 rounded-xl bg-primary-400 text-white text-center">Login</Link>}
+      {userLogged && <Link to="/dashboard" className="py-2 px-5 rounded-xl bg-white text-black text-center">Dashboard</Link>}
+    </div>
   </>
 }
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const { userLogged } = useAuthStore.getState();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -27,11 +33,11 @@ const Header: React.FC = () => {
       </Link>
 
       <nav className={` ${isMenuOpen ? 'flex ' : 'hidden'} absolute right-1 pt-24 top-1 flex-col gap-7 items-right space-x-4 p-10 text-right bg-neutral-800 md:hidden rounded-xl backdrop-blur-md z-50`}>
-        <Links />
+        <Links userLogged={userLogged}/>
       </nav>
 
       <nav className="hidden md:flex items-center space-x-4 lg:gap-10  xl:gap-20">
-        <Links />
+        <Links userLogged={userLogged}/>
       </nav>
 
       <div className="md:hidden absolute right-1 top-1 h-5/6 aspect-square z-50">
